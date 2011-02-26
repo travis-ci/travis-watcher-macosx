@@ -1,0 +1,646 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 44;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		172754BD107597F200D0347B /* Unit Tests */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 172754C7107597F400D0347B /* Build configuration list for PBXAggregateTarget "Unit Tests" */;
+			buildPhases = (
+				172754BC107597F200D0347B /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = "Unit Tests";
+			productName = "Unit Tests";
+		};
+		4D1A51A110A4FF5D0046A98A /* Compile */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 4D1A51AB10A4FF6A0046A98A /* Build configuration list for PBXAggregateTarget "Compile" */;
+			buildPhases = (
+				4D1A51A010A4FF5D0046A98A /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = Compile;
+			productName = Compile;
+		};
+		4D1A51A510A4FF640046A98A /* Embed */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 4D1A51AC10A4FF6A0046A98A /* Build configuration list for PBXAggregateTarget "Embed" */;
+			buildPhases = (
+				4D1A51A410A4FF640046A98A /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = Embed;
+			productName = Embed;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		2BFA9DA710CDF852007972A1 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BFA9DA510CDF852007972A1 /* MainMenu.xib */; };
+		4DE339F70D74FCDD00ADB6EE /* rb_main.rb in Resources */ = {isa = PBXBuildFile; fileRef = 4DE339F60D74FCDD00ADB6EE /* rb_main.rb */; };
+		4DE3BE140D8651D900ECA448 /* MacRuby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DE3BE130D8651D900ECA448 /* MacRuby.framework */; };
+		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
+		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
+		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		DD06BD7413170793007673AA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD06BD7313170793007673AA /* CoreLocation.framework */; };
+		DD06BD8F131708C8007673AA /* constants.rb in Resources */ = {isa = PBXBuildFile; fileRef = DD06BD8E131708C8007673AA /* constants.rb */; };
+		DD06BD9113170BC9007673AA /* ApplicationController.rb in Resources */ = {isa = PBXBuildFile; fileRef = DD06BD9013170BC9007673AA /* ApplicationController.rb */; };
+		DD06BDC713171314007673AA /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = DD06BDAA13170FF6007673AA /* Growl Registration Ticket.growlRegDict */; };
+		DD06BDE2131714CA007673AA /* travis_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = DD06BDE1131714CA007673AA /* travis_logo.png */; };
+		DD071CE913170267004C67D1 /* NSDictionary+QueryString.m in Sources */ = {isa = PBXBuildFile; fileRef = DD071CDC13170267004C67D1 /* NSDictionary+QueryString.m */; };
+		DD071CEA13170267004C67D1 /* NSString+Hashing.m in Sources */ = {isa = PBXBuildFile; fileRef = DD071CDE13170267004C67D1 /* NSString+Hashing.m */; };
+		DD071CEB13170267004C67D1 /* PTEventListener.m in Sources */ = {isa = PBXBuildFile; fileRef = DD071CE013170267004C67D1 /* PTEventListener.m */; };
+		DD071CEC13170267004C67D1 /* PTPusher.m in Sources */ = {isa = PBXBuildFile; fileRef = DD071CE213170267004C67D1 /* PTPusher.m */; };
+		DD071CED13170267004C67D1 /* PTPusherChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = DD071CE413170267004C67D1 /* PTPusherChannel.m */; };
+		DD071CEE13170267004C67D1 /* PTPusherEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = DD071CE813170267004C67D1 /* PTPusherEvent.m */; };
+		DD071D0F131702A2004C67D1 /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = DD071D0C131702A2004C67D1 /* AsyncSocket.m */; };
+		DD071D10131702A2004C67D1 /* AsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = DD071D0E131702A2004C67D1 /* AsyncUdpSocket.m */; };
+		DD071D1E131702B3004C67D1 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = DD071D13131702B3004C67D1 /* NSObject+SBJSON.m */; };
+		DD071D1F131702B3004C67D1 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = DD071D15131702B3004C67D1 /* NSString+SBJSON.m */; };
+		DD071D20131702B3004C67D1 /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = DD071D17131702B3004C67D1 /* SBJSON.m */; };
+		DD071D21131702B3004C67D1 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = DD071D19131702B3004C67D1 /* SBJsonBase.m */; };
+		DD071D22131702B3004C67D1 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = DD071D1B131702B3004C67D1 /* SBJsonParser.m */; };
+		DD071D23131702B3004C67D1 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = DD071D1D131702B3004C67D1 /* SBJsonWriter.m */; };
+		DD071D2D1317034A004C67D1 /* ZTWebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = DD071D2C1317034A004C67D1 /* ZTWebSocket.m */; };
+		DDD32950131929D100B9A1FF /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDD3294F131929D100B9A1FF /* Growl.framework */; };
+		DDFA458B1317AD16000FD1B1 /* travis_logo.icns in Resources */ = {isa = PBXBuildFile; fileRef = DDFA458A1317AD16000FD1B1 /* travis_logo.icns */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		172754B4107597CF00D0347B /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD06BE0A13171C93007673AA /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+		172754D5107598EA00D0347B /* stub_test.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = stub_test.rb; sourceTree = "<group>"; };
+		17D55CD81076A1A2008207BD /* run_suite.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = run_suite.rb; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		2BFA9DA610CDF852007972A1 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		4DE339F60D74FCDD00ADB6EE /* rb_main.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = rb_main.rb; sourceTree = "<group>"; };
+		4DE3BE130D8651D900ECA448 /* MacRuby.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MacRuby.framework; path = /Library/Frameworks/MacRuby.framework; sourceTree = "<absolute>"; };
+		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D1107320486CEB800E47090 /* Travis Toolbar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Travis Toolbar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD06BD7313170793007673AA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = /System/Library/Frameworks/CoreLocation.framework; sourceTree = "<absolute>"; };
+		DD06BD8E131708C8007673AA /* constants.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = constants.rb; sourceTree = "<group>"; };
+		DD06BD9013170BC9007673AA /* ApplicationController.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = ApplicationController.rb; sourceTree = "<group>"; };
+		DD06BDAA13170FF6007673AA /* Growl Registration Ticket.growlRegDict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Growl Registration Ticket.growlRegDict"; sourceTree = "<group>"; };
+		DD06BDE1131714CA007673AA /* travis_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = travis_logo.png; sourceTree = "<group>"; };
+		DD071CDB13170267004C67D1 /* NSDictionary+QueryString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+QueryString.h"; path = "vendor/libPusher/Library/NSDictionary+QueryString.h"; sourceTree = "<group>"; };
+		DD071CDC13170267004C67D1 /* NSDictionary+QueryString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+QueryString.m"; path = "vendor/libPusher/Library/NSDictionary+QueryString.m"; sourceTree = "<group>"; };
+		DD071CDD13170267004C67D1 /* NSString+Hashing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Hashing.h"; path = "vendor/libPusher/Library/NSString+Hashing.h"; sourceTree = "<group>"; };
+		DD071CDE13170267004C67D1 /* NSString+Hashing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Hashing.m"; path = "vendor/libPusher/Library/NSString+Hashing.m"; sourceTree = "<group>"; };
+		DD071CDF13170267004C67D1 /* PTEventListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTEventListener.h; path = vendor/libPusher/Library/PTEventListener.h; sourceTree = "<group>"; };
+		DD071CE013170267004C67D1 /* PTEventListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PTEventListener.m; path = vendor/libPusher/Library/PTEventListener.m; sourceTree = "<group>"; };
+		DD071CE113170267004C67D1 /* PTPusher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTPusher.h; path = vendor/libPusher/Library/PTPusher.h; sourceTree = "<group>"; };
+		DD071CE213170267004C67D1 /* PTPusher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PTPusher.m; path = vendor/libPusher/Library/PTPusher.m; sourceTree = "<group>"; };
+		DD071CE313170267004C67D1 /* PTPusherChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTPusherChannel.h; path = vendor/libPusher/Library/PTPusherChannel.h; sourceTree = "<group>"; };
+		DD071CE413170267004C67D1 /* PTPusherChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PTPusherChannel.m; path = vendor/libPusher/Library/PTPusherChannel.m; sourceTree = "<group>"; };
+		DD071CE513170267004C67D1 /* PTPusherChannelDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTPusherChannelDelegate.h; path = vendor/libPusher/Library/PTPusherChannelDelegate.h; sourceTree = "<group>"; };
+		DD071CE613170267004C67D1 /* PTPusherDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTPusherDelegate.h; path = vendor/libPusher/Library/PTPusherDelegate.h; sourceTree = "<group>"; };
+		DD071CE713170267004C67D1 /* PTPusherEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTPusherEvent.h; path = vendor/libPusher/Library/PTPusherEvent.h; sourceTree = "<group>"; };
+		DD071CE813170267004C67D1 /* PTPusherEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PTPusherEvent.m; path = vendor/libPusher/Library/PTPusherEvent.m; sourceTree = "<group>"; };
+		DD071D0B131702A2004C67D1 /* AsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AsyncSocket.h; path = vendor/libPusher/Vendor/AsyncSocket/AsyncSocket.h; sourceTree = "<group>"; };
+		DD071D0C131702A2004C67D1 /* AsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AsyncSocket.m; path = vendor/libPusher/Vendor/AsyncSocket/AsyncSocket.m; sourceTree = "<group>"; };
+		DD071D0D131702A2004C67D1 /* AsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AsyncUdpSocket.h; path = vendor/libPusher/Vendor/AsyncSocket/AsyncUdpSocket.h; sourceTree = "<group>"; };
+		DD071D0E131702A2004C67D1 /* AsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AsyncUdpSocket.m; path = vendor/libPusher/Vendor/AsyncSocket/AsyncUdpSocket.m; sourceTree = "<group>"; };
+		DD071D11131702B3004C67D1 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSON.h; path = vendor/libPusher/Vendor/JSON/JSON.h; sourceTree = "<group>"; };
+		DD071D12131702B3004C67D1 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+SBJSON.h"; path = "vendor/libPusher/Vendor/JSON/NSObject+SBJSON.h"; sourceTree = "<group>"; };
+		DD071D13131702B3004C67D1 /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+SBJSON.m"; path = "vendor/libPusher/Vendor/JSON/NSObject+SBJSON.m"; sourceTree = "<group>"; };
+		DD071D14131702B3004C67D1 /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+SBJSON.h"; path = "vendor/libPusher/Vendor/JSON/NSString+SBJSON.h"; sourceTree = "<group>"; };
+		DD071D15131702B3004C67D1 /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+SBJSON.m"; path = "vendor/libPusher/Vendor/JSON/NSString+SBJSON.m"; sourceTree = "<group>"; };
+		DD071D16131702B3004C67D1 /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJSON.h; path = vendor/libPusher/Vendor/JSON/SBJSON.h; sourceTree = "<group>"; };
+		DD071D17131702B3004C67D1 /* SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJSON.m; path = vendor/libPusher/Vendor/JSON/SBJSON.m; sourceTree = "<group>"; };
+		DD071D18131702B3004C67D1 /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonBase.h; path = vendor/libPusher/Vendor/JSON/SBJsonBase.h; sourceTree = "<group>"; };
+		DD071D19131702B3004C67D1 /* SBJsonBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonBase.m; path = vendor/libPusher/Vendor/JSON/SBJsonBase.m; sourceTree = "<group>"; };
+		DD071D1A131702B3004C67D1 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonParser.h; path = vendor/libPusher/Vendor/JSON/SBJsonParser.h; sourceTree = "<group>"; };
+		DD071D1B131702B3004C67D1 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonParser.m; path = vendor/libPusher/Vendor/JSON/SBJsonParser.m; sourceTree = "<group>"; };
+		DD071D1C131702B3004C67D1 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonWriter.h; path = vendor/libPusher/Vendor/JSON/SBJsonWriter.h; sourceTree = "<group>"; };
+		DD071D1D131702B3004C67D1 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonWriter.m; path = vendor/libPusher/Vendor/JSON/SBJsonWriter.m; sourceTree = "<group>"; };
+		DD071D2C1317034A004C67D1 /* ZTWebSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZTWebSocket.m; path = vendor/libPusher/Vendor/Zimt/src/ZTWebSocket.m; sourceTree = "<group>"; };
+		DD071D301317038B004C67D1 /* Zimt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Zimt.h; path = vendor/libPusher/Vendor/Zimt/src/Zimt/Zimt.h; sourceTree = "<group>"; };
+		DD071D321317038B004C67D1 /* ZTLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZTLog.h; path = vendor/libPusher/Vendor/Zimt/src/Zimt/ZTLog.h; sourceTree = "<group>"; };
+		DD071D331317038B004C67D1 /* ZTWebSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZTWebSocket.h; path = vendor/libPusher/Vendor/Zimt/src/Zimt/ZTWebSocket.h; sourceTree = "<group>"; };
+		DDD3294F131929D100B9A1FF /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = /Library/Frameworks/Growl.framework; sourceTree = "<absolute>"; };
+		DDFA458A1317AD16000FD1B1 /* travis_logo.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = travis_logo.icns; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D11072E0486CEB800E47090 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
+				4DE3BE140D8651D900ECA448 /* MacRuby.framework in Frameworks */,
+				DD06BD7413170793007673AA /* CoreLocation.framework in Frameworks */,
+				DDD32950131929D100B9A1FF /* Growl.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				DD06BD8E131708C8007673AA /* constants.rb */,
+				DD06BD9013170BC9007673AA /* ApplicationController.rb */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4DE3BE130D8651D900ECA448 /* MacRuby.framework */,
+				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
+				DD06BD7313170793007673AA /* CoreLocation.framework */,
+				DDD3294F131929D100B9A1FF /* Growl.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
+				13E42FB307B3F0F600E4EEF1 /* CoreData.framework */,
+				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		172754AE1075979200D0347B /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				172754D5107598EA00D0347B /* stub_test.rb */,
+				17D55CD81076A1A2008207BD /* run_suite.rb */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D1107320486CEB800E47090 /* Travis Toolbar.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* Travis Toolbar */ = {
+			isa = PBXGroup;
+			children = (
+				172754AE1075979200D0347B /* Tests */,
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = "Travis Toolbar";
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				DD071CEF13170273004C67D1 /* libPusherVendor */,
+				DD071CDA1317023E004C67D1 /* libPusher */,
+				4DE339F60D74FCDD00ADB6EE /* rb_main.rb */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DDFA458A1317AD16000FD1B1 /* travis_logo.icns */,
+				DD06BDE1131714CA007673AA /* travis_logo.png */,
+				2BFA9DA510CDF852007972A1 /* MainMenu.xib */,
+				8D1107310486CEB800E47090 /* Info.plist */,
+				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
+				DD06BDAA13170FF6007673AA /* Growl Registration Ticket.growlRegDict */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
+				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DD071CDA1317023E004C67D1 /* libPusher */ = {
+			isa = PBXGroup;
+			children = (
+				DD071CDB13170267004C67D1 /* NSDictionary+QueryString.h */,
+				DD071CDC13170267004C67D1 /* NSDictionary+QueryString.m */,
+				DD071CDD13170267004C67D1 /* NSString+Hashing.h */,
+				DD071CDE13170267004C67D1 /* NSString+Hashing.m */,
+				DD071CDF13170267004C67D1 /* PTEventListener.h */,
+				DD071CE013170267004C67D1 /* PTEventListener.m */,
+				DD071CE113170267004C67D1 /* PTPusher.h */,
+				DD071CE213170267004C67D1 /* PTPusher.m */,
+				DD071CE313170267004C67D1 /* PTPusherChannel.h */,
+				DD071CE413170267004C67D1 /* PTPusherChannel.m */,
+				DD071CE513170267004C67D1 /* PTPusherChannelDelegate.h */,
+				DD071CE613170267004C67D1 /* PTPusherDelegate.h */,
+				DD071CE713170267004C67D1 /* PTPusherEvent.h */,
+				DD071CE813170267004C67D1 /* PTPusherEvent.m */,
+			);
+			name = libPusher;
+			sourceTree = "<group>";
+		};
+		DD071CEF13170273004C67D1 /* libPusherVendor */ = {
+			isa = PBXGroup;
+			children = (
+				DD071D301317038B004C67D1 /* Zimt.h */,
+				DD071D321317038B004C67D1 /* ZTLog.h */,
+				DD071D331317038B004C67D1 /* ZTWebSocket.h */,
+				DD071D2C1317034A004C67D1 /* ZTWebSocket.m */,
+				DD071D11131702B3004C67D1 /* JSON.h */,
+				DD071D12131702B3004C67D1 /* NSObject+SBJSON.h */,
+				DD071D13131702B3004C67D1 /* NSObject+SBJSON.m */,
+				DD071D14131702B3004C67D1 /* NSString+SBJSON.h */,
+				DD071D15131702B3004C67D1 /* NSString+SBJSON.m */,
+				DD071D16131702B3004C67D1 /* SBJSON.h */,
+				DD071D17131702B3004C67D1 /* SBJSON.m */,
+				DD071D18131702B3004C67D1 /* SBJsonBase.h */,
+				DD071D19131702B3004C67D1 /* SBJsonBase.m */,
+				DD071D1A131702B3004C67D1 /* SBJsonParser.h */,
+				DD071D1B131702B3004C67D1 /* SBJsonParser.m */,
+				DD071D1C131702B3004C67D1 /* SBJsonWriter.h */,
+				DD071D1D131702B3004C67D1 /* SBJsonWriter.m */,
+				DD071D0B131702A2004C67D1 /* AsyncSocket.h */,
+				DD071D0C131702A2004C67D1 /* AsyncSocket.m */,
+				DD071D0D131702A2004C67D1 /* AsyncUdpSocket.h */,
+				DD071D0E131702A2004C67D1 /* AsyncUdpSocket.m */,
+			);
+			name = libPusherVendor;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D1107260486CEB800E47090 /* Travis Toolbar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Travis Toolbar" */;
+			buildPhases = (
+				8D1107290486CEB800E47090 /* Resources */,
+				DD06BE0A13171C93007673AA /* CopyFiles */,
+				8D11072C0486CEB800E47090 /* Sources */,
+				8D11072E0486CEB800E47090 /* Frameworks */,
+				172754B4107597CF00D0347B /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Travis Toolbar";
+			productInstallPath = "$(HOME)/Applications";
+			productName = "Travis Toolbar";
+			productReference = 8D1107320486CEB800E47090 /* Travis Toolbar.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Travis Toolbar" */;
+			compatibilityVersion = "Xcode 3.0";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* Travis Toolbar */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D1107260486CEB800E47090 /* Travis Toolbar */,
+				172754BD107597F200D0347B /* Unit Tests */,
+				4D1A51A110A4FF5D0046A98A /* Compile */,
+				4D1A51A510A4FF640046A98A /* Embed */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D1107290486CEB800E47090 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD06BDC713171314007673AA /* Growl Registration Ticket.growlRegDict in Resources */,
+				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
+				4DE339F70D74FCDD00ADB6EE /* rb_main.rb in Resources */,
+				2BFA9DA710CDF852007972A1 /* MainMenu.xib in Resources */,
+				DD06BD8F131708C8007673AA /* constants.rb in Resources */,
+				DD06BD9113170BC9007673AA /* ApplicationController.rb in Resources */,
+				DD06BDE2131714CA007673AA /* travis_logo.png in Resources */,
+				DDFA458B1317AD16000FD1B1 /* travis_logo.icns in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		172754BC107597F200D0347B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/macruby Tests/run_suite.rb";
+		};
+		4D1A51A010A4FF5D0046A98A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# The macruby_deploy command-line tool with the --compile argument will compile every Ruby source file of your .app into machine code. Default options will be used. Pass the -h option to get more information.\nPATH=\"$PATH:/usr/local/bin\" macruby_deploy --compile \"$TARGET_BUILD_DIR/$PROJECT_NAME.app\"";
+		};
+		4D1A51A410A4FF640046A98A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# The macruby_deploy command-line tool with the --embed argument will make sure the MacRuby framework will be embedded in your .app. Default options will be used. Pass the -h option to get more information.\nPATH=\"$PATH:/usr/local/bin\" macruby_deploy --embed \"$TARGET_BUILD_DIR/$PROJECT_NAME.app\" --no-stdlib";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D11072C0486CEB800E47090 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072D0486CEB800E47090 /* main.m in Sources */,
+				DD071CE913170267004C67D1 /* NSDictionary+QueryString.m in Sources */,
+				DD071CEA13170267004C67D1 /* NSString+Hashing.m in Sources */,
+				DD071CEB13170267004C67D1 /* PTEventListener.m in Sources */,
+				DD071CEC13170267004C67D1 /* PTPusher.m in Sources */,
+				DD071CED13170267004C67D1 /* PTPusherChannel.m in Sources */,
+				DD071CEE13170267004C67D1 /* PTPusherEvent.m in Sources */,
+				DD071D0F131702A2004C67D1 /* AsyncSocket.m in Sources */,
+				DD071D10131702A2004C67D1 /* AsyncUdpSocket.m in Sources */,
+				DD071D1E131702B3004C67D1 /* NSObject+SBJSON.m in Sources */,
+				DD071D1F131702B3004C67D1 /* NSString+SBJSON.m in Sources */,
+				DD071D20131702B3004C67D1 /* SBJSON.m in Sources */,
+				DD071D21131702B3004C67D1 /* SBJsonBase.m in Sources */,
+				DD071D22131702B3004C67D1 /* SBJsonParser.m in Sources */,
+				DD071D23131702B3004C67D1 /* SBJsonWriter.m in Sources */,
+				DD071D2D1317034A004C67D1 /* ZTWebSocket.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		089C165CFE840E0CC02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C165DFE840E0CC02AAC07 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		2BFA9DA510CDF852007972A1 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2BFA9DA610CDF852007972A1 /* English */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		172754BE107597F200D0347B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = "Unit Tests";
+			};
+			name = Debug;
+		};
+		172754BF107597F200D0347B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				PRODUCT_NAME = "Unit Tests";
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		4D1A51A210A4FF5D0046A98A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = Compile;
+			};
+			name = Debug;
+		};
+		4D1A51A310A4FF5D0046A98A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				PRODUCT_NAME = Compile;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		4D1A51A610A4FF640046A98A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = Embed;
+			};
+			name = Debug;
+		};
+		4D1A51A710A4FF640046A98A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				PRODUCT_NAME = Embed;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		C01FCF4B08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/build/Debug\"",
+					"\"$(SRCROOT)/../../../Library/Frameworks\"",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = "Travis Toolbar";
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		C01FCF4C08A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/build/Debug\"",
+					"\"$(SRCROOT)/../../../Library/Frameworks\"",
+				);
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = "Travis Toolbar";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_ENABLE_OBJC_GC = required;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_ENABLE_OBJC_GC = required;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		172754C7107597F400D0347B /* Build configuration list for PBXAggregateTarget "Unit Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				172754BE107597F200D0347B /* Debug */,
+				172754BF107597F200D0347B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4D1A51AB10A4FF6A0046A98A /* Build configuration list for PBXAggregateTarget "Compile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D1A51A210A4FF5D0046A98A /* Debug */,
+				4D1A51A310A4FF5D0046A98A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4D1A51AC10A4FF6A0046A98A /* Build configuration list for PBXAggregateTarget "Embed" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D1A51A610A4FF640046A98A /* Debug */,
+				4D1A51A710A4FF640046A98A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Travis Toolbar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4B08A954540054247B /* Debug */,
+				C01FCF4C08A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Travis Toolbar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
