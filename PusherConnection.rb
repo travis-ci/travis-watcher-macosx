@@ -3,7 +3,7 @@ require 'json'
 require 'net/http'
 require 'singleton'
 
-class Queue
+class PusherConnection
   
   include Singleton
   

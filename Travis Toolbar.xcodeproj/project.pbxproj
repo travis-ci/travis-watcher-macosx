@@ -42,7 +42,7 @@
 		83C6F8C913FE900F001B43D3 /* CoreExt.rb in Resources */ = {isa = PBXBuildFile; fileRef = 83C6F8C513FE900F001B43D3 /* CoreExt.rb */; };
 		83C6F8CA13FE900F001B43D3 /* Growl.rb in Resources */ = {isa = PBXBuildFile; fileRef = 83C6F8C613FE900F001B43D3 /* Growl.rb */; };
 		83C6F8CB13FE900F001B43D3 /* Preferences.rb in Resources */ = {isa = PBXBuildFile; fileRef = 83C6F8C713FE900F001B43D3 /* Preferences.rb */; };
-		83C6F8CC13FE900F001B43D3 /* Queue.rb in Resources */ = {isa = PBXBuildFile; fileRef = 83C6F8C813FE900F001B43D3 /* Queue.rb */; };
+		83C6F8CC13FE900F001B43D3 /* PusherConnection.rb in Resources */ = {isa = PBXBuildFile; fileRef = 83C6F8C813FE900F001B43D3 /* PusherConnection.rb */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -105,7 +105,7 @@
 		83C6F8C513FE900F001B43D3 /* CoreExt.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = CoreExt.rb; sourceTree = "<group>"; };
 		83C6F8C613FE900F001B43D3 /* Growl.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = Growl.rb; sourceTree = "<group>"; };
 		83C6F8C713FE900F001B43D3 /* Preferences.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = Preferences.rb; sourceTree = "<group>"; };
-		83C6F8C813FE900F001B43D3 /* Queue.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = Queue.rb; sourceTree = "<group>"; };
+		83C6F8C813FE900F001B43D3 /* PusherConnection.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = PusherConnection.rb; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Travis Toolbar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Travis Toolbar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD06BD7313170793007673AA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = /System/Library/Frameworks/CoreLocation.framework; sourceTree = "<absolute>"; };
@@ -253,7 +253,7 @@
 				83C6F8C513FE900F001B43D3 /* CoreExt.rb */,
 				83C6F8C613FE900F001B43D3 /* Growl.rb */,
 				83C6F8C713FE900F001B43D3 /* Preferences.rb */,
-				83C6F8C813FE900F001B43D3 /* Queue.rb */,
+				83C6F8C813FE900F001B43D3 /* PusherConnection.rb */,
 				8397A8CA13FE983A0049CBE4 /* Result.rb */,
 			);
 			name = Helper;
@@ -373,7 +373,7 @@
 				83C6F8C913FE900F001B43D3 /* CoreExt.rb in Resources */,
 				83C6F8CA13FE900F001B43D3 /* Growl.rb in Resources */,
 				83C6F8CB13FE900F001B43D3 /* Preferences.rb in Resources */,
-				83C6F8CC13FE900F001B43D3 /* Queue.rb in Resources */,
+				83C6F8CC13FE900F001B43D3 /* PusherConnection.rb in Resources */,
 				8397A8C713FE91A10049CBE4 /* PreferencesController.rb in Resources */,
 				8397A8CB13FE983A0049CBE4 /* Result.rb in Resources */,
 			);

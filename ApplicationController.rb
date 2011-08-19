@@ -1,8 +1,7 @@
 class ApplicationController
   
   attr_accessor :statusMenu, :statusItem, :statusImage, :reposStatusItem, :statusHighlightImage, :preferencesPanel
-  
-  attr_reader :queue
+
   # Cocoa
   
   def awakeFromNib
@@ -18,7 +17,7 @@ class ApplicationController
     @statusItem.setToolTip("Travis-CI")
     @statusItem.setHighlightMode(true)
     
-    @queue = Queue.instance
+    PusherConnection.instance
   end
   
   # Menu Delegate

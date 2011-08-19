@@ -1,6 +1,6 @@
 class PreferencesController
   
-  attr_accessor :preferencesPanel, :reposTableView, :intervalInput, :remoteInput
+  attr_accessor :preferencesPanel, :reposTableView
   
   def initialize
     @preferences = Preferences.instance
@@ -11,8 +11,6 @@ class PreferencesController
   
   def awakeFromNib
     @reposTableView.dataSource = self
-    #    @intervalInput.setIntegerValue(@preferences[:interval])
-    #    @remoteInput.setStringValue(@preferences[:remote])
   end
   
   # Actions
@@ -32,8 +30,6 @@ class PreferencesController
   
   def saveSettings(sender)
     @preferences[:repos] = @repos
-    #    @preferences[:interval] = @intervalInput.integerValue
-    #    @preferences[:remote] = @remoteInput.stringValue
     @preferencesPanel.performClose(self)
   end
   
