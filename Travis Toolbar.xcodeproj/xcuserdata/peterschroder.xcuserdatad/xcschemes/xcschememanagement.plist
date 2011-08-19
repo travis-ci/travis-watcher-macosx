@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>3</integer>
 		</dict>
+		<key>Deployment.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
 		<key>Embed.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -38,6 +43,11 @@
 			<true/>
 		</dict>
 		<key>4D1A51A510A4FF640046A98A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8397A8CC13FE9DB80049CBE4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
