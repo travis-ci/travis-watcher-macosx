@@ -35,11 +35,18 @@
 		2BFA9DA710CDF852007972A1 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BFA9DA510CDF852007972A1 /* MainMenu.xib */; };
 		4DE339F70D74FCDD00ADB6EE /* rb_main.rb in Resources */ = {isa = PBXBuildFile; fileRef = 4DE339F60D74FCDD00ADB6EE /* rb_main.rb */; };
 		4DE3BE140D8651D900ECA448 /* MacRuby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DE3BE130D8651D900ECA448 /* MacRuby.framework */; };
+		8397A8C713FE91A10049CBE4 /* PreferencesController.rb in Resources */ = {isa = PBXBuildFile; fileRef = 8397A8C613FE91A10049CBE4 /* PreferencesController.rb */; };
+		8397A8CB13FE983A0049CBE4 /* Result.rb in Resources */ = {isa = PBXBuildFile; fileRef = 8397A8CA13FE983A0049CBE4 /* Result.rb */; };
+		83C6F8C313FE8FA2001B43D3 /* tci-alt.png in Resources */ = {isa = PBXBuildFile; fileRef = 83C6F8C113FE8FA2001B43D3 /* tci-alt.png */; };
+		83C6F8C413FE8FA2001B43D3 /* tci.png in Resources */ = {isa = PBXBuildFile; fileRef = 83C6F8C213FE8FA2001B43D3 /* tci.png */; };
+		83C6F8C913FE900F001B43D3 /* CoreExt.rb in Resources */ = {isa = PBXBuildFile; fileRef = 83C6F8C513FE900F001B43D3 /* CoreExt.rb */; };
+		83C6F8CA13FE900F001B43D3 /* Growl.rb in Resources */ = {isa = PBXBuildFile; fileRef = 83C6F8C613FE900F001B43D3 /* Growl.rb */; };
+		83C6F8CB13FE900F001B43D3 /* Preferences.rb in Resources */ = {isa = PBXBuildFile; fileRef = 83C6F8C713FE900F001B43D3 /* Preferences.rb */; };
+		83C6F8CC13FE900F001B43D3 /* Queue.rb in Resources */ = {isa = PBXBuildFile; fileRef = 83C6F8C813FE900F001B43D3 /* Queue.rb */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		DD06BD7413170793007673AA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD06BD7313170793007673AA /* CoreLocation.framework */; };
-		DD06BD8F131708C8007673AA /* constants.rb in Resources */ = {isa = PBXBuildFile; fileRef = DD06BD8E131708C8007673AA /* constants.rb */; };
 		DD06BD9113170BC9007673AA /* ApplicationController.rb in Resources */ = {isa = PBXBuildFile; fileRef = DD06BD9013170BC9007673AA /* ApplicationController.rb */; };
 		DD06BDE2131714CA007673AA /* travis_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = DD06BDE1131714CA007673AA /* travis_logo.png */; };
 		DD071CE913170267004C67D1 /* NSDictionary+QueryString.m in Sources */ = {isa = PBXBuildFile; fileRef = DD071CDC13170267004C67D1 /* NSDictionary+QueryString.m */; };
@@ -91,10 +98,17 @@
 		2BFA9DA610CDF852007972A1 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		4DE339F60D74FCDD00ADB6EE /* rb_main.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = rb_main.rb; sourceTree = "<group>"; };
 		4DE3BE130D8651D900ECA448 /* MacRuby.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MacRuby.framework; path = /Library/Frameworks/MacRuby.framework; sourceTree = "<absolute>"; };
+		8397A8C613FE91A10049CBE4 /* PreferencesController.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = PreferencesController.rb; sourceTree = "<group>"; };
+		8397A8CA13FE983A0049CBE4 /* Result.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = Result.rb; sourceTree = "<group>"; };
+		83C6F8C113FE8FA2001B43D3 /* tci-alt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tci-alt.png"; sourceTree = "<group>"; };
+		83C6F8C213FE8FA2001B43D3 /* tci.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tci.png; sourceTree = "<group>"; };
+		83C6F8C513FE900F001B43D3 /* CoreExt.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = CoreExt.rb; sourceTree = "<group>"; };
+		83C6F8C613FE900F001B43D3 /* Growl.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = Growl.rb; sourceTree = "<group>"; };
+		83C6F8C713FE900F001B43D3 /* Preferences.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = Preferences.rb; sourceTree = "<group>"; };
+		83C6F8C813FE900F001B43D3 /* Queue.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = Queue.rb; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Travis Toolbar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Travis Toolbar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD06BD7313170793007673AA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = /System/Library/Frameworks/CoreLocation.framework; sourceTree = "<absolute>"; };
-		DD06BD8E131708C8007673AA /* constants.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = constants.rb; sourceTree = "<group>"; };
 		DD06BD9013170BC9007673AA /* ApplicationController.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = ApplicationController.rb; sourceTree = "<group>"; };
 		DD06BDE1131714CA007673AA /* travis_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = travis_logo.png; sourceTree = "<group>"; };
 		DD071CDB13170267004C67D1 /* NSDictionary+QueryString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+QueryString.h"; path = "vendor/libPusher/Library/NSDictionary+QueryString.h"; sourceTree = "<group>"; };
@@ -149,13 +163,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		080E96DDFE201D6D7F000001 /* Classes */ = {
+		080E96DDFE201D6D7F000001 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				DD06BD8E131708C8007673AA /* constants.rb */,
+				8397A8C613FE91A10049CBE4 /* PreferencesController.rb */,
 				DD06BD9013170BC9007673AA /* ApplicationController.rb */,
 			);
-			name = Classes;
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
@@ -189,7 +203,8 @@
 		29B97314FDCFA39411CA2CEA /* Travis Toolbar */ = {
 			isa = PBXGroup;
 			children = (
-				080E96DDFE201D6D7F000001 /* Classes */,
+				8397A8C913FE93500049CBE4 /* Helper */,
+				080E96DDFE201D6D7F000001 /* Controller */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
@@ -212,6 +227,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				83C6F8C113FE8FA2001B43D3 /* tci-alt.png */,
+				83C6F8C213FE8FA2001B43D3 /* tci.png */,
 				DDFA458A1317AD16000FD1B1 /* travis_logo.icns */,
 				DD06BDE1131714CA007673AA /* travis_logo.png */,
 				2BFA9DA510CDF852007972A1 /* MainMenu.xib */,
@@ -228,6 +245,18 @@
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8397A8C913FE93500049CBE4 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				83C6F8C513FE900F001B43D3 /* CoreExt.rb */,
+				83C6F8C613FE900F001B43D3 /* Growl.rb */,
+				83C6F8C713FE900F001B43D3 /* Preferences.rb */,
+				83C6F8C813FE900F001B43D3 /* Queue.rb */,
+				8397A8CA13FE983A0049CBE4 /* Result.rb */,
+			);
+			name = Helper;
 			sourceTree = "<group>";
 		};
 		DD071CDA1317023E004C67D1 /* libPusher */ = {
@@ -336,10 +365,17 @@
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				4DE339F70D74FCDD00ADB6EE /* rb_main.rb in Resources */,
 				2BFA9DA710CDF852007972A1 /* MainMenu.xib in Resources */,
-				DD06BD8F131708C8007673AA /* constants.rb in Resources */,
 				DD06BD9113170BC9007673AA /* ApplicationController.rb in Resources */,
 				DD06BDE2131714CA007673AA /* travis_logo.png in Resources */,
 				DDFA458B1317AD16000FD1B1 /* travis_logo.icns in Resources */,
+				83C6F8C313FE8FA2001B43D3 /* tci-alt.png in Resources */,
+				83C6F8C413FE8FA2001B43D3 /* tci.png in Resources */,
+				83C6F8C913FE900F001B43D3 /* CoreExt.rb in Resources */,
+				83C6F8CA13FE900F001B43D3 /* Growl.rb in Resources */,
+				83C6F8CB13FE900F001B43D3 /* Preferences.rb in Resources */,
+				83C6F8CC13FE900F001B43D3 /* Queue.rb in Resources */,
+				8397A8C713FE91A10049CBE4 /* PreferencesController.rb in Resources */,
+				8397A8CB13FE983A0049CBE4 /* Result.rb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
