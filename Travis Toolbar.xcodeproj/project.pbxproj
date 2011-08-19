@@ -7,17 +7,6 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		172754BD107597F200D0347B /* Unit Tests */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = 172754C7107597F400D0347B /* Build configuration list for PBXAggregateTarget "Unit Tests" */;
-			buildPhases = (
-				172754BC107597F200D0347B /* ShellScript */,
-			);
-			dependencies = (
-			);
-			name = "Unit Tests";
-			productName = "Unit Tests";
-		};
 		4D1A51A110A4FF5D0046A98A /* Compile */ = {
 			isa = PBXAggregateTarget;
 			buildConfigurationList = 4D1A51AB10A4FF6A0046A98A /* Build configuration list for PBXAggregateTarget "Compile" */;
@@ -52,7 +41,6 @@
 		DD06BD7413170793007673AA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD06BD7313170793007673AA /* CoreLocation.framework */; };
 		DD06BD8F131708C8007673AA /* constants.rb in Resources */ = {isa = PBXBuildFile; fileRef = DD06BD8E131708C8007673AA /* constants.rb */; };
 		DD06BD9113170BC9007673AA /* ApplicationController.rb in Resources */ = {isa = PBXBuildFile; fileRef = DD06BD9013170BC9007673AA /* ApplicationController.rb */; };
-		DD06BDC713171314007673AA /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = DD06BDAA13170FF6007673AA /* Growl Registration Ticket.growlRegDict */; };
 		DD06BDE2131714CA007673AA /* travis_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = DD06BDE1131714CA007673AA /* travis_logo.png */; };
 		DD071CE913170267004C67D1 /* NSDictionary+QueryString.m in Sources */ = {isa = PBXBuildFile; fileRef = DD071CDC13170267004C67D1 /* NSDictionary+QueryString.m */; };
 		DD071CEA13170267004C67D1 /* NSString+Hashing.m in Sources */ = {isa = PBXBuildFile; fileRef = DD071CDE13170267004C67D1 /* NSString+Hashing.m */; };
@@ -69,7 +57,6 @@
 		DD071D22131702B3004C67D1 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = DD071D1B131702B3004C67D1 /* SBJsonParser.m */; };
 		DD071D23131702B3004C67D1 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = DD071D1D131702B3004C67D1 /* SBJsonWriter.m */; };
 		DD071D2D1317034A004C67D1 /* ZTWebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = DD071D2C1317034A004C67D1 /* ZTWebSocket.m */; };
-		DDD32950131929D100B9A1FF /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDD3294F131929D100B9A1FF /* Growl.framework */; };
 		DDFA458B1317AD16000FD1B1 /* travis_logo.icns in Resources */ = {isa = PBXBuildFile; fileRef = DDFA458A1317AD16000FD1B1 /* travis_logo.icns */; };
 /* End PBXBuildFile section */
 
@@ -98,8 +85,6 @@
 		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
-		172754D5107598EA00D0347B /* stub_test.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = stub_test.rb; sourceTree = "<group>"; };
-		17D55CD81076A1A2008207BD /* run_suite.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = run_suite.rb; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
@@ -111,7 +96,6 @@
 		DD06BD7313170793007673AA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = /System/Library/Frameworks/CoreLocation.framework; sourceTree = "<absolute>"; };
 		DD06BD8E131708C8007673AA /* constants.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = constants.rb; sourceTree = "<group>"; };
 		DD06BD9013170BC9007673AA /* ApplicationController.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = ApplicationController.rb; sourceTree = "<group>"; };
-		DD06BDAA13170FF6007673AA /* Growl Registration Ticket.growlRegDict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Growl Registration Ticket.growlRegDict"; sourceTree = "<group>"; };
 		DD06BDE1131714CA007673AA /* travis_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = travis_logo.png; sourceTree = "<group>"; };
 		DD071CDB13170267004C67D1 /* NSDictionary+QueryString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+QueryString.h"; path = "vendor/libPusher/Library/NSDictionary+QueryString.h"; sourceTree = "<group>"; };
 		DD071CDC13170267004C67D1 /* NSDictionary+QueryString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+QueryString.m"; path = "vendor/libPusher/Library/NSDictionary+QueryString.m"; sourceTree = "<group>"; };
@@ -148,7 +132,6 @@
 		DD071D301317038B004C67D1 /* Zimt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Zimt.h; path = vendor/libPusher/Vendor/Zimt/src/Zimt/Zimt.h; sourceTree = "<group>"; };
 		DD071D321317038B004C67D1 /* ZTLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZTLog.h; path = vendor/libPusher/Vendor/Zimt/src/Zimt/ZTLog.h; sourceTree = "<group>"; };
 		DD071D331317038B004C67D1 /* ZTWebSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZTWebSocket.h; path = vendor/libPusher/Vendor/Zimt/src/Zimt/ZTWebSocket.h; sourceTree = "<group>"; };
-		DDD3294F131929D100B9A1FF /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = /Library/Frameworks/Growl.framework; sourceTree = "<absolute>"; };
 		DDFA458A1317AD16000FD1B1 /* travis_logo.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = travis_logo.icns; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -160,7 +143,6 @@
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				4DE3BE140D8651D900ECA448 /* MacRuby.framework in Frameworks */,
 				DD06BD7413170793007673AA /* CoreLocation.framework in Frameworks */,
-				DDD32950131929D100B9A1FF /* Growl.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,7 +164,6 @@
 				4DE3BE130D8651D900ECA448 /* MacRuby.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 				DD06BD7313170793007673AA /* CoreLocation.framework */,
-				DDD3294F131929D100B9A1FF /* Growl.framework */,
 			);
 			name = "Linked Frameworks";
 			sourceTree = "<group>";
@@ -197,15 +178,6 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		172754AE1075979200D0347B /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-				172754D5107598EA00D0347B /* stub_test.rb */,
-				17D55CD81076A1A2008207BD /* run_suite.rb */,
-			);
-			path = Tests;
-			sourceTree = "<group>";
-		};
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -217,7 +189,6 @@
 		29B97314FDCFA39411CA2CEA /* Travis Toolbar */ = {
 			isa = PBXGroup;
 			children = (
-				172754AE1075979200D0347B /* Tests */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -246,7 +217,6 @@
 				2BFA9DA510CDF852007972A1 /* MainMenu.xib */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
-				DD06BDAA13170FF6007673AA /* Growl Registration Ticket.growlRegDict */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -352,7 +322,6 @@
 			projectRoot = "";
 			targets = (
 				8D1107260486CEB800E47090 /* Travis Toolbar */,
-				172754BD107597F200D0347B /* Unit Tests */,
 				4D1A51A110A4FF5D0046A98A /* Compile */,
 				4D1A51A510A4FF640046A98A /* Embed */,
 			);
@@ -364,7 +333,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD06BDC713171314007673AA /* Growl Registration Ticket.growlRegDict in Resources */,
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				4DE339F70D74FCDD00ADB6EE /* rb_main.rb in Resources */,
 				2BFA9DA710CDF852007972A1 /* MainMenu.xib in Resources */,
@@ -378,19 +346,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		172754BC107597F200D0347B /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/macruby Tests/run_suite.rb";
-		};
 		4D1A51A010A4FF5D0046A98A /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -465,27 +420,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		172754BE107597F200D0347B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				PRODUCT_NAME = "Unit Tests";
-			};
-			name = Debug;
-		};
-		172754BF107597F200D0347B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				PRODUCT_NAME = "Unit Tests";
-				ZERO_LINK = NO;
-			};
-			name = Release;
-		};
 		4D1A51A210A4FF5D0046A98A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -595,15 +529,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		172754C7107597F400D0347B /* Build configuration list for PBXAggregateTarget "Unit Tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				172754BE107597F200D0347B /* Debug */,
-				172754BF107597F200D0347B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		4D1A51AB10A4FF6A0046A98A /* Build configuration list for PBXAggregateTarget "Compile" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
