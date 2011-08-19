@@ -1,3 +1,5 @@
+require 'pp'
+
 class Result
   
   def initialize(data)
@@ -6,11 +8,11 @@ class Result
   end
   
   def name
-    event.data["repository"]["slug"]
+    @data["repository"]["slug"]
   end
   
   def status
-    event.data["repository"]["last_build_status"]
+    @data["repository"]["last_build_status"]
   end
   
 end
