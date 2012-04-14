@@ -1,22 +1,58 @@
 class ApplicationController
-  def applicationDidFinishLaunching(notification)
-    GrowlApplicationBridge.growlDelegate = self
+  
+  attr_accessor :statusMenu, :statusItem, :statusImage, :reposStatusItem, :statusHighlightImage, :preferencesPanel
 
-    @pusher = PTPusher.alloc.initWithKey(TravisToolbar::PUSHER_API_KEY, channel:TravisToolbar::PUSHER_CHANNEL_NAME)
-
-    @pusher.addEventListener(TravisToolbar::BUILD_STARTED,  target:self, selector:"handle_event:")
-    @pusher.addEventListener(TravisToolbar::BUILD_FINISHED, target:self, selector:"handle_event:")
-	
-	@pusher.reconnect = true;
+  # Cocoa
+  
+  def awakeFromNib
+    @statusItem = NSStatusBar.systemStatusBar.statusItemWithLength(NSSquareStatusItemLength)
+    
+    @statusImage = load_image('tci')
+    @statusHighlightImage = load_image('tci-alt')
+    
+    @statusItem.setImage(@statusImage)
+    @statusItem.setAlternateImage(@statusHighlightImage)
+    
+    @statusItem.setMenu(@statusMenu)
+    @statusItem.setToolTip("Travis-CI")
+    @statusItem.setHighlightMode(true)
+    
+    PusherConnection.instance
   end
-
-  def handle_event(event)
-    GrowlApplicationBridge.notifyWithTitle(event.name,
-      description:event.data["build"]["repository"]["name"],
-      notificationName:"Build Information",
-      iconData:NSImage.imageNamed("travis_logo.png").TIFFRepresentation,
-      priority:0,
-      isSticky:false,
-      clickContext:nil)
+  
+  # Menu Delegate
+  
+  def menu(menu, willHighlightItem:item)
+    if item == @reposStatusItem
+      item.submenu.removeAllItems()
+      Preferences.instance[:repos].each do |repo|
+        mi = NSMenuItem.new
+        mi.title  = repo
+        mi.action = 'showStatus:'
+        mi.target = self
+        mi.image  = load_build_image(repo)
+        
+        item.submenu.addItem(mi)
+      end
+    end
   end
+  
+  # Actions
+  
+  def showPreferences(sender)
+    NSApp.activateIgnoringOtherApps(true)
+    @preferencesPanel.makeKeyAndOrderFront(self)
+  end
+  
+  def showStatus(sender)
+    alert = NSAlert.new
+    alert.messageText = "Build result for #{sender.title}"
+    alert.informativeText = Queue.instance.results[sender.title]
+    alert.alertStyle = NSInformationalAlertStyle
+    alert.addButtonWithTitle('close')
+    alert.icon = load_image('tci')
+    
+    alert.runModal()
+  end
+  
 end
