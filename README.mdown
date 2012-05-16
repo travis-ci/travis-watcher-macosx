@@ -1,6 +1,7 @@
 # Travis Watcher - Mac edition
 
-Right now this app is a simple connector to the Travis PusherApp stream, with notifications shown using Growl.
+Right now this app is a simple connector to the Travis PusherApp stream, with
+notifications shown using Growl.
 
 But big plans are in the works, so stay tuned, or better yet, get involved!
 
@@ -30,4 +31,5 @@ For now, download via GitHub downloads. More to come soon.
 
 ## Copyright
 
-Copyright (c) 2011 [Travis](http://github.com/travis-ci). See LICENSE for details.
+Copyright (c) 2012 [Travis](http://github.com/travis-ci). See LICENSE for
+details.
