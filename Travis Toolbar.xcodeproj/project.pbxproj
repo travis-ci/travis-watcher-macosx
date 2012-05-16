@@ -44,6 +44,8 @@
 
 /* Begin PBXBuildFile section */
 		2BFA9DA710CDF852007972A1 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BFA9DA510CDF852007972A1 /* MainMenu.xib */; };
+		2EE31A5F15642182004F33FE /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE31A5E15642182004F33FE /* Growl.framework */; };
+		2EE31A601564218D004F33FE /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2EE31A5E15642182004F33FE /* Growl.framework */; };
 		4DE339F70D74FCDD00ADB6EE /* rb_main.rb in Resources */ = {isa = PBXBuildFile; fileRef = 4DE339F60D74FCDD00ADB6EE /* rb_main.rb */; };
 		4DE3BE140D8651D900ECA448 /* MacRuby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DE3BE130D8651D900ECA448 /* MacRuby.framework */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
@@ -69,7 +71,6 @@
 		DD071D22131702B3004C67D1 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = DD071D1B131702B3004C67D1 /* SBJsonParser.m */; };
 		DD071D23131702B3004C67D1 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = DD071D1D131702B3004C67D1 /* SBJsonWriter.m */; };
 		DD071D2D1317034A004C67D1 /* ZTWebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = DD071D2C1317034A004C67D1 /* ZTWebSocket.m */; };
-		DDD32950131929D100B9A1FF /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDD3294F131929D100B9A1FF /* Growl.framework */; };
 		DDFA458B1317AD16000FD1B1 /* travis_logo.icns in Resources */ = {isa = PBXBuildFile; fileRef = DDFA458A1317AD16000FD1B1 /* travis_logo.icns */; };
 /* End PBXBuildFile section */
 
@@ -80,15 +81,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DD06BE0A13171C93007673AA /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
+				2EE31A601564218D004F33FE /* Growl.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +97,7 @@
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		2BFA9DA610CDF852007972A1 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		2EE31A5E15642182004F33FE /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = vendor/Growl.framework; sourceTree = "<group>"; };
 		4DE339F60D74FCDD00ADB6EE /* rb_main.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = rb_main.rb; sourceTree = "<group>"; };
 		4DE3BE130D8651D900ECA448 /* MacRuby.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MacRuby.framework; path = /Library/Frameworks/MacRuby.framework; sourceTree = "<absolute>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -148,7 +142,6 @@
 		DD071D301317038B004C67D1 /* Zimt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Zimt.h; path = vendor/libPusher/Vendor/Zimt/src/Zimt/Zimt.h; sourceTree = "<group>"; };
 		DD071D321317038B004C67D1 /* ZTLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZTLog.h; path = vendor/libPusher/Vendor/Zimt/src/Zimt/ZTLog.h; sourceTree = "<group>"; };
 		DD071D331317038B004C67D1 /* ZTWebSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZTWebSocket.h; path = vendor/libPusher/Vendor/Zimt/src/Zimt/ZTWebSocket.h; sourceTree = "<group>"; };
-		DDD3294F131929D100B9A1FF /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = /Library/Frameworks/Growl.framework; sourceTree = "<absolute>"; };
 		DDFA458A1317AD16000FD1B1 /* travis_logo.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = travis_logo.icns; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -160,7 +153,7 @@
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				4DE3BE140D8651D900ECA448 /* MacRuby.framework in Frameworks */,
 				DD06BD7413170793007673AA /* CoreLocation.framework in Frameworks */,
-				DDD32950131929D100B9A1FF /* Growl.framework in Frameworks */,
+				2EE31A5F15642182004F33FE /* Growl.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,10 +172,10 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2EE31A5E15642182004F33FE /* Growl.framework */,
 				4DE3BE130D8651D900ECA448 /* MacRuby.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 				DD06BD7313170793007673AA /* CoreLocation.framework */,
-				DDD3294F131929D100B9A1FF /* Growl.framework */,
 			);
 			name = "Linked Frameworks";
 			sourceTree = "<group>";
@@ -317,7 +310,6 @@
 			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Travis Toolbar" */;
 			buildPhases = (
 				8D1107290486CEB800E47090 /* Resources */,
-				DD06BE0A13171C93007673AA /* CopyFiles */,
 				8D11072C0486CEB800E47090 /* Sources */,
 				8D11072E0486CEB800E47090 /* Frameworks */,
 				172754B4107597CF00D0347B /* CopyFiles */,
@@ -536,6 +528,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/build/Debug\"",
 					"\"$(SRCROOT)/../../../Library/Frameworks\"",
+					"\"$(SRCROOT)/vendor\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
@@ -557,6 +550,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/build/Debug\"",
 					"\"$(SRCROOT)/../../../Library/Frameworks\"",
+					"\"$(SRCROOT)/vendor\"",
 				);
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
