@@ -44,6 +44,7 @@
 
 /* Begin PBXBuildFile section */
 		2BFA9DA710CDF852007972A1 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BFA9DA510CDF852007972A1 /* MainMenu.xib */; };
+		2EDA045915644D5D0043A3A6 /* PusherConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EDA045815644D5D0043A3A6 /* PusherConnection.m */; };
 		2EE31A5F15642182004F33FE /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE31A5E15642182004F33FE /* Growl.framework */; };
 		2EE31A601564218D004F33FE /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2EE31A5E15642182004F33FE /* Growl.framework */; };
 		2EE31A6B156422CF004F33FE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EE31A6A156422CF004F33FE /* AppDelegate.m */; };
@@ -80,6 +81,8 @@
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		2BFA9DA610CDF852007972A1 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		2EDA045715644D5D0043A3A6 /* PusherConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PusherConnection.h; path = src/PusherConnection.h; sourceTree = "<group>"; };
+		2EDA045815644D5D0043A3A6 /* PusherConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PusherConnection.m; path = src/PusherConnection.m; sourceTree = "<group>"; };
 		2EE31A5E15642182004F33FE /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = vendor/Growl.framework; sourceTree = "<group>"; };
 		2EE31A69156422CF004F33FE /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = src/AppDelegate.h; sourceTree = "<group>"; };
 		2EE31A6A156422CF004F33FE /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = src/AppDelegate.m; sourceTree = "<group>"; };
@@ -179,6 +182,8 @@
 				2EE31A69156422CF004F33FE /* AppDelegate.h */,
 				2EE31A6A156422CF004F33FE /* AppDelegate.m */,
 				2EE31A731564259B004F33FE /* Constants.h */,
+				2EDA045715644D5D0043A3A6 /* PusherConnection.h */,
+				2EDA045815644D5D0043A3A6 /* PusherConnection.m */,
 			);
 			name = "Travis Toolbar";
 			sourceTree = "<group>";
@@ -308,6 +313,7 @@
 			files = (
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
 				2EE31A6B156422CF004F33FE /* AppDelegate.m in Sources */,
+				2EDA045915644D5D0043A3A6 /* PusherConnection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
