@@ -30,5 +30,7 @@
 	<string>NSApplication</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright (c) 2012 Travis CI GmbH</string>
+	<key>LSUIElement</key>
+	<true/>
 </dict>
 </plist>
