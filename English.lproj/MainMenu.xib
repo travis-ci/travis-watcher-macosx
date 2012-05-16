@@ -38,15 +38,14 @@
 			<object class="NSCustomObject" id="984965921">
 				<string key="NSClassName">AppDelegate</string>
 			</object>
-			<object class="NSMenu" id="522401070">
+			<object class="NSMenu" id="12197506">
 				<string key="NSTitle"/>
 				<object class="NSMutableArray" key="NSMenuItems">
 					<bool key="EncodedWithXMLCoder">YES</bool>
-					<object class="NSMenuItem" id="377228738">
-						<reference key="NSMenu" ref="522401070"/>
+					<object class="NSMenuItem" id="826275542">
+						<reference key="NSMenu" ref="12197506"/>
 						<string key="NSTitle">Quit</string>
-						<string key="NSKeyEquiv">q</string>
-						<int key="NSKeyEquivModMask">1048576</int>
+						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<object class="NSCustomResource" key="NSOnImage">
 							<string key="NSClassName">NSImage</string>
@@ -75,7 +74,7 @@
 					<object class="IBActionConnection" key="connection">
 						<string key="label">terminate:</string>
 						<reference key="source" ref="1014"/>
-						<reference key="destination" ref="377228738"/>
+						<reference key="destination" ref="826275542"/>
 					</object>
 					<int key="connectionID">391</int>
 				</object>
@@ -83,7 +82,7 @@
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">statusMenu</string>
 						<reference key="source" ref="984965921"/>
-						<reference key="destination" ref="522401070"/>
+						<reference key="destination" ref="12197506"/>
 					</object>
 					<int key="connectionID">390</int>
 				</object>
@@ -124,18 +123,18 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">386</int>
-						<reference key="object" ref="522401070"/>
+						<reference key="object" ref="12197506"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="377228738"/>
+							<reference ref="826275542"/>
 						</object>
 						<reference key="parent" ref="0"/>
 						<string key="objectName">StatusItem</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">387</int>
-						<reference key="object" ref="377228738"/>
-						<reference key="parent" ref="522401070"/>
+						<reference key="object" ref="826275542"/>
+						<reference key="parent" ref="12197506"/>
 					</object>
 				</object>
 			</object>
