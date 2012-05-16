@@ -49,7 +49,6 @@
 		2EE31A6B156422CF004F33FE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EE31A6A156422CF004F33FE /* AppDelegate.m */; };
 		2EE31A7115642547004F33FE /* Pusher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE31A7015642547004F33FE /* Pusher.framework */; };
 		2EE31A721564254C004F33FE /* Pusher.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2EE31A7015642547004F33FE /* Pusher.framework */; };
-		2EE31A7715642763004F33FE /* Growl Registration Ticket.growlRegDict in CopyFiles */ = {isa = PBXBuildFile; fileRef = DD06BDAA13170FF6007673AA /* Growl Registration Ticket.growlRegDict */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -68,16 +67,6 @@
 			files = (
 				2EE31A601564218D004F33FE /* Growl.framework in CopyFiles */,
 				2EE31A721564254C004F33FE /* Pusher.framework in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2EE31A7615642760004F33FE /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 7;
-			files = (
-				2EE31A7715642763004F33FE /* Growl Registration Ticket.growlRegDict in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,7 +202,6 @@
 				8D11072C0486CEB800E47090 /* Sources */,
 				8D11072E0486CEB800E47090 /* Frameworks */,
 				172754B4107597CF00D0347B /* CopyFiles */,
-				2EE31A7615642760004F33FE /* CopyFiles */,
 			);
 			buildRules = (
 			);
