@@ -10,6 +10,7 @@
 #import <Pusher/PTPusherChannel.h>
 #import <Pusher/PTPusherEvent.h>
 #import "Constants.h"
+#import "TravisEventData.h"
 
 #import "PusherConnection.h"
 
@@ -44,7 +45,8 @@
 }
 
 - (void)handleStarted:(PTPusherEvent *)event {
-  [GrowlApplicationBridge notifyWithTitle:[[event.data objectForKey:@"repository"] objectForKey:@"slug"]
+  TravisEventData *eventData = [[TravisEventData alloc] initWithEventData:event.data];
+  [GrowlApplicationBridge notifyWithTitle:eventData.name
                               description:@"Starting build!"
                          notificationName:@"Build Information"
                                  iconData:[[NSImage imageNamed:@"travis_logo.png"] TIFFRepresentation]
@@ -54,8 +56,9 @@
 }
 
 - (void)handleFinished:(PTPusherEvent *)event {
-  [GrowlApplicationBridge notifyWithTitle:[[event.data objectForKey:@"repository"] objectForKey:@"slug"]
-                              description:@"Finished build!"
+  TravisEventData *eventData = [[TravisEventData alloc] initWithEventData:event.data];
+  [GrowlApplicationBridge notifyWithTitle:eventData.name
+                              description:[NSString stringWithFormat:@"Finished build with status: %@", eventData.status]
                          notificationName:@"Build Information"
                                  iconData:[[NSImage imageNamed:@"travis_logo.png"] TIFFRepresentation]
                                  priority:0
