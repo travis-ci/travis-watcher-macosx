@@ -96,6 +96,7 @@
 		2EE31A6A156422CF004F33FE /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = src/AppDelegate.m; sourceTree = "<group>"; };
 		2EE31A7015642547004F33FE /* Pusher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pusher.framework; path = vendor/Pusher.framework; sourceTree = "<group>"; };
 		2EE31A731564259B004F33FE /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = src/Constants.h; sourceTree = "<group>"; };
+		2EE31A7E15644ABD004F33FE /* Travis Toolbar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Travis Toolbar.entitlements"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = resources/Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Travis Toolbar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Travis Toolbar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD06BD7313170793007673AA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = /System/Library/Frameworks/CoreLocation.framework; sourceTree = "<absolute>"; };
@@ -162,6 +163,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2EE31A7E15644ABD004F33FE /* Travis Toolbar.entitlements */,
 				DDFA458A1317AD16000FD1B1 /* travis_logo.icns */,
 				DD06BDE1131714CA007673AA /* travis_logo.png */,
 				2BFA9DA510CDF852007972A1 /* MainMenu.xib */,
@@ -407,6 +409,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = "Travis Toolbar.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -434,6 +438,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = "Travis Toolbar.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
