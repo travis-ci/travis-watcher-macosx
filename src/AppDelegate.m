@@ -14,6 +14,7 @@
 @implementation AppDelegate
 @synthesize window = _window;
 @synthesize pusher = _pusher;
+@synthesize channel = _channel;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)notification {
   [GrowlApplicationBridge setGrowlDelegate:self];
@@ -21,9 +22,9 @@
   
   self.pusher.reconnectAutomatically = YES;
   
-  PTPusherChannel *channel = [self.pusher subscribeToChannelNamed:kPusherChannelName];
+  self.channel = [self.pusher subscribeToChannelNamed:kPusherChannelName];
 
-  [channel bindToEventNamed:kPusherEventBuildStarted target:self action:@selector(buildStarted:)];
+  [self.channel bindToEventNamed:kPusherEventBuildStarted target:self action:@selector(buildStarted:)];
 }
 
 - (void)buildStarted:(PTPusherEvent *)event {

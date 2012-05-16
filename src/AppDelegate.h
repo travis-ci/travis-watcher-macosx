@@ -9,11 +9,13 @@
 #import <Cocoa/Cocoa.h>
 #import <Pusher/PTPusher.h>
 #import <Pusher/PTPusherEvent.h>
+#import <Pusher/PTPusherChannel.h>
 #import <Growl/Growl.h>
 
 @interface AppDelegate : NSObject <NSApplicationDelegate, PTPusherDelegate, GrowlApplicationBridgeDelegate>
 @property (assign) IBOutlet NSWindow *window;
 @property (strong) PTPusher *pusher;
+@property (strong) PTPusherChannel *channel;
 
 - (void)buildStarted:(PTPusherEvent *)event;
 @end
