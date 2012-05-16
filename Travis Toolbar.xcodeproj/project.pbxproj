@@ -46,8 +46,11 @@
 		2BFA9DA710CDF852007972A1 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BFA9DA510CDF852007972A1 /* MainMenu.xib */; };
 		2EE31A5F15642182004F33FE /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE31A5E15642182004F33FE /* Growl.framework */; };
 		2EE31A601564218D004F33FE /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2EE31A5E15642182004F33FE /* Growl.framework */; };
+		2EE31A6B156422CF004F33FE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EE31A6A156422CF004F33FE /* AppDelegate.m */; };
+		2EE31A7115642547004F33FE /* Pusher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE31A7015642547004F33FE /* Pusher.framework */; };
+		2EE31A721564254C004F33FE /* Pusher.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2EE31A7015642547004F33FE /* Pusher.framework */; };
+		2EE31A7715642763004F33FE /* Growl Registration Ticket.growlRegDict in CopyFiles */ = {isa = PBXBuildFile; fileRef = DD06BDAA13170FF6007673AA /* Growl Registration Ticket.growlRegDict */; };
 		4DE339F70D74FCDD00ADB6EE /* rb_main.rb in Resources */ = {isa = PBXBuildFile; fileRef = 4DE339F60D74FCDD00ADB6EE /* rb_main.rb */; };
-		4DE3BE140D8651D900ECA448 /* MacRuby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DE3BE130D8651D900ECA448 /* MacRuby.framework */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -56,21 +59,6 @@
 		DD06BD9113170BC9007673AA /* ApplicationController.rb in Resources */ = {isa = PBXBuildFile; fileRef = DD06BD9013170BC9007673AA /* ApplicationController.rb */; };
 		DD06BDC713171314007673AA /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = DD06BDAA13170FF6007673AA /* Growl Registration Ticket.growlRegDict */; };
 		DD06BDE2131714CA007673AA /* travis_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = DD06BDE1131714CA007673AA /* travis_logo.png */; };
-		DD071CE913170267004C67D1 /* NSDictionary+QueryString.m in Sources */ = {isa = PBXBuildFile; fileRef = DD071CDC13170267004C67D1 /* NSDictionary+QueryString.m */; };
-		DD071CEA13170267004C67D1 /* NSString+Hashing.m in Sources */ = {isa = PBXBuildFile; fileRef = DD071CDE13170267004C67D1 /* NSString+Hashing.m */; };
-		DD071CEB13170267004C67D1 /* PTEventListener.m in Sources */ = {isa = PBXBuildFile; fileRef = DD071CE013170267004C67D1 /* PTEventListener.m */; };
-		DD071CEC13170267004C67D1 /* PTPusher.m in Sources */ = {isa = PBXBuildFile; fileRef = DD071CE213170267004C67D1 /* PTPusher.m */; };
-		DD071CED13170267004C67D1 /* PTPusherChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = DD071CE413170267004C67D1 /* PTPusherChannel.m */; };
-		DD071CEE13170267004C67D1 /* PTPusherEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = DD071CE813170267004C67D1 /* PTPusherEvent.m */; };
-		DD071D0F131702A2004C67D1 /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = DD071D0C131702A2004C67D1 /* AsyncSocket.m */; };
-		DD071D10131702A2004C67D1 /* AsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = DD071D0E131702A2004C67D1 /* AsyncUdpSocket.m */; };
-		DD071D1E131702B3004C67D1 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = DD071D13131702B3004C67D1 /* NSObject+SBJSON.m */; };
-		DD071D1F131702B3004C67D1 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = DD071D15131702B3004C67D1 /* NSString+SBJSON.m */; };
-		DD071D20131702B3004C67D1 /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = DD071D17131702B3004C67D1 /* SBJSON.m */; };
-		DD071D21131702B3004C67D1 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = DD071D19131702B3004C67D1 /* SBJsonBase.m */; };
-		DD071D22131702B3004C67D1 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = DD071D1B131702B3004C67D1 /* SBJsonParser.m */; };
-		DD071D23131702B3004C67D1 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = DD071D1D131702B3004C67D1 /* SBJsonWriter.m */; };
-		DD071D2D1317034A004C67D1 /* ZTWebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = DD071D2C1317034A004C67D1 /* ZTWebSocket.m */; };
 		DDFA458B1317AD16000FD1B1 /* travis_logo.icns in Resources */ = {isa = PBXBuildFile; fileRef = DDFA458A1317AD16000FD1B1 /* travis_logo.icns */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +70,17 @@
 			dstSubfolderSpec = 10;
 			files = (
 				2EE31A601564218D004F33FE /* Growl.framework in CopyFiles */,
+				2EE31A721564254C004F33FE /* Pusher.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2EE31A7615642760004F33FE /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				2EE31A7715642763004F33FE /* Growl Registration Ticket.growlRegDict in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,8 +97,11 @@
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		2BFA9DA610CDF852007972A1 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		2EE31A5E15642182004F33FE /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = vendor/Growl.framework; sourceTree = "<group>"; };
+		2EE31A69156422CF004F33FE /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = src/AppDelegate.h; sourceTree = "<group>"; };
+		2EE31A6A156422CF004F33FE /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = src/AppDelegate.m; sourceTree = "<group>"; };
+		2EE31A7015642547004F33FE /* Pusher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pusher.framework; path = vendor/Pusher.framework; sourceTree = "<group>"; };
+		2EE31A731564259B004F33FE /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		4DE339F60D74FCDD00ADB6EE /* rb_main.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = rb_main.rb; sourceTree = "<group>"; };
-		4DE3BE130D8651D900ECA448 /* MacRuby.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MacRuby.framework; path = /Library/Frameworks/MacRuby.framework; sourceTree = "<absolute>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Travis Toolbar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Travis Toolbar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD06BD7313170793007673AA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = /System/Library/Frameworks/CoreLocation.framework; sourceTree = "<absolute>"; };
@@ -151,9 +153,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
-				4DE3BE140D8651D900ECA448 /* MacRuby.framework in Frameworks */,
 				DD06BD7413170793007673AA /* CoreLocation.framework in Frameworks */,
 				2EE31A5F15642182004F33FE /* Growl.framework in Frameworks */,
+				2EE31A7115642547004F33FE /* Pusher.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,8 +174,8 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2EE31A7015642547004F33FE /* Pusher.framework */,
 				2EE31A5E15642182004F33FE /* Growl.framework */,
-				4DE3BE130D8651D900ECA448 /* MacRuby.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 				DD06BD7313170793007673AA /* CoreLocation.framework */,
 			);
@@ -210,6 +212,7 @@
 		29B97314FDCFA39411CA2CEA /* Travis Toolbar */ = {
 			isa = PBXGroup;
 			children = (
+				2EE31A611564226E004F33FE /* Travis Toolbar */,
 				172754AE1075979200D0347B /* Tests */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -226,7 +229,6 @@
 				DD071CEF13170273004C67D1 /* libPusherVendor */,
 				DD071CDA1317023E004C67D1 /* libPusher */,
 				4DE339F60D74FCDD00ADB6EE /* rb_main.rb */,
-				29B97316FDCFA39411CA2CEA /* main.m */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
@@ -251,6 +253,25 @@
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2EE31A611564226E004F33FE /* Travis Toolbar */ = {
+			isa = PBXGroup;
+			children = (
+				2EE31A6C15642365004F33FE /* Supporting Files */,
+				2EE31A69156422CF004F33FE /* AppDelegate.h */,
+				2EE31A6A156422CF004F33FE /* AppDelegate.m */,
+				2EE31A731564259B004F33FE /* Constants.h */,
+			);
+			name = "Travis Toolbar";
+			sourceTree = "<group>";
+		};
+		2EE31A6C15642365004F33FE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		DD071CDA1317023E004C67D1 /* libPusher */ = {
@@ -313,6 +334,7 @@
 				8D11072C0486CEB800E47090 /* Sources */,
 				8D11072E0486CEB800E47090 /* Frameworks */,
 				172754B4107597CF00D0347B /* CopyFiles */,
+				2EE31A7615642760004F33FE /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -421,21 +443,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
-				DD071CE913170267004C67D1 /* NSDictionary+QueryString.m in Sources */,
-				DD071CEA13170267004C67D1 /* NSString+Hashing.m in Sources */,
-				DD071CEB13170267004C67D1 /* PTEventListener.m in Sources */,
-				DD071CEC13170267004C67D1 /* PTPusher.m in Sources */,
-				DD071CED13170267004C67D1 /* PTPusherChannel.m in Sources */,
-				DD071CEE13170267004C67D1 /* PTPusherEvent.m in Sources */,
-				DD071D0F131702A2004C67D1 /* AsyncSocket.m in Sources */,
-				DD071D10131702A2004C67D1 /* AsyncUdpSocket.m in Sources */,
-				DD071D1E131702B3004C67D1 /* NSObject+SBJSON.m in Sources */,
-				DD071D1F131702B3004C67D1 /* NSString+SBJSON.m in Sources */,
-				DD071D20131702B3004C67D1 /* SBJSON.m in Sources */,
-				DD071D21131702B3004C67D1 /* SBJsonBase.m in Sources */,
-				DD071D22131702B3004C67D1 /* SBJsonParser.m in Sources */,
-				DD071D23131702B3004C67D1 /* SBJsonWriter.m in Sources */,
-				DD071D2D1317034A004C67D1 /* ZTWebSocket.m in Sources */,
+				2EE31A6B156422CF004F33FE /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -524,20 +532,25 @@
 		C01FCF4B08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/build/Debug\"",
 					"\"$(SRCROOT)/../../../Library/Frameworks\"",
 					"\"$(SRCROOT)/vendor\"",
+					"\"$(SRCROOT)\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_GC = unsupported;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				PRODUCT_NAME = "Travis Toolbar";
+				SDKROOT = macosx10.7;
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = YES;
 			};
@@ -546,18 +559,23 @@
 		C01FCF4C08A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/build/Debug\"",
 					"\"$(SRCROOT)/../../../Library/Frameworks\"",
 					"\"$(SRCROOT)/vendor\"",
+					"\"$(SRCROOT)\"",
 				);
+				GCC_ENABLE_OBJC_GC = unsupported;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				PRODUCT_NAME = "Travis Toolbar";
+				SDKROOT = macosx10.7;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

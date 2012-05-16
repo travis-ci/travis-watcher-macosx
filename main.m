@@ -6,9 +6,9 @@
 //  Copyright Travis CI GmbH 2011. All rights reserved.
 //
 
-#import <MacRuby/MacRuby.h>
+#import <Cocoa/Cocoa.h>
 
 int main(int argc, char *argv[])
 {
-    return macruby_main("rb_main.rb", argc, argv);
+  return NSApplicationMain(argc, (const char **)argv);
 }
