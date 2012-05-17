@@ -281,8 +281,6 @@
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/build/Debug\"",
-					"\"$(SRCROOT)/../../../Library/Frameworks\"",
 					"\"$(SRCROOT)/vendor\"",
 					"\"$(SRCROOT)\"",
 				);
@@ -311,8 +309,6 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/build/Debug\"",
-					"\"$(SRCROOT)/../../../Library/Frameworks\"",
 					"\"$(SRCROOT)/vendor\"",
 					"\"$(SRCROOT)\"",
 				);
