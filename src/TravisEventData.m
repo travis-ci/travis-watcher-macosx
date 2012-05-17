@@ -10,7 +10,7 @@
 
 @interface TravisEventData ()
 
-@property (nonatomic, retain) NSDictionary *eventData;
+@property (strong) NSDictionary *eventData;
 
 @end
 
@@ -32,12 +32,10 @@
 }
 
 - (NSString *)status {
-  NSNumber *result = [[[self.eventData objectForKey:@"build"] objectForKey:@"result"] retain];
+  NSNumber *result = [[self.eventData objectForKey:@"build"] objectForKey:@"result"];
   if ([result isEqualToNumber:[NSNumber numberWithInt:0]]) {
-    [result release];
     return @"passed";
   } else {
-    [result release];
     return @"failed";
   }
 }

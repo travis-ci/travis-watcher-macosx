@@ -10,9 +10,9 @@
 
 @interface AppDelegate ()
 
-@property (nonatomic, retain) NSStatusItem *statusItem;
-@property (nonatomic, retain) NSImage *statusImage;
-@property (nonatomic, retain) NSImage *statusHighlightImage;
+@property (strong) NSStatusItem *statusItem;
+@property (strong) NSImage *statusImage;
+@property (strong) NSImage *statusHighlightImage;
 
 @end
 
