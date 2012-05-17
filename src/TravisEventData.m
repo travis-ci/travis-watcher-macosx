@@ -22,8 +22,6 @@
   self = [super init];
   if (self) {
     self.eventData = eventData;
-    
-    //NSLog(@"%@", self.eventData);
   }
   
   return self;
@@ -34,8 +32,8 @@
 }
 
 - (NSString *)status {
-  BOOL passed = [[self.eventData objectForKey:@"build"] objectForKey:@"result"] == 0;
-  if (passed) {
+  NSNumber *result = [[self.eventData objectForKey:@"build"] objectForKey:@"result"];
+  if ([result isEqualToNumber:[NSNumber numberWithInt:0]]) {
     return @"passed";
   } else {
     return @"failed";
