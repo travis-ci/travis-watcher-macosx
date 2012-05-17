@@ -294,8 +294,9 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = resources/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = "Travis Toolbar";
-				SDKROOT = macosx10.7;
+				SDKROOT = macosx10.6;
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = YES;
 			};
@@ -321,8 +322,9 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = resources/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = "Travis Toolbar";
-				SDKROOT = macosx10.7;
+				SDKROOT = macosx10.6;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
