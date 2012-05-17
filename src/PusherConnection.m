@@ -16,8 +16,8 @@
 
 @interface PusherConnection ()
 
-@property (strong) PTPusher *pusher;
-@property (strong) PTPusherChannel *channel;
+@property (nonatomic, retain) PTPusher *pusher;
+@property (nonatomic, retain) PTPusherChannel *channel;
 
 - (void)handleStarted:(PTPusherEvent *)event;
 - (void)handleFinished:(PTPusherEvent *)event;
@@ -45,7 +45,7 @@
 }
 
 - (void)handleStarted:(PTPusherEvent *)event {
-  TravisEventData *eventData = [[TravisEventData alloc] initWithEventData:event.data];
+  TravisEventData *eventData = [[[TravisEventData alloc] initWithEventData:event.data] retain];
   [GrowlApplicationBridge notifyWithTitle:eventData.name
                               description:@"Starting build!"
                          notificationName:@"Build Information"
@@ -53,10 +53,11 @@
                                  priority:0
                                  isSticky:NO
                              clickContext:nil];
+  [eventData release];
 }
 
 - (void)handleFinished:(PTPusherEvent *)event {
-  TravisEventData *eventData = [[TravisEventData alloc] initWithEventData:event.data];
+  TravisEventData *eventData = [[[TravisEventData alloc] initWithEventData:event.data] retain];
   [GrowlApplicationBridge notifyWithTitle:eventData.name
                               description:[NSString stringWithFormat:@"Finished build with status: %@", eventData.status]
                          notificationName:@"Build Information"
@@ -64,6 +65,7 @@
                                  priority:0
                                  isSticky:NO
                              clickContext:nil];
+  [eventData release];
 }
 
 @end

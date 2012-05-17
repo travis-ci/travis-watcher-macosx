@@ -11,7 +11,7 @@
 #import "PusherConnection.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
-@property (assign) IBOutlet NSWindow *window;
-@property (strong) PusherConnection *pusher;
-@property (assign) IBOutlet NSMenu *statusMenu;
+@property (nonatomic, assign) IBOutlet NSWindow *window;
+@property (nonatomic, retain) PusherConnection *pusher;
+@property (nonatomic, assign) IBOutlet NSMenu *statusMenu;
 @end
