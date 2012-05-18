@@ -53,4 +53,8 @@
   self.statusItem.highlightMode = YES;
 }
 
+- (IBAction)showPreferences:(id)sender {
+  [NSApp activateIgnoringOtherApps:YES];
+  [self.preferencesPanel makeKeyAndOrderFront:self];
+}
 @end

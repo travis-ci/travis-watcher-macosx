@@ -14,4 +14,7 @@
 @property (assign) IBOutlet NSWindow *window;
 @property (strong) PusherConnection *pusher;
 @property (assign) IBOutlet NSMenu *statusMenu;
+@property (assign) IBOutlet NSPanel *preferencesPanel;
+
+- (IBAction)showPreferences:(id)sender;
 @end

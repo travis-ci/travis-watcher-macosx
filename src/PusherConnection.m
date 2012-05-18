@@ -11,6 +11,7 @@
 #import <Pusher/PTPusherEvent.h>
 #import "Constants.h"
 #import "TravisEventData.h"
+#import "Preferences.h"
 
 #import "PusherConnection.h"
 
@@ -46,6 +47,8 @@
 
 - (void)handleStarted:(PTPusherEvent *)event {
   TravisEventData *eventData = [[TravisEventData alloc] initWithEventData:event.data];
+  NSArray *repos = [[Preferences alloc] objectForKey:@"repositories"];
+  if ([repos indexOfObject:eventData.name] == NSNotFound) return;
   Class GAB = NSClassFromString(@"GrowlApplicationBridge");
   if ([GAB respondsToSelector:@selector(notifyWithTitle:description:notificationName:iconData:priority:isSticky:clickContext:identifier:)])
     [GAB notifyWithTitle:eventData.name
@@ -60,6 +63,8 @@
 
 - (void)handleFinished:(PTPusherEvent *)event {
   TravisEventData *eventData = [[TravisEventData alloc] initWithEventData:event.data];
+  NSArray *repos = [[Preferences alloc] objectForKey:@"repositories"];
+  if ([repos indexOfObject:eventData.name] == NSNotFound) return;
   Class GAB = NSClassFromString(@"GrowlApplicationBridge");
   if ([GAB respondsToSelector:@selector(notifyWithTitle:description:notificationName:iconData:priority:isSticky:clickContext:identifier:)])
     [GAB notifyWithTitle:eventData.name
