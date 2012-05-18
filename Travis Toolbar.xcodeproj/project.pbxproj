@@ -12,8 +12,8 @@
 		2EDA045D156450750043A3A6 /* TravisEventData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EDA045C156450750043A3A6 /* TravisEventData.m */; };
 		2EDA0460156464FF0043A3A6 /* tray-alt.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EDA045E156464FF0043A3A6 /* tray-alt.png */; };
 		2EDA0461156464FF0043A3A6 /* tray.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EDA045F156464FF0043A3A6 /* tray.png */; };
-		2EE31A5F15642182004F33FE /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE31A5E15642182004F33FE /* Growl.framework */; };
-		2EE31A601564218D004F33FE /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2EE31A5E15642182004F33FE /* Growl.framework */; };
+		2EDA046C1565B86F0043A3A6 /* Growl.framework in Copy Growl 1.3 */ = {isa = PBXBuildFile; fileRef = 2EE31A5E15642182004F33FE /* Growl.framework */; };
+		2EDA046E1565B8850043A3A6 /* Growl.framework in Copy Growl 1.2.3 */ = {isa = PBXBuildFile; fileRef = 2EDA04691565B82C0043A3A6 /* Growl.framework */; };
 		2EE31A6B156422CF004F33FE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EE31A6A156422CF004F33FE /* AppDelegate.m */; };
 		2EE31A7115642547004F33FE /* Pusher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE31A7015642547004F33FE /* Pusher.framework */; };
 		2EE31A721564254C004F33FE /* Pusher.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2EE31A7015642547004F33FE /* Pusher.framework */; };
@@ -33,9 +33,30 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				2EE31A601564218D004F33FE /* Growl.framework in CopyFiles */,
 				2EE31A721564254C004F33FE /* Pusher.framework in CopyFiles */,
 			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2EDA046B1565B8450043A3A6 /* Copy Growl 1.3 */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Frameworks/Growl/1.3;
+			dstSubfolderSpec = 1;
+			files = (
+				2EDA046C1565B86F0043A3A6 /* Growl.framework in Copy Growl 1.3 */,
+			);
+			name = "Copy Growl 1.3";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2EDA046D1565B8760043A3A6 /* Copy Growl 1.2.3 */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Frameworks/Growl/1.2.3;
+			dstSubfolderSpec = 1;
+			files = (
+				2EDA046E1565B8850043A3A6 /* Growl.framework in Copy Growl 1.2.3 */,
+			);
+			name = "Copy Growl 1.2.3";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -54,6 +75,7 @@
 		2EDA045C156450750043A3A6 /* TravisEventData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TravisEventData.m; path = src/TravisEventData.m; sourceTree = "<group>"; };
 		2EDA045E156464FF0043A3A6 /* tray-alt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tray-alt.png"; path = "resources/tray-alt.png"; sourceTree = "<group>"; };
 		2EDA045F156464FF0043A3A6 /* tray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tray.png; path = resources/tray.png; sourceTree = "<group>"; };
+		2EDA04691565B82C0043A3A6 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = vendor/legacy/Growl.framework; sourceTree = "<group>"; };
 		2EE31A5E15642182004F33FE /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = vendor/Growl.framework; sourceTree = "<group>"; };
 		2EE31A69156422CF004F33FE /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = src/AppDelegate.h; sourceTree = "<group>"; };
 		2EE31A6A156422CF004F33FE /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = src/AppDelegate.m; sourceTree = "<group>"; };
@@ -75,7 +97,6 @@
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				DD06BD7413170793007673AA /* CoreLocation.framework in Frameworks */,
-				2EE31A5F15642182004F33FE /* Growl.framework in Frameworks */,
 				2EE31A7115642547004F33FE /* Pusher.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -87,7 +108,6 @@
 			isa = PBXGroup;
 			children = (
 				2EE31A7015642547004F33FE /* Pusher.framework */,
-				2EE31A5E15642182004F33FE /* Growl.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 				DD06BD7313170793007673AA /* CoreLocation.framework */,
 			);
@@ -142,10 +162,36 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2EDA04661565B7F90043A3A6 /* Growl */,
 				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2EDA04661565B7F90043A3A6 /* Growl */ = {
+			isa = PBXGroup;
+			children = (
+				2EDA04681565B8190043A3A6 /* 1.2.3 */,
+				2EDA04671565B80B0043A3A6 /* 1.3 */,
+			);
+			name = Growl;
+			sourceTree = "<group>";
+		};
+		2EDA04671565B80B0043A3A6 /* 1.3 */ = {
+			isa = PBXGroup;
+			children = (
+				2EE31A5E15642182004F33FE /* Growl.framework */,
+			);
+			name = 1.3;
+			sourceTree = "<group>";
+		};
+		2EDA04681565B8190043A3A6 /* 1.2.3 */ = {
+			isa = PBXGroup;
+			children = (
+				2EDA04691565B82C0043A3A6 /* Growl.framework */,
+			);
+			name = 1.2.3;
 			sourceTree = "<group>";
 		};
 		2EE31A611564226E004F33FE /* Travis Toolbar */ = {
@@ -182,6 +228,8 @@
 				8D11072C0486CEB800E47090 /* Sources */,
 				8D11072E0486CEB800E47090 /* Frameworks */,
 				172754B4107597CF00D0347B /* CopyFiles */,
+				2EDA046B1565B8450043A3A6 /* Copy Growl 1.3 */,
+				2EDA046D1565B8760043A3A6 /* Copy Growl 1.2.3 */,
 			);
 			buildRules = (
 			);
@@ -283,6 +331,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/vendor\"",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/vendor/legacy\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_GC = unsupported;
@@ -311,6 +360,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/vendor\"",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/vendor/legacy\"",
 				);
 				GCC_ENABLE_OBJC_GC = unsupported;
 				GCC_MODEL_TUNING = G5;
