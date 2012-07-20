@@ -12,6 +12,7 @@
 
 @property (readonly) NSString *name;
 @property (readonly) NSString *status;
+@property (readonly) NSString *url;
 
 - (id)initWithEventData:(NSDictionary *)eventData;
 
