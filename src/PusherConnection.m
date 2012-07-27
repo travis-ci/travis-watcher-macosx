@@ -40,6 +40,10 @@
     
     [self.channel bindToEventNamed:kPusherEventBuildStarted target:self action:@selector(handleStarted:)];
     [self.channel bindToEventNamed:kPusherEventBuildFinished target:self action:@selector(handleFinished:)];
+    
+    Class GAB = NSClassFromString(@"GrowlApplicationBridge");
+    if([GAB respondsToSelector:@selector(setGrowlDelegate:)])
+      [GAB setGrowlDelegate:self];
   }
   
   return self;
@@ -57,7 +61,7 @@
                 iconData:[[NSImage imageNamed:@"travis_logo.png"] TIFFRepresentation]
                 priority:0
                 isSticky:NO
-            clickContext:nil
+            clickContext:eventData.url
               identifier:eventData.name];
 }
 
@@ -73,8 +77,12 @@
                 iconData:[[NSImage imageNamed:@"travis_logo.png"] TIFFRepresentation]
                 priority:0
                 isSticky:NO
-            clickContext:nil
+            clickContext:eventData.url
               identifier:eventData.name];
+}
+
+- (void)growlNotificationWasClicked:(id)clickContext {
+  [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:(NSString *)clickContext]];
 }
 
 @end
