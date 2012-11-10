@@ -61,7 +61,7 @@
   userNotification.title = notification.title;
   userNotification.subtitle = notification.subtitle;
   userNotification.informativeText = notification.informativeText;
-  userNotification.userInfo = @{ @"notificationID": notification.uniqueID };
+  userNotification.userInfo = @{ @"notificationID": notification.uniqueID, @"URL": notification.URL };
 
   return userNotification;
 }

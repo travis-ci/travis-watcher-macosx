@@ -17,6 +17,7 @@
 @property (readonly) NSString *title;
 @property (readonly) NSString *subtitle;
 @property (readonly) NSString *informativeText;
+@property (readonly) NSString *URL;
 
 + (Notification *)notificationWithEventData:(TravisEvent *)eventData;
 

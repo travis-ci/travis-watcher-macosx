@@ -15,7 +15,7 @@
 #import "NotificationDisplayer.h"
 #import "TravisAPI.h"
 
-@interface AppDelegate () <TravisEventFetcherDelegate>
+@interface AppDelegate () <TravisEventFetcherDelegate, NSUserNotificationCenterDelegate>
 
 @property (strong) TravisEventFetcher *eventFetcher;
 @property (strong) NSStatusItem *statusItem;
@@ -26,6 +26,7 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)notification {
   [self setupGrowl];
+  [NSUserNotificationCenter defaultUserNotificationCenter].delegate = self;
 
   self.eventFetcher = [[TravisEventFetcher alloc] init];
   self.eventFetcher.delegate = self;
@@ -78,6 +79,14 @@
     } failure:^(NSError *error) {
       NSLog(@"Couldn't get build info from JSON API. Error: %@.", error);
     }];
+  }
+}
+
+#pragma mark - NSUserNotificationCenterDelegate
+
+- (void)userNotificationCenter:(NSUserNotificationCenter *)center didActivateNotification:(NSUserNotification *)notification {
+  if (notification.activationType == NSUserNotificationActivationTypeContentsClicked) {
+    [NSWorkspace.sharedWorkspace openURL:[NSURL URLWithString:notification.userInfo[@"URL"]]];
   }
 }
 

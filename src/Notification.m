@@ -60,6 +60,10 @@
   return nil;
 }
 
+- (NSString *)URL {
+  return self.eventData.url;
+}
+
 @end
 
 @implementation BuildStartedNotification
