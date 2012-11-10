@@ -16,13 +16,13 @@
 @implementation NotificationDisplayer
 
 + (NotificationDisplayer *)sharedNotificationDisplayer {
-  static NotificationDisplayer *_sharedNotificationManager = nil;
+  static NotificationDisplayer *_sharedNotificationDisplayer = nil;
   static dispatch_once_t onceToken;
   dispatch_once(&onceToken, ^{
-    _sharedNotificationManager = [NotificationDisplayer new];
+    _sharedNotificationDisplayer = [NotificationDisplayer new];
   });
 
-  return _sharedNotificationManager;
+  return _sharedNotificationDisplayer;
 }
 
 
