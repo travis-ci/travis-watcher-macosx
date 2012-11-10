@@ -85,10 +85,11 @@
   TravisEvent *eventData = [[TravisEvent alloc] initWithEventData:event.data];
   if ([self shouldShowNotificationFor:eventData]) {
     Notification *notification = [Notification notificationWithEventData:eventData];
-    [NotificationDisplayer.sharedNotificationManager deliverNotification:notification];
+    [NotificationDisplayer.sharedNotificationDisplayer deliverNotification:notification];
     
-  if ([self.delegate respondsToSelector:@selector(eventFetcher:gotEvent:)]) {
-    [self.delegate eventFetcher:self gotEvent:[[TravisEvent alloc] initWithEventData:event.data]];
+    if ([self.delegate respondsToSelector:@selector(eventFetcher:gotEvent:)]) {
+      [self.delegate eventFetcher:self gotEvent:[[TravisEvent alloc] initWithEventData:event.data]];
+    }
   }
 }
 
