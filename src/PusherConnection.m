@@ -29,10 +29,6 @@
 
 @implementation PusherConnection
 
-@synthesize pusher = _pusher;
-@synthesize channel = _channel;
-@synthesize reachability = _reachability;
-
 - (id)init {
   self = [super init];
   if (self) {

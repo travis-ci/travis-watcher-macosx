@@ -16,8 +16,6 @@
 
 @implementation TravisEventData
 
-@synthesize eventData = _eventData;
-
 - (id)initWithEventData:(NSDictionary *)eventData {
   self = [super init];
   if (self) {
@@ -28,12 +26,12 @@
 }
 
 - (NSString *)name {
-  return [[self.eventData objectForKey:@"repository"] objectForKey:@"slug"];
+  return (self.eventData)[@"repository"][@"slug"];
 }
 
 - (NSString *)status {
-  NSNumber *result = [[self.eventData objectForKey:@"build"] objectForKey:@"result"];
-  if ([result isEqualToNumber:[NSNumber numberWithInt:0]]) {
+  NSNumber *result = (self.eventData)[@"build"][@"result"];
+  if ([result isEqualToNumber:@0]) {
     return @"passed";
   } else {
     return @"failed";
@@ -41,7 +39,7 @@
 }
 
 - (NSString *)url {
-  NSNumber *build = [[self.eventData objectForKey:@"build"] objectForKey:@"id"];
+  NSNumber *build = (self.eventData)[@"build"][@"id"];
   return [NSString stringWithFormat:@"http://travis-ci.org/%@/builds/%@", self.name, build];
 }
 

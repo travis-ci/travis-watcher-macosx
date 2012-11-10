@@ -16,15 +16,12 @@
 @end
 
 @implementation PreferencesController
-@synthesize reposTableView = _reposTableView;
-@synthesize preferencesPanel = _preferencesPanel;
-@synthesize repos = _repos;
 
 - (id)init {
   self = [super init];
   if (self) {
     self.repos = [[Preferences alloc] objectForKey:@"repositories"];
-    if (!self.repos) self.repos = [NSArray array];
+    if (!self.repos) self.repos = @[];
   }
   
   return self;
@@ -60,12 +57,12 @@
 }
 
 - (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
-  return [self.repos objectAtIndex:row];
+  return (self.repos)[row];
 }
 
 - (void)tableView:(NSTableView *)tableView setObjectValue:(id)object forTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
   NSMutableArray *newArray = [self.repos mutableCopy];
-  [newArray replaceObjectAtIndex:row withObject:object];
+  newArray[row] = object;
   self.repos = [newArray copy];
 }
 

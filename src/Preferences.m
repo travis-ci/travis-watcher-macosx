@@ -13,7 +13,7 @@
 - (id)objectForKey:(NSString *)aKey {
   NSUserDefaults *defs = [NSUserDefaults standardUserDefaults];
   id object = [defs objectForKey:aKey];
-  if (!object && [aKey isEqualToString:@"repositories"]) return [NSArray arrayWithObject:@"travis-ci/travis-ci"];
+  if (!object && [aKey isEqualToString:@"repositories"]) return @[@"travis-ci/travis-ci"];
   else return object;
 }
 

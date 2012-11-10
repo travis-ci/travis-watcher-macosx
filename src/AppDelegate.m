@@ -17,13 +17,6 @@
 @end
 
 @implementation AppDelegate
-@synthesize window = _window;
-@synthesize pusher = _pusher;
-@synthesize statusMenu = _statusMenu;
-@synthesize preferencesPanel = _preferencesPanel;
-@synthesize statusItem = _statusItem;
-@synthesize statusImage = _statusImage;
-@synthesize statusHighlightImage = _statusHighlightImage;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)notification {
   NSBundle *mainBundle = [NSBundle mainBundle];
