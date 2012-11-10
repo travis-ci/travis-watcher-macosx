@@ -8,9 +8,11 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface PreferencesController : NSObject <NSTableViewDataSource>
+@interface PreferencesController : NSObject <NSTableViewDataSource, NSWindowDelegate>
 @property (assign) IBOutlet NSTableView *reposTableView;
 @property (assign) IBOutlet NSPanel *preferencesPanel;
+@property (weak) IBOutlet NSButtonCell *firehoseEnabled;
+@property (weak) IBOutlet NSButtonCell *firehoseDisabled;
 
 - (IBAction)addRepository:(id)sender;
 - (IBAction)removeRepository:(id)sender;

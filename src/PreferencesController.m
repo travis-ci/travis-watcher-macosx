@@ -48,6 +48,18 @@
   Preferences.sharedPreferences.firehoseEnabled = NO;
 }
 
+#pragma mark - NSWindowDelegate
+
+- (void)windowDidBecomeKey:(NSNotification *)notification {
+  if (Preferences.sharedPreferences.firehoseEnabled) {
+    self.firehoseEnabled.objectValue = @(YES);
+    self.firehoseDisabled.objectValue = @(NO);
+  } else {
+    self.firehoseEnabled.objectValue = @(NO);
+    self.firehoseDisabled.objectValue = @(YES);
+  }
+}
+
 #pragma mark - NSTableViewDataSource
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
