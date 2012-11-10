@@ -48,7 +48,11 @@
 }
 
 - (NSString *)title {
-  return [NSString stringWithFormat:@"%@ (#%@)", self.eventData.name, self.eventData.buildNumber];
+  return self.eventData.name;
+}
+
+- (NSString *)subtitle {
+  return [NSString stringWithFormat:@"Build #%@", self.eventData.buildNumber];
 }
 
 - (NSString *)informativeText {

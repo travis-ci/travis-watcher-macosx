@@ -60,6 +60,7 @@
 - (NSUserNotification *)userNotificationForNotification:(Notification *)notification {
   NSUserNotification *userNotification = [NSUserNotification new];
   userNotification.title = notification.title;
+  userNotification.subtitle = notification.subtitle;
   userNotification.informativeText = notification.informativeText;
   userNotification.userInfo = @{ @"notificationID": notification.uniqueID };
 
