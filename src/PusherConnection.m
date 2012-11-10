@@ -13,6 +13,7 @@
 #import "TravisEventData.h"
 #import "Preferences.h"
 #import "Reachability.h"
+#import "Notification.h"
 
 #import "PusherConnection.h"
 
@@ -90,36 +91,20 @@
   TravisEventData *eventData = [[TravisEventData alloc] initWithEventData:event.data];
   NSArray *repos = [[Preferences alloc] objectForKey:@"repositories"];
   if ([repos indexOfObject:eventData.name] == NSNotFound) return;
-  Class GAB = NSClassFromString(@"GrowlApplicationBridge");
-  if ([GAB respondsToSelector:@selector(notifyWithTitle:description:notificationName:iconData:priority:isSticky:clickContext:identifier:)])
-    [GAB notifyWithTitle:eventData.name
-             description:@"Starting build!"
-        notificationName:@"Build Information"
-                iconData:[[NSImage imageNamed:@"travis_logo.png"] TIFFRepresentation]
-                priority:0
-                isSticky:NO
-            clickContext:eventData.url
-              identifier:eventData.name];
+
+  Notification *notification = [[Notification alloc] initWithTitle:eventData.name description:@"Starting build."];
+  [notification deliver];
 }
 
 - (void)handleFinished:(PTPusherEvent *)event {
   TravisEventData *eventData = [[TravisEventData alloc] initWithEventData:event.data];
   NSArray *repos = [[Preferences alloc] objectForKey:@"repositories"];
   if ([repos indexOfObject:eventData.name] == NSNotFound) return;
-  Class GAB = NSClassFromString(@"GrowlApplicationBridge");
-  if ([GAB respondsToSelector:@selector(notifyWithTitle:description:notificationName:iconData:priority:isSticky:clickContext:identifier:)])
-    [GAB notifyWithTitle:eventData.name
-             description:[NSString stringWithFormat:@"Finished build with status: %@", eventData.status]
-        notificationName:@"Build Information"
-                iconData:[[NSImage imageNamed:@"travis_logo.png"] TIFFRepresentation]
-                priority:0
-                isSticky:NO
-            clickContext:eventData.url
-              identifier:eventData.name];
-}
 
-- (void)growlNotificationWasClicked:(id)clickContext {
-  [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:(NSString *)clickContext]];
+  NSString *description = [NSString stringWithFormat:@"Finished build with status: %@", eventData.status];
+
+  Notification *notification = [[Notification alloc] initWithTitle:eventData.name description:description];
+  [notification deliver];
 }
 
 @end

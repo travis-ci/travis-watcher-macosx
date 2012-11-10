@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2BFA9DA710CDF852007972A1 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BFA9DA510CDF852007972A1 /* MainMenu.xib */; };
+		2E75988B164DF68100B87810 /* Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E75988A164DF68100B87810 /* Notification.m */; };
 		2EDA045915644D5D0043A3A6 /* PusherConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EDA045815644D5D0043A3A6 /* PusherConnection.m */; };
 		2EDA045D156450750043A3A6 /* TravisEventData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EDA045C156450750043A3A6 /* TravisEventData.m */; };
 		2EDA0460156464FF0043A3A6 /* tray-alt.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EDA045E156464FF0043A3A6 /* tray-alt.png */; };
@@ -73,6 +74,8 @@
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		2BFA9DA610CDF852007972A1 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		2E759889164DF68100B87810 /* Notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Notification.h; path = src/Notification.h; sourceTree = "<group>"; };
+		2E75988A164DF68100B87810 /* Notification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Notification.m; path = src/Notification.m; sourceTree = "<group>"; };
 		2EDA045715644D5D0043A3A6 /* PusherConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PusherConnection.h; path = src/PusherConnection.h; sourceTree = "<group>"; };
 		2EDA045815644D5D0043A3A6 /* PusherConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PusherConnection.m; path = src/PusherConnection.m; sourceTree = "<group>"; };
 		2EDA045B156450750043A3A6 /* TravisEventData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TravisEventData.h; path = src/TravisEventData.h; sourceTree = "<group>"; };
@@ -227,6 +230,8 @@
 				2EDA04771565C67C0043A3A6 /* Preferences.m */,
 				9DAF568D15932852002018B5 /* Reachability.h */,
 				9DAF568E15932852002018B5 /* Reachability.m */,
+				2E759889164DF68100B87810 /* Notification.h */,
+				2E75988A164DF68100B87810 /* Notification.m */,
 			);
 			name = "Travis Toolbar";
 			sourceTree = "<group>";
@@ -320,6 +325,7 @@
 				2EDA04751565C0A70043A3A6 /* PreferencesController.m in Sources */,
 				2EDA04781565C67C0043A3A6 /* Preferences.m in Sources */,
 				9DAF568F15932852002018B5 /* Reachability.m in Sources */,
+				2E75988B164DF68100B87810 /* Notification.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,7 +374,7 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "Travis Toolbar";
-				SDKROOT = macosx10.7;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = YES;
 			};
@@ -395,7 +401,7 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "Travis Toolbar";
-				SDKROOT = macosx10.7;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
