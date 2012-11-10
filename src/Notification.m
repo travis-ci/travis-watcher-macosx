@@ -43,6 +43,10 @@
   return self;
 }
 
+- (NSNumber *)uniqueID {
+  return self.eventData.buildID;
+}
+
 - (NSString *)title {
   return [NSString stringWithFormat:@"%@ (#%@)", self.eventData.name, self.eventData.buildNumber];
 }

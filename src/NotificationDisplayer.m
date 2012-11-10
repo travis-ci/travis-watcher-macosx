@@ -45,8 +45,15 @@
 }
 
 - (void)deliverWithNotificationCenter:(Notification *)notification {
-  NSUserNotification *userNotification = [self userNotificationForNotification:notification];
   NSUserNotificationCenter *notificationCenter = [NSUserNotificationCenter defaultUserNotificationCenter];
+  NSUserNotification *userNotification = [self userNotificationForNotification:notification];
+  for (NSUserNotification *deliveredUserNotification in notificationCenter.deliveredNotifications) {
+    if ([deliveredUserNotification.userInfo[@"notificationID"] isEqualToNumber:notification.uniqueID]) {
+      userNotification.title = deliveredUserNotification.title;
+      [notificationCenter removeDeliveredNotification:deliveredUserNotification];
+    }
+  }
+
   [notificationCenter deliverNotification:userNotification];
 }
 
@@ -54,6 +61,7 @@
   NSUserNotification *userNotification = [NSUserNotification new];
   userNotification.title = notification.title;
   userNotification.informativeText = notification.informativeText;
+  userNotification.userInfo = @{ @"notificationID": notification.uniqueID };
 
   return userNotification;
 }
@@ -68,7 +76,7 @@
                 priority:0
                 isSticky:NO
             clickContext:nil
-              identifier:notification.eventData.buildID.stringValue];
+              identifier:notification.uniqueID.stringValue];
   }
 }
 

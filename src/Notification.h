@@ -12,9 +12,10 @@
 
 @interface Notification : NSObject
 
-@property (readonly) NSString *informativeText;
 @property (strong, readonly) TravisEvent *eventData;
+@property (readonly) NSNumber *uniqueID;
 @property (readonly) NSString *title;
+@property (readonly) NSString *informativeText;
 
 + (Notification *)notificationWithEventData:(TravisEvent *)eventData;
 
