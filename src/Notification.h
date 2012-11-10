@@ -8,11 +8,26 @@
 
 #import <Foundation/Foundation.h>
 
+@class TravisEventData;
+
 @interface Notification : NSObject
 
-@property (strong, readonly) NSString *title;
-@property (strong, readonly) NSString *description;
+@property (strong, readonly) TravisEventData *eventData;
+@property (readonly) NSString *informativeText;
+@property (readonly) NSString *title;
 
-- (id)initWithTitle:(NSString *)title description:(NSString *)description;
++ (Notification *)notificationWithEventData:(TravisEventData *)eventData;
 
+@end
+
+@interface BuildStartedNotification : Notification
+@end
+
+@interface BuildPassedNotification : Notification
+@end
+
+@interface BuildFailedNotification : Notification
+@end
+
+@interface NullNotification : Notification
 @end

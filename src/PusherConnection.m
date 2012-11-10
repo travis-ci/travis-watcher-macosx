@@ -24,9 +24,6 @@
 @property (strong) PTPusherChannel *channel;
 @property (strong) Reachability *reachability;
 
-- (void)handleStarted:(PTPusherEvent *)event;
-- (void)handleFinished:(PTPusherEvent *)event;
-
 @end
 
 @implementation PusherConnection
@@ -38,8 +35,7 @@
     
     self.channel = [self.pusher subscribeToChannelNamed:kPusherChannelName];
     
-    [self.channel bindToEventNamed:kPusherEventBuildStarted target:self action:@selector(handleStarted:)];
-    [self.channel bindToEventNamed:kPusherEventBuildFinished target:self action:@selector(handleFinished:)];
+    [self.channel bindToEventNamed:kPusherEventBuildStarted target:self action:@selector(handleEvent:)];
   }
   
   return self;
@@ -84,19 +80,10 @@
   }
 }
 
-- (void)handleStarted:(PTPusherEvent *)event {
+- (void)handleEvent:(PTPusherEvent *)event {
   TravisEventData *eventData = [[TravisEventData alloc] initWithEventData:event.data];
   if ([self shouldShowNotificationFor:eventData]) {
-    Notification *notification = [[Notification alloc] initWithTitle:[self titleFor:eventData] description:@"Starting build."];
-    [NotificationManager.sharedNotificationManager deliverNotification:notification];
-  }
-}
-
-- (void)handleFinished:(PTPusherEvent *)event {
-  TravisEventData *eventData = [[TravisEventData alloc] initWithEventData:event.data];
-  if ([self shouldShowNotificationFor:eventData]) {
-    NSString *description = [NSString stringWithFormat:@"Finished build with status: %@", eventData.status];
-    Notification *notification = [[Notification alloc] initWithTitle:[self titleFor:eventData] description:description];
+    Notification *notification = [Notification notificationWithEventData:eventData];
     [NotificationManager.sharedNotificationManager deliverNotification:notification];
   }
 }
@@ -104,10 +91,6 @@
 - (BOOL)shouldShowNotificationFor:(TravisEventData *)eventData {
   NSArray *repositories = Preferences.sharedPreferences.repositories;
   return Preferences.sharedPreferences.firehoseEnabled || [repositories containsObject:eventData.name];
-}
-
-- (NSString *)titleFor:(TravisEventData *)eventData {
-  return [NSString stringWithFormat:@"%@ (#%@)", eventData.name, eventData.buildNumber];
 }
 
 @end

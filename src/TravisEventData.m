@@ -29,17 +29,35 @@
   return (self.eventData)[@"repository"][@"slug"];
 }
 
-- (NSString *)status {
+- (TravisEventStatus)status {
   NSNumber *result = (self.eventData)[@"build"][@"result"];
-  if ([result isEqualToNumber:@0]) {
-    return @"passed";
+  if (result && [result isEqualToNumber:@0]) {
+    return TravisEventStatusPassed;
+  } else if (result && [result isEqualToNumber:@1]) {
+    return TravisEventStatusFailed;
   } else {
-    return @"failed";
+    return TravisEventStatusUnknown;
   }
+}
+
+- (NSNumber *)buildID {
+  return (self.eventData)[@"build"][@"id"];
 }
 
 - (NSNumber *)buildNumber {
   return (self.eventData)[@"build"][@"number"];
+}
+
+- (TravisEventState)state {
+  NSString *state = (self.eventData)[@"build"][@"state"];
+
+  if ([state isEqualToString:@"started"]) {
+    return TravisEventStateStarted;
+  } else if ([state isEqualToString:@"finished"]) {
+    return TravisEventStateFinished;
+  } else {
+    return TravisEventStateUnknown;
+  }
 }
 
 - (NSString *)url {

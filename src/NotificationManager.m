@@ -11,6 +11,7 @@
 #import "Notification.h"
 #import <AppKit/AppKit.h>
 #import <Growl/Growl.h>
+#import "TravisEventData.h"
 
 @implementation NotificationManager
 
@@ -26,6 +27,8 @@
 
 
 - (void)deliverNotification:(Notification *)notification {
+  if ([notification isKindOfClass:NullNotification.class]) return;
+
   if ([self notificationCenterIsAvailable]) {
     [self deliverWithNotificationCenter:notification];
   } else {
@@ -50,7 +53,7 @@
 - (NSUserNotification *)userNotificationForNotification:(Notification *)notification {
   NSUserNotification *userNotification = [NSUserNotification new];
   userNotification.title = notification.title;
-  userNotification.informativeText = notification.description;
+  userNotification.informativeText = notification.informativeText;
 
   return userNotification;
 }
@@ -59,13 +62,13 @@
   Class GAB = NSClassFromString(@"GrowlApplicationBridge");
   if ([GAB respondsToSelector:@selector(notifyWithTitle:description:notificationName:iconData:priority:isSticky:clickContext:identifier:)]) {
     [GAB notifyWithTitle:notification.title
-             description:notification.description
+             description:notification.informativeText
         notificationName:@"Build Information"
                 iconData:[[NSImage imageNamed:@"travis_logo.png"] TIFFRepresentation]
                 priority:0
                 isSticky:NO
             clickContext:nil
-              identifier:notification.title];
+              identifier:notification.eventData.buildID.stringValue];
   }
 }
 
