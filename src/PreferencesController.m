@@ -22,7 +22,7 @@
 #pragma mark - Actions
 
 - (IBAction)addRepository:(NSButton *)sender {
-  NSAlert *alert = [NSAlert alertWithMessageText:@"Add repository" defaultButton:@"Add" alternateButton:@"Cancel" otherButton:nil informativeTextWithFormat:@"Enter the name of the repository you want to add (for example, \"travis-ci/travis-ci\")"];
+  NSAlert *alert = [NSAlert alertWithMessageText:@"Add repository" defaultButton:@"Add" alternateButton:@"Cancel" otherButton:nil informativeTextWithFormat:@"Enter the name of the repository you want to add (for example, \"travis-ci/travis-ci\" or \"travis-ci/*\")"];
   NSTextField *textField = [[NSTextField alloc] initWithFrame:NSMakeRect(0, 0, 200, 23)];
   alert.accessoryView = textField;
   [alert beginSheetModalForWindow:sender.window modalDelegate:self didEndSelector:@selector(alertDidEnd:returnCode:contextInfo:) contextInfo:nil];

@@ -64,8 +64,23 @@
 }
 
 - (BOOL)shouldShowNotificationFor:(TravisEvent *)eventData {
+  if (Preferences.sharedPreferences.firehoseEnabled) return YES;
+
+  NSArray *incomingComponents = [eventData.name componentsSeparatedByString:@"/"];
+  NSString *incomingOwner = incomingComponents[0];
+  NSString *incomingName = incomingComponents[1];
   NSArray *repositories = Preferences.sharedPreferences.repositories;
-  return Preferences.sharedPreferences.firehoseEnabled || [repositories containsObject:eventData.name];
+  for (NSString *repository in repositories) {
+    NSArray *filterComponents = [repository componentsSeparatedByString:@"/"];
+    NSString *filterOwner = filterComponents[0];
+    NSString *filterName = filterComponents[1];
+
+    if (![filterOwner isEqualToString:@"*"] && ![filterOwner isEqualToString:incomingOwner]) continue;
+    else if (![filterName isEqualToString:@"*"] && ![filterName isEqualToString:incomingName]) continue;
+    else return YES;
+  }
+
+  return NO;
 }
 
 #pragma mark - TravisEventFetcherDelegate
