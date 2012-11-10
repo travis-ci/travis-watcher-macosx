@@ -82,20 +82,9 @@
 }
 
 - (void)handleEvent:(PTPusherEvent *)event {
-  TravisEvent *eventData = [[TravisEvent alloc] initWithEventData:event.data];
-  if ([self shouldShowNotificationFor:eventData]) {
-    Notification *notification = [Notification notificationWithEventData:eventData];
-    [NotificationDisplayer.sharedNotificationDisplayer deliverNotification:notification];
-    
-    if ([self.delegate respondsToSelector:@selector(eventFetcher:gotEvent:)]) {
-      [self.delegate eventFetcher:self gotEvent:[[TravisEvent alloc] initWithEventData:event.data]];
-    }
+  if ([self.delegate respondsToSelector:@selector(eventFetcher:gotEvent:)]) {
+    [self.delegate eventFetcher:self gotEvent:[[TravisEvent alloc] initWithEventData:event.data]];
   }
-}
-
-- (BOOL)shouldShowNotificationFor:(TravisEvent *)eventData {
-  NSArray *repositories = Preferences.sharedPreferences.repositories;
-  return Preferences.sharedPreferences.firehoseEnabled || [repositories containsObject:eventData.name];
 }
 
 @end
