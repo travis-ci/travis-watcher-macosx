@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2BFA9DA710CDF852007972A1 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BFA9DA510CDF852007972A1 /* MainMenu.xib */; };
 		2E75988B164DF68100B87810 /* Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E75988A164DF68100B87810 /* Notification.m */; };
+		2E90F156164E389F009CAA25 /* Travis Toolbar.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2E90F155164E389F009CAA25 /* Travis Toolbar.icns */; };
 		2EDA045915644D5D0043A3A6 /* PusherConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EDA045815644D5D0043A3A6 /* PusherConnection.m */; };
 		2EDA045D156450750043A3A6 /* TravisEventData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EDA045C156450750043A3A6 /* TravisEventData.m */; };
 		2EDA0460156464FF0043A3A6 /* tray-alt.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EDA045E156464FF0043A3A6 /* tray-alt.png */; };
@@ -27,8 +28,6 @@
 		9DAF568F15932852002018B5 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DAF568E15932852002018B5 /* Reachability.m */; };
 		DD06BD7413170793007673AA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD06BD7313170793007673AA /* CoreLocation.framework */; };
 		DD06BDC713171314007673AA /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = DD06BDAA13170FF6007673AA /* Growl Registration Ticket.growlRegDict */; };
-		DD06BDE2131714CA007673AA /* travis_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = DD06BDE1131714CA007673AA /* travis_logo.png */; };
-		DDFA458B1317AD16000FD1B1 /* travis_logo.icns in Resources */ = {isa = PBXBuildFile; fileRef = DDFA458A1317AD16000FD1B1 /* travis_logo.icns */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -76,6 +75,7 @@
 		2BFA9DA610CDF852007972A1 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		2E759889164DF68100B87810 /* Notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Notification.h; path = src/Notification.h; sourceTree = "<group>"; };
 		2E75988A164DF68100B87810 /* Notification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Notification.m; path = src/Notification.m; sourceTree = "<group>"; };
+		2E90F155164E389F009CAA25 /* Travis Toolbar.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = "Travis Toolbar.icns"; path = "resources/Travis Toolbar.icns"; sourceTree = "<group>"; };
 		2EDA045715644D5D0043A3A6 /* PusherConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PusherConnection.h; path = src/PusherConnection.h; sourceTree = "<group>"; };
 		2EDA045815644D5D0043A3A6 /* PusherConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PusherConnection.m; path = src/PusherConnection.m; sourceTree = "<group>"; };
 		2EDA045B156450750043A3A6 /* TravisEventData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TravisEventData.h; path = src/TravisEventData.h; sourceTree = "<group>"; };
@@ -100,8 +100,6 @@
 		9DAF569015932D77002018B5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
 		DD06BD7313170793007673AA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = /System/Library/Frameworks/CoreLocation.framework; sourceTree = "<absolute>"; };
 		DD06BDAA13170FF6007673AA /* Growl Registration Ticket.growlRegDict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "Growl Registration Ticket.growlRegDict"; path = "resources/Growl Registration Ticket.growlRegDict"; sourceTree = "<group>"; };
-		DD06BDE1131714CA007673AA /* travis_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = travis_logo.png; path = resources/travis_logo.png; sourceTree = "<group>"; };
-		DDFA458A1317AD16000FD1B1 /* travis_logo.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = travis_logo.icns; path = resources/travis_logo.icns; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,11 +163,10 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2E90F155164E389F009CAA25 /* Travis Toolbar.icns */,
 				2EDA045E156464FF0043A3A6 /* tray-alt.png */,
 				2EDA045F156464FF0043A3A6 /* tray.png */,
 				2EE31A7E15644ABD004F33FE /* Travis Toolbar.entitlements */,
-				DDFA458A1317AD16000FD1B1 /* travis_logo.icns */,
-				DD06BDE1131714CA007673AA /* travis_logo.png */,
 				2BFA9DA510CDF852007972A1 /* MainMenu.xib */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
@@ -304,10 +301,9 @@
 				DD06BDC713171314007673AA /* Growl Registration Ticket.growlRegDict in Resources */,
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				2BFA9DA710CDF852007972A1 /* MainMenu.xib in Resources */,
-				DD06BDE2131714CA007673AA /* travis_logo.png in Resources */,
-				DDFA458B1317AD16000FD1B1 /* travis_logo.icns in Resources */,
 				2EDA0460156464FF0043A3A6 /* tray-alt.png in Resources */,
 				2EDA0461156464FF0043A3A6 /* tray.png in Resources */,
+				2E90F156164E389F009CAA25 /* Travis Toolbar.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
