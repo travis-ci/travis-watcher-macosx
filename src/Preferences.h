@@ -16,4 +16,7 @@
 - (void)addRepository:(NSString *)slug;
 - (void)removeRepository:(NSString *)slug;
 
+- (BOOL)firehoseEnabled;
+- (void)setFirehoseEnabled:(BOOL)firehoseEnabled;
+
 @end

@@ -102,7 +102,7 @@
 
 - (BOOL)shouldShowNotificationFor:(TravisEventData *)eventData {
   NSArray *repositories = Preferences.sharedPreferences.repositories;
-  return [repositories containsObject:eventData.name];
+  return Preferences.sharedPreferences.firehoseEnabled || [repositories containsObject:eventData.name];
 }
 
 @end

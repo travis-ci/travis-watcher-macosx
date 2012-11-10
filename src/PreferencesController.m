@@ -40,6 +40,14 @@
   [self.preferencesPanel performClose:self];
 }
 
+- (IBAction)enableFirehose:(id)sender {
+  Preferences.sharedPreferences.firehoseEnabled = YES;
+}
+
+- (IBAction)disableFirehose:(id)sender {
+  Preferences.sharedPreferences.firehoseEnabled = NO;
+}
+
 #pragma mark - NSTableViewDataSource
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {

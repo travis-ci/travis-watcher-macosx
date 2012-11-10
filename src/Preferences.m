@@ -9,6 +9,7 @@
 #import "Preferences.h"
 
 #define REPOSITORIES_SETTING @"repositories"
+#define FIREHOSE_SETTING @"firehose"
 
 @implementation Preferences
 
@@ -43,6 +44,17 @@
 - (void)updateRepositories:(NSArray *)repositories {
   NSUserDefaults *userDefaults = NSUserDefaults.standardUserDefaults;
   [userDefaults setObject:repositories forKey:REPOSITORIES_SETTING];
+  [userDefaults synchronize];
+}
+
+- (BOOL)firehoseEnabled {
+  NSUserDefaults *userDefaults = NSUserDefaults.standardUserDefaults;
+  return [userDefaults boolForKey:FIREHOSE_SETTING];
+}
+
+- (void)setFirehoseEnabled:(BOOL)firehoseEnabled {
+  NSUserDefaults *userDefaults = NSUserDefaults.standardUserDefaults;
+  [userDefaults setBool:firehoseEnabled forKey:FIREHOSE_SETTING];
   [userDefaults synchronize];
 }
 

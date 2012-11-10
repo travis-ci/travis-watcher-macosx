@@ -14,6 +14,8 @@
 
 - (IBAction)addRepository:(id)sender;
 - (IBAction)removeRepository:(id)sender;
+- (IBAction)enableFirehose:(id)sender;
+- (IBAction)disableFirehose:(id)sender;
 - (IBAction)close:(id)sender;
 
 @end
