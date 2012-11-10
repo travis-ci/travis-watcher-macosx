@@ -166,14 +166,14 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DD06BDAA13170FF6007673AA /* Growl Registration Ticket.growlRegDict */,
+				8D1107310486CEB800E47090 /* Info.plist */,
+				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
+				2BFA9DA510CDF852007972A1 /* MainMenu.xib */,
+				2EE31A7E15644ABD004F33FE /* Travis Toolbar.entitlements */,
 				2E90F155164E389F009CAA25 /* Travis Toolbar.icns */,
 				2EDA045E156464FF0043A3A6 /* tray-alt.png */,
 				2EDA045F156464FF0043A3A6 /* tray.png */,
-				2EE31A7E15644ABD004F33FE /* Travis Toolbar.entitlements */,
-				2BFA9DA510CDF852007972A1 /* MainMenu.xib */,
-				8D1107310486CEB800E47090 /* Info.plist */,
-				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
-				DD06BDAA13170FF6007673AA /* Growl Registration Ticket.growlRegDict */,
 			);
 			name = Resources;
 			path = resources;
@@ -217,24 +217,24 @@
 		2EE31A611564226E004F33FE /* Travis Toolbar */ = {
 			isa = PBXGroup;
 			children = (
-				2EE31A6C15642365004F33FE /* Supporting Files */,
 				2EE31A69156422CF004F33FE /* AppDelegate.h */,
 				2EE31A6A156422CF004F33FE /* AppDelegate.m */,
 				2EE31A731564259B004F33FE /* Constants.h */,
-				2E90F15B164E64F7009CAA25 /* TravisEventFetcher.h */,
-				2EDA045815644D5D0043A3A6 /* TravisEventFetcher.m */,
-				2EDA045B156450750043A3A6 /* TravisEvent.h */,
-				2EDA045C156450750043A3A6 /* TravisEvent.m */,
-				2EDA04731565C0A70043A3A6 /* PreferencesController.h */,
-				2EDA04741565C0A70043A3A6 /* PreferencesController.m */,
-				2EDA04761565C67C0043A3A6 /* Preferences.h */,
-				2EDA04771565C67C0043A3A6 /* Preferences.m */,
-				9DAF568D15932852002018B5 /* Reachability.h */,
-				9DAF568E15932852002018B5 /* Reachability.m */,
 				2E759889164DF68100B87810 /* Notification.h */,
 				2E75988A164DF68100B87810 /* Notification.m */,
 				2E90F158164E49BB009CAA25 /* NotificationDisplayer.h */,
 				2E90F159164E49BB009CAA25 /* NotificationDisplayer.m */,
+				2EDA04761565C67C0043A3A6 /* Preferences.h */,
+				2EDA04771565C67C0043A3A6 /* Preferences.m */,
+				2EDA04731565C0A70043A3A6 /* PreferencesController.h */,
+				2EDA04741565C0A70043A3A6 /* PreferencesController.m */,
+				9DAF568D15932852002018B5 /* Reachability.h */,
+				9DAF568E15932852002018B5 /* Reachability.m */,
+				2EDA045B156450750043A3A6 /* TravisEvent.h */,
+				2EDA045C156450750043A3A6 /* TravisEvent.m */,
+				2E90F15B164E64F7009CAA25 /* TravisEventFetcher.h */,
+				2EDA045815644D5D0043A3A6 /* TravisEventFetcher.m */,
+				2EE31A6C15642365004F33FE /* Supporting Files */,
 			);
 			name = "Travis Toolbar";
 			path = src;
