@@ -8,17 +8,17 @@
 
 #import "Notification.h"
 
-#import "TravisEventData.h"
+#import "TravisEvent.h"
 
 @interface Notification ()
 
-- (id)initWithEventData:(TravisEventData *)eventData;
+- (id)initWithEventData:(TravisEvent *)eventData;
 
 @end
 
 @implementation Notification
 
-+ (Notification *)notificationWithEventData:(TravisEventData *)eventData {
++ (Notification *)notificationWithEventData:(TravisEvent *)eventData {
   if (eventData.state == TravisEventStateStarted) {
     return [[BuildStartedNotification alloc] initWithEventData:eventData];
   } else if (eventData.state == TravisEventStateFinished) {
@@ -32,7 +32,7 @@
   return [[NullNotification alloc] initWithEventData:eventData];
 }
 
-- (id)initWithEventData:(TravisEventData *)eventData {
+- (id)initWithEventData:(TravisEvent *)eventData {
   self = [super init];
   if (!self) {
     return nil;

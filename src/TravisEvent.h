@@ -1,5 +1,5 @@
 //
-//  TravisEventData.h
+//  TravisEvent.h
 //  Travis Toolbar
 //
 //  Created by Henrik Hodne on 5/16/12.
@@ -20,7 +20,7 @@ typedef enum {
   TravisEventStatusUnknown,
 } TravisEventStatus;
 
-@interface TravisEventData : NSObject
+@interface TravisEvent : NSObject
 
 @property (readonly) NSString *name;
 @property (readonly) TravisEventStatus status;

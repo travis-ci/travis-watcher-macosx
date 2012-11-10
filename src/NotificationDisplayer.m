@@ -11,7 +11,7 @@
 #import "Notification.h"
 #import <AppKit/AppKit.h>
 #import <Growl/Growl.h>
-#import "TravisEventData.h"
+#import "TravisEvent.h"
 
 @implementation NotificationDisplayer
 

@@ -1,20 +1,20 @@
 //
-//  TravisEventData.m
+//  TravisEvent.m
 //  Travis Toolbar
 //
 //  Created by Henrik Hodne on 5/16/12.
 //  Copyright (c) 2012 Travis CI GmbH. All rights reserved.
 //
 
-#import "TravisEventData.h"
+#import "TravisEvent.h"
 
-@interface TravisEventData ()
+@interface TravisEvent ()
 
 @property (strong) NSDictionary *eventData;
 
 @end
 
-@implementation TravisEventData
+@implementation TravisEvent
 
 - (id)initWithEventData:(NSDictionary *)eventData {
   self = [super init];
@@ -63,6 +63,10 @@
 - (NSString *)url {
   NSNumber *build = (self.eventData)[@"build"][@"id"];
   return [NSString stringWithFormat:@"http://travis-ci.org/%@/builds/%@", self.name, build];
+}
+
+- (NSString *)description {
+  return [NSString stringWithFormat:@"<%@: %@>", self.class, self.eventData];
 }
 
 @end

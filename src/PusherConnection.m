@@ -10,7 +10,7 @@
 #import <Pusher/PTPusherChannel.h>
 #import <Pusher/PTPusherEvent.h>
 #import "Constants.h"
-#import "TravisEventData.h"
+#import "TravisEvent.h"
 #import "Preferences.h"
 #import "Reachability.h"
 #import "Notification.h"
@@ -81,14 +81,14 @@
 }
 
 - (void)handleEvent:(PTPusherEvent *)event {
-  TravisEventData *eventData = [[TravisEventData alloc] initWithEventData:event.data];
+  TravisEvent *eventData = [[TravisEvent alloc] initWithEventData:event.data];
   if ([self shouldShowNotificationFor:eventData]) {
     Notification *notification = [Notification notificationWithEventData:eventData];
     [NotificationDisplayer.sharedNotificationManager deliverNotification:notification];
   }
 }
 
-- (BOOL)shouldShowNotificationFor:(TravisEventData *)eventData {
+- (BOOL)shouldShowNotificationFor:(TravisEvent *)eventData {
   NSArray *repositories = Preferences.sharedPreferences.repositories;
   return Preferences.sharedPreferences.firehoseEnabled || [repositories containsObject:eventData.name];
 }
