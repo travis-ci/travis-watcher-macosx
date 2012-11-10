@@ -167,7 +167,7 @@
 							<object class="NSButtonCell" key="NSCell" id="390705427">
 								<int key="NSCellFlags">67108864</int>
 								<int key="NSCellFlags2">134217728</int>
-								<string key="NSContents">Save</string>
+								<string key="NSContents">Close</string>
 								<reference key="NSSupport" ref="862158106"/>
 								<string key="NSCellIdentifier">_NS:9</string>
 								<reference key="NSControlView" ref="932672328"/>
@@ -461,20 +461,20 @@
 					<int key="connectionID">417</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">saveSettings:</string>
-						<reference key="source" ref="643761213"/>
-						<reference key="destination" ref="932672328"/>
-					</object>
-					<int key="connectionID">418</int>
-				</object>
-				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">preferencesPanel</string>
 						<reference key="source" ref="643761213"/>
 						<reference key="destination" ref="1021178745"/>
 					</object>
 					<int key="connectionID">419</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">close:</string>
+						<reference key="source" ref="643761213"/>
+						<reference key="destination" ref="932672328"/>
+					</object>
+					<int key="connectionID">421</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -792,8 +792,8 @@
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>addRepository:</string>
+							<string>close:</string>
 							<string>removeRepository:</string>
-							<string>saveSettings:</string>
 						</object>
 						<object class="NSArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
@@ -807,8 +807,8 @@
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>addRepository:</string>
+							<string>close:</string>
 							<string>removeRepository:</string>
-							<string>saveSettings:</string>
 						</object>
 						<object class="NSArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
@@ -817,11 +817,11 @@
 								<string key="candidateClassName">id</string>
 							</object>
 							<object class="IBActionInfo">
-								<string key="name">removeRepository:</string>
+								<string key="name">close:</string>
 								<string key="candidateClassName">id</string>
 							</object>
 							<object class="IBActionInfo">
-								<string key="name">saveSettings:</string>
+								<string key="name">removeRepository:</string>
 								<string key="candidateClassName">id</string>
 							</object>
 						</object>

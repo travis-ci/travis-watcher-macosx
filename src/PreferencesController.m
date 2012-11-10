@@ -10,60 +10,44 @@
 
 #import "PreferencesController.h"
 
-@interface PreferencesController ()
-@property (strong) NSArray *repos;
-
-@end
-
 @implementation PreferencesController
 
-- (id)init {
-  self = [super init];
-  if (self) {
-    self.repos = [[Preferences alloc] objectForKey:@"repositories"];
-    if (!self.repos) self.repos = @[];
-  }
-  
-  return self;
+- (void)alertDidEnd:(NSAlert *)alert returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo {
+  NSTextField *textField = (NSTextField *)alert.accessoryView;
+
+  [Preferences.sharedPreferences addRepository:textField.stringValue];
+  [self.reposTableView reloadData];
 }
 
-#pragma mark -
-#pragma mark Actions
+#pragma mark - Actions
 
-- (IBAction)addRepository:(id)sender {
-  self.repos = [self.repos arrayByAddingObject:@"travis-ci/travis-ci"];
-  [self.reposTableView reloadData];
+- (IBAction)addRepository:(NSButton *)sender {
+  NSAlert *alert = [NSAlert alertWithMessageText:@"Add repository" defaultButton:@"Add" alternateButton:@"Cancel" otherButton:nil informativeTextWithFormat:@"Enter the name of the repository you want to add (for example, \"travis-ci/travis-ci\")"];
+  NSTextField *textField = [[NSTextField alloc] initWithFrame:NSMakeRect(0, 0, 200, 15)];
+  alert.accessoryView = textField;
+  [alert beginSheetModalForWindow:sender.window modalDelegate:self didEndSelector:@selector(alertDidEnd:returnCode:contextInfo:) contextInfo:nil];
 }
 
 - (IBAction)removeRepository:(id)sender {
   if (self.reposTableView.selectedRow != -1) {
-    NSMutableArray *newArray = [self.repos mutableCopy];
-    [newArray removeObjectAtIndex:self.reposTableView.selectedRow];
-    self.repos = [newArray copy];
+    NSString *repository = [self tableView:self.reposTableView objectValueForTableColumn:nil row:self.reposTableView.selectedRow];
+    [Preferences.sharedPreferences removeRepository:repository];
     [self.reposTableView reloadData];
   }
 }
 
-- (IBAction)saveSettings:(id)sender {
-  [[Preferences alloc] setObject:self.repos forKey:@"repositories"];
+- (IBAction)close:(id)sender {
   [self.preferencesPanel performClose:self];
 }
 
-#pragma mark -
-#pragma mark NSTableViewDataSource
+#pragma mark - NSTableViewDataSource
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
-  return [self.repos count];
+  return [Preferences.sharedPreferences.repositories count];
 }
 
 - (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
-  return (self.repos)[row];
-}
-
-- (void)tableView:(NSTableView *)tableView setObjectValue:(id)object forTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
-  NSMutableArray *newArray = [self.repos mutableCopy];
-  newArray[row] = object;
-  self.repos = [newArray copy];
+  return (Preferences.sharedPreferences.repositories)[row];
 }
 
 @end

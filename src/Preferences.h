@@ -10,7 +10,10 @@
 
 @interface Preferences : NSObject
 
-- (id)objectForKey:(NSString *)aKey;
-- (void)setObject:(id)object forKey:(NSString *)aKey;
++ (Preferences *)sharedPreferences;
+
+- (NSArray *)repositories;
+- (void)addRepository:(NSString *)slug;
+- (void)removeRepository:(NSString *)slug;
 
 @end

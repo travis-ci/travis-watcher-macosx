@@ -8,19 +8,42 @@
 
 #import "Preferences.h"
 
+#define REPOSITORIES_SETTING @"repositories"
+
 @implementation Preferences
 
-- (id)objectForKey:(NSString *)aKey {
-  NSUserDefaults *defs = [NSUserDefaults standardUserDefaults];
-  id object = [defs objectForKey:aKey];
-  if (!object && [aKey isEqualToString:@"repositories"]) return @[@"travis-ci/travis-ci"];
-  else return object;
++ (Preferences *)sharedPreferences {
+  static Preferences *_sharedPreferences = nil;
+  static dispatch_once_t onceToken;
+  dispatch_once(&onceToken, ^{
+    _sharedPreferences = [[Preferences alloc] init];
+  });
+
+  return _sharedPreferences;
 }
 
-- (void)setObject:(id)object forKey:(NSString *)aKey {
-  NSUserDefaults *defs = [NSUserDefaults standardUserDefaults];
-  [defs setObject:object forKey:aKey];
-  [defs synchronize];
+- (NSArray *)repositories {
+  NSUserDefaults *userDefault = NSUserDefaults.standardUserDefaults;
+  return [userDefault stringArrayForKey:REPOSITORIES_SETTING];
+}
+
+- (void)addRepository:(NSString *)slug {
+  if (![self.repositories containsObject:slug]) {
+    NSArray *repositories = [self.repositories arrayByAddingObject:slug];
+    [self updateRepositories:repositories];
+  }
+}
+
+- (void)removeRepository:(NSString *)slug {
+  NSMutableArray *repositories = [self.repositories mutableCopy];
+  [repositories removeObject:slug];
+  [self updateRepositories:repositories];
+}
+
+- (void)updateRepositories:(NSArray *)repositories {
+  NSUserDefaults *userDefaults = NSUserDefaults.standardUserDefaults;
+  [userDefaults setObject:repositories forKey:REPOSITORIES_SETTING];
+  [userDefaults synchronize];
 }
 
 @end

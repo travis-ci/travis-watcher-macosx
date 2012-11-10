@@ -12,9 +12,8 @@
 @property (assign) IBOutlet NSTableView *reposTableView;
 @property (assign) IBOutlet NSPanel *preferencesPanel;
 
-- (id)init;
 - (IBAction)addRepository:(id)sender;
 - (IBAction)removeRepository:(id)sender;
-- (IBAction)saveSettings:(id)sender;
+- (IBAction)close:(id)sender;
 
 @end
