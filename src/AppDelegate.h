@@ -8,11 +8,11 @@
 
 #import <Cocoa/Cocoa.h>
 
-#import "PusherConnection.h"
+@class PusherConnection;
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
-@property (assign) IBOutlet NSWindow *window;
 @property (strong) PusherConnection *pusher;
+
 @property (assign) IBOutlet NSMenu *statusMenu;
 @property (assign) IBOutlet NSPanel *preferencesPanel;
 

@@ -8,17 +8,25 @@
 
 #import "AppDelegate.h"
 
+#import "PusherConnection.h"
+
 @interface AppDelegate ()
 
 @property (strong) NSStatusItem *statusItem;
-@property (strong) NSImage *statusImage;
-@property (strong) NSImage *statusHighlightImage;
 
 @end
 
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)notification {
+  [self setupGrowl];
+
+  self.pusher = [[PusherConnection alloc] init];
+
+  [self setupStatusBarItem];
+}
+
+- (void)setupGrowl {
   NSBundle *mainBundle = [NSBundle mainBundle];
   NSString *path = [[mainBundle privateFrameworksPath] stringByAppendingPathComponent:@"Growl"];
   if (NSAppKitVersionNumber >= 1038)
@@ -29,18 +37,14 @@
   path = [path stringByAppendingPathComponent:@"Growl.framework"];
   NSBundle *growlFramework = [NSBundle bundleWithPath:path];
   [growlFramework load];
+}
 
-  self.pusher = [[PusherConnection alloc] init];
-  
+- (void)setupStatusBarItem {
   self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSSquareStatusItemLength];
-  NSBundle *bundle = [NSBundle mainBundle];
-  
-  self.statusImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForImageResource:@"tray.png"]];
-  self.statusHighlightImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForImageResource:@"tray-alt.png"]];
-  
-  self.statusItem.image = self.statusImage;
-  self.statusItem.alternateImage = self.statusHighlightImage;
-  
+
+  self.statusItem.image = [[NSImage alloc] initByReferencingFile:[NSBundle.mainBundle pathForImageResource:@"tray.png"]];
+  self.statusItem.alternateImage = [[NSImage alloc] initByReferencingFile:[NSBundle.mainBundle pathForImageResource:@"tray-alt.png"]];
+
   self.statusItem.menu = self.statusMenu;
   self.statusItem.toolTip = @"Travis Toolbar";
   self.statusItem.highlightMode = YES;
