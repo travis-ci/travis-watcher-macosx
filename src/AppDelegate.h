@@ -8,10 +8,10 @@
 
 #import <Cocoa/Cocoa.h>
 
-@class PusherConnection;
+@class TravisEventFetcher;
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
-@property (strong) PusherConnection *pusher;
+@property (strong) TravisEventFetcher *pusher;
 
 @property (assign) IBOutlet NSMenu *statusMenu;
 @property (assign) IBOutlet NSPanel *preferencesPanel;

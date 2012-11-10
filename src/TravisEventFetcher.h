@@ -1,5 +1,5 @@
 //
-//  PusherConnection.h
+//  TravisEventFetcher.h
 //  Travis Toolbar
 //
 //  Created by Henrik Hodne on 5/16/12.
@@ -8,5 +8,5 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface PusherConnection : NSObject
+@interface TravisEventFetcher : NSObject
 @end

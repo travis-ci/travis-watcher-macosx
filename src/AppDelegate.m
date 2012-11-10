@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 
-#import "PusherConnection.h"
+#import "TravisEventFetcher.h"
 
 @interface AppDelegate ()
 
@@ -21,7 +21,7 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)notification {
   [self setupGrowl];
 
-  self.pusher = [[PusherConnection alloc] init];
+  self.pusher = [[TravisEventFetcher alloc] init];
 
   [self setupStatusBarItem];
 }

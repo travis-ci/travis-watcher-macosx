@@ -1,5 +1,5 @@
 //
-//  PusherConnection.m
+//  TravisEventFetcher.m
 //  Travis Toolbar
 //
 //  Created by Henrik Hodne on 5/16/12.
@@ -16,9 +16,9 @@
 #import "Notification.h"
 #import "NotificationDisplayer.h"
 
-#import "PusherConnection.h"
+#import "TravisEventFetcher.h"
 
-@interface PusherConnection () <PTPusherDelegate>
+@interface TravisEventFetcher () <PTPusherDelegate>
 
 @property (strong) PTPusher *pusher;
 @property (strong) PTPusherChannel *channel;
@@ -26,7 +26,7 @@
 
 @end
 
-@implementation PusherConnection
+@implementation TravisEventFetcher
 
 - (id)init {
   self = [super init];
