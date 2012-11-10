@@ -15,6 +15,4 @@
 
 - (id)initWithTitle:(NSString *)title description:(NSString *)description;
 
-- (void)deliver;
-
 @end

@@ -14,6 +14,7 @@
 #import "Preferences.h"
 #import "Reachability.h"
 #import "Notification.h"
+#import "NotificationManager.h"
 
 #import "PusherConnection.h"
 
@@ -87,7 +88,7 @@
   TravisEventData *eventData = [[TravisEventData alloc] initWithEventData:event.data];
   if ([self shouldShowNotificationFor:eventData]) {
     Notification *notification = [[Notification alloc] initWithTitle:eventData.name description:@"Starting build."];
-    [notification deliver];
+    [NotificationManager.sharedNotificationManager deliverNotification:notification];
   }
 }
 
@@ -96,7 +97,7 @@
   if ([self shouldShowNotificationFor:eventData]) {
     NSString *description = [NSString stringWithFormat:@"Finished build with status: %@", eventData.status];
     Notification *notification = [[Notification alloc] initWithTitle:eventData.name description:description];
-    [notification deliver];
+    [NotificationManager.sharedNotificationManager deliverNotification:notification];
   }
 }
 
