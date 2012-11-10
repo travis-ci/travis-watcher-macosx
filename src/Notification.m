@@ -25,6 +25,36 @@
 }
 
 - (void)deliver {
+  if ([self notificationCenterIsAvailable]) {
+    [self deliverWithNotificationCenter];
+  } else {
+    [self deliverWithGrowl];
+  }
+}
+
+- (BOOL)notificationCenterIsAvailable {
+  if (NSClassFromString(@"NSUserNotification")) {
+    return YES;
+  } else {
+    return NO;
+  }
+}
+
+- (void)deliverWithNotificationCenter {
+  NSUserNotification *notification = [self userNotification];
+  NSUserNotificationCenter *notificationCenter = [NSUserNotificationCenter defaultUserNotificationCenter];
+  [notificationCenter deliverNotification:notification];
+}
+
+- (NSUserNotification *)userNotification {
+  NSUserNotification *userNotification = [NSUserNotification new];
+  userNotification.title = self.title;
+  userNotification.informativeText = self.description;
+
+  return userNotification;
+}
+
+- (void)deliverWithGrowl {
   Class GAB = NSClassFromString(@"GrowlApplicationBridge");
   if ([GAB respondsToSelector:@selector(notifyWithTitle:description:notificationName:iconData:priority:isSticky:clickContext:identifier:)])
     [GAB notifyWithTitle:self.title
