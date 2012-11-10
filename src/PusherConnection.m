@@ -87,7 +87,7 @@
 - (void)handleStarted:(PTPusherEvent *)event {
   TravisEventData *eventData = [[TravisEventData alloc] initWithEventData:event.data];
   if ([self shouldShowNotificationFor:eventData]) {
-    Notification *notification = [[Notification alloc] initWithTitle:eventData.name description:@"Starting build."];
+    Notification *notification = [[Notification alloc] initWithTitle:[self titleFor:eventData] description:@"Starting build."];
     [NotificationManager.sharedNotificationManager deliverNotification:notification];
   }
 }
@@ -96,7 +96,7 @@
   TravisEventData *eventData = [[TravisEventData alloc] initWithEventData:event.data];
   if ([self shouldShowNotificationFor:eventData]) {
     NSString *description = [NSString stringWithFormat:@"Finished build with status: %@", eventData.status];
-    Notification *notification = [[Notification alloc] initWithTitle:eventData.name description:description];
+    Notification *notification = [[Notification alloc] initWithTitle:[self titleFor:eventData] description:description];
     [NotificationManager.sharedNotificationManager deliverNotification:notification];
   }
 }
@@ -104,6 +104,10 @@
 - (BOOL)shouldShowNotificationFor:(TravisEventData *)eventData {
   NSArray *repositories = Preferences.sharedPreferences.repositories;
   return Preferences.sharedPreferences.firehoseEnabled || [repositories containsObject:eventData.name];
+}
+
+- (NSString *)titleFor:(TravisEventData *)eventData {
+  return [NSString stringWithFormat:@"%@ (#%@)", eventData.name, eventData.buildNumber];
 }
 
 @end

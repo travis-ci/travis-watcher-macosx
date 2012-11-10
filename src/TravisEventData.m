@@ -38,6 +38,10 @@
   }
 }
 
+- (NSNumber *)buildNumber {
+  return (self.eventData)[@"build"][@"number"];
+}
+
 - (NSString *)url {
   NSNumber *build = (self.eventData)[@"build"][@"id"];
   return [NSString stringWithFormat:@"http://travis-ci.org/%@/builds/%@", self.name, build];
