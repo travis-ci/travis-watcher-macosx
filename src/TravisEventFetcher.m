@@ -6,6 +6,8 @@
 //  Copyright (c) 2012 Travis CI GmbH. All rights reserved.
 //
 
+#import "TravisEventFetcher.h"
+
 #import <Pusher/PTPusher.h>
 #import <Pusher/PTPusherChannel.h>
 #import <Pusher/PTPusherEvent.h>
@@ -15,8 +17,6 @@
 #import "Reachability.h"
 #import "Notification.h"
 #import "NotificationDisplayer.h"
-
-#import "TravisEventFetcher.h"
 
 @interface TravisEventFetcher () <PTPusherDelegate>
 
@@ -34,8 +34,9 @@
     self.pusher = [PTPusher pusherWithKey:kPusherApiKey delegate:self encrypted:YES];
     
     self.channel = [self.pusher subscribeToChannelNamed:kPusherChannelName];
-    
+
     [self.channel bindToEventNamed:kPusherEventBuildStarted target:self action:@selector(handleEvent:)];
+    [self.channel bindToEventNamed:kPusherEventBuildFinished target:self action:@selector(handleEvent:)];
   }
   
   return self;
@@ -85,6 +86,9 @@
   if ([self shouldShowNotificationFor:eventData]) {
     Notification *notification = [Notification notificationWithEventData:eventData];
     [NotificationDisplayer.sharedNotificationManager deliverNotification:notification];
+    
+  if ([self.delegate respondsToSelector:@selector(eventFetcher:gotEvent:)]) {
+    [self.delegate eventFetcher:self gotEvent:[[TravisEvent alloc] initWithEventData:event.data]];
   }
 }
 

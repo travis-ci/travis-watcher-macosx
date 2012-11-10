@@ -9,9 +9,14 @@
 #import "AppDelegate.h"
 
 #import "TravisEventFetcher.h"
+#import "TravisEvent.h"
+#import "Preferences.h"
+#import "Notification.h"
+#import "NotificationDisplayer.h"
 
-@interface AppDelegate ()
+@interface AppDelegate () <TravisEventFetcherDelegate>
 
+@property (strong) TravisEventFetcher *eventFetcher;
 @property (strong) NSStatusItem *statusItem;
 
 @end
@@ -21,7 +26,8 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)notification {
   [self setupGrowl];
 
-  self.pusher = [[TravisEventFetcher alloc] init];
+  self.eventFetcher = [[TravisEventFetcher alloc] init];
+  self.eventFetcher.delegate = self;
 
   [self setupStatusBarItem];
 }
@@ -54,4 +60,20 @@
   [NSApp activateIgnoringOtherApps:YES];
   [self.preferencesPanel makeKeyAndOrderFront:self];
 }
+
+- (BOOL)shouldShowNotificationFor:(TravisEvent *)eventData {
+  NSArray *repositories = Preferences.sharedPreferences.repositories;
+  return Preferences.sharedPreferences.firehoseEnabled || [repositories containsObject:eventData.name];
+}
+
+#pragma mark - TravisEventFetcherDelegate
+
+- (void)eventFetcher:(TravisEventFetcher *)eventFetcher gotEvent:(TravisEvent *)event {
+  if ([self shouldShowNotificationFor:event]) {
+    Notification *notification = [Notification notificationWithEventData:event];
+    NSLog(@"Got notification: %@", notification);
+    [NotificationDisplayer.sharedNotificationDisplayer deliverNotification:notification];
+  }
+}
+
 @end
