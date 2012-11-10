@@ -39,10 +39,6 @@
     
     [self.channel bindToEventNamed:kPusherEventBuildStarted target:self action:@selector(handleStarted:)];
     [self.channel bindToEventNamed:kPusherEventBuildFinished target:self action:@selector(handleFinished:)];
-    
-    Class GAB = NSClassFromString(@"GrowlApplicationBridge");
-    if([GAB respondsToSelector:@selector(setGrowlDelegate:)])
-      [GAB setGrowlDelegate:self];
   }
   
   return self;
