@@ -46,14 +46,13 @@
 
 - (void)deliverWithNotificationCenter:(Notification *)notification {
   NSUserNotificationCenter *notificationCenter = [NSUserNotificationCenter defaultUserNotificationCenter];
-  NSUserNotification *userNotification = [self userNotificationForNotification:notification];
   for (NSUserNotification *deliveredUserNotification in notificationCenter.deliveredNotifications) {
     if ([deliveredUserNotification.userInfo[@"notificationID"] isEqualToNumber:notification.uniqueID]) {
-      userNotification.title = deliveredUserNotification.title;
       [notificationCenter removeDeliveredNotification:deliveredUserNotification];
     }
   }
 
+  NSUserNotification *userNotification = [self userNotificationForNotification:notification];
   [notificationCenter deliverNotification:userNotification];
 }
 
