@@ -14,7 +14,7 @@
 #import "Preferences.h"
 #import "Reachability.h"
 #import "Notification.h"
-#import "NotificationManager.h"
+#import "NotificationDisplayer.h"
 
 #import "PusherConnection.h"
 
@@ -84,7 +84,7 @@
   TravisEventData *eventData = [[TravisEventData alloc] initWithEventData:event.data];
   if ([self shouldShowNotificationFor:eventData]) {
     Notification *notification = [Notification notificationWithEventData:eventData];
-    [NotificationManager.sharedNotificationManager deliverNotification:notification];
+    [NotificationDisplayer.sharedNotificationManager deliverNotification:notification];
   }
 }
 

@@ -10,9 +10,9 @@
 
 @class Notification;
 
-@interface NotificationManager : NSObject
+@interface NotificationDisplayer : NSObject
 
-+ (NotificationManager *)sharedNotificationManager;
++ (NotificationDisplayer *)sharedNotificationDisplayer;
 
 - (void)deliverNotification:(Notification *)notification;
 

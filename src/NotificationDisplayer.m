@@ -6,20 +6,20 @@
 //  Copyright (c) 2012 Travis CI GmbH. All rights reserved.
 //
 
-#import "NotificationManager.h"
+#import "NotificationDisplayer.h"
 
 #import "Notification.h"
 #import <AppKit/AppKit.h>
 #import <Growl/Growl.h>
 #import "TravisEventData.h"
 
-@implementation NotificationManager
+@implementation NotificationDisplayer
 
-+ (NotificationManager *)sharedNotificationManager {
-  static NotificationManager *_sharedNotificationManager = nil;
++ (NotificationDisplayer *)sharedNotificationDisplayer {
+  static NotificationDisplayer *_sharedNotificationManager = nil;
   static dispatch_once_t onceToken;
   dispatch_once(&onceToken, ^{
-    _sharedNotificationManager = [NotificationManager new];
+    _sharedNotificationManager = [NotificationDisplayer new];
   });
 
   return _sharedNotificationManager;
