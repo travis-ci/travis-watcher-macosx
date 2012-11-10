@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 Travis CI GmbH. All rights reserved.
 //
 
-#import <Growl/Growl.h>
+#import <Pusher/PTPusher.h>
 #import <Pusher/PTPusherChannel.h>
 #import <Pusher/PTPusherEvent.h>
 #import "Constants.h"
@@ -18,7 +18,7 @@
 
 #import "PusherConnection.h"
 
-@interface PusherConnection ()
+@interface PusherConnection () <PTPusherDelegate>
 
 @property (strong) PTPusher *pusher;
 @property (strong) PTPusherChannel *channel;

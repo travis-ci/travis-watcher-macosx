@@ -7,11 +7,6 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import <Pusher/PTPusher.h>
-#import <Growl/Growl.h>
 
-@interface PusherConnection : NSObject <PTPusherDelegate, GrowlApplicationBridgeDelegate>
-
-- (id)init;
-
+@interface PusherConnection : NSObject
 @end
