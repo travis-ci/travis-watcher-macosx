@@ -25,6 +25,12 @@
   return self;
 }
 
+- (void)updateBuildInfo:(NSDictionary *)build {
+  NSMutableDictionary *eventData = [self.eventData mutableCopy];
+  eventData[@"build"] = build;
+  self.eventData = eventData;
+}
+
 - (NSString *)name {
   return (self.eventData)[@"repository"][@"slug"];
 }

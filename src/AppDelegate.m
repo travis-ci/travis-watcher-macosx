@@ -13,6 +13,7 @@
 #import "Preferences.h"
 #import "Notification.h"
 #import "NotificationDisplayer.h"
+#import "TravisAPI.h"
 
 @interface AppDelegate () <TravisEventFetcherDelegate>
 
@@ -70,9 +71,13 @@
 
 - (void)eventFetcher:(TravisEventFetcher *)eventFetcher gotEvent:(TravisEvent *)event {
   if ([self shouldShowNotificationFor:event]) {
-    Notification *notification = [Notification notificationWithEventData:event];
-    NSLog(@"Got notification: %@", notification);
-    [NotificationDisplayer.sharedNotificationDisplayer deliverNotification:notification];
+    [[TravisAPI new] getBuildWithID:event.buildID forRepository:event.name success:^(NSDictionary *build) {
+      [event updateBuildInfo:build];
+      Notification *notification = [Notification notificationWithEventData:event];
+      [NotificationDisplayer.sharedNotificationDisplayer deliverNotification:notification];
+    } failure:^(NSError *error) {
+      NSLog(@"Couldn't get build info from JSON API. Error: %@.", error);
+    }];
   }
 }
 

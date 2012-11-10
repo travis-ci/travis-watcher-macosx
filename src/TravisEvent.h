@@ -31,4 +31,6 @@ typedef enum {
 
 - (id)initWithEventData:(NSDictionary *)eventData;
 
+- (void)updateBuildInfo:(NSDictionary *)build;
+
 @end
