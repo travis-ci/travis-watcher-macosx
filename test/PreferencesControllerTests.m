@@ -20,15 +20,25 @@
 @interface PreferencesControllerTests : SenTestCase
 @end
 
-@implementation PreferencesControllerTests
+@implementation PreferencesControllerTests {
+  Preferences *_preferences;
+  PreferencesController *_preferencesController;
+}
+
+- (void)setUp {
+  _preferences = mock([Preferences class]);
+  _preferencesController = [PreferencesController new];
+  _preferencesController.preferences = _preferences;
+}
 
 - (void)testEnableFirehoseSetting {
-  Preferences *preferences = mock([Preferences class]);
-  PreferencesController *controller = [PreferencesController new];
-  controller.preferences = preferences;
-  [controller enableFirehose:nil];
+  [_preferencesController enableFirehose:nil];
+  [verify(_preferences) setFirehoseEnabled:YES];
+}
 
-  [verify(preferences) setFirehoseEnabled:YES];
+- (void)testDisableFirehoseSetting {
+  [_preferencesController disableFirehose:nil];
+  [verify(_preferences) setFirehoseEnabled:NO];
 }
 
 @end
