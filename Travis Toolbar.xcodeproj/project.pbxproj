@@ -10,6 +10,9 @@
 		2BFA9DA710CDF852007972A1 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BFA9DA510CDF852007972A1 /* MainMenu.xib */; };
 		2E00CCB4164EE10000A30635 /* TravisAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E00CCB3164EE10000A30635 /* TravisAPI.m */; };
 		2E00CCB7164EE18000A30635 /* TravisHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E00CCB6164EE18000A30635 /* TravisHTTPClient.m */; };
+		2E00CCC1164F974800A30635 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E00CCC0164F974800A30635 /* SenTestingKit.framework */; };
+		2E00CCC3164F974900A30635 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E00CCC2164F974900A30635 /* Cocoa.framework */; };
+		2E00CCC9164F974900A30635 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2E00CCC7164F974900A30635 /* InfoPlist.strings */; };
 		2E75988B164DF68100B87810 /* Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E75988A164DF68100B87810 /* Notification.m */; };
 		2E90F156164E389F009CAA25 /* Travis Toolbar.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2E90F155164E389F009CAA25 /* Travis Toolbar.icns */; };
 		2E90F15A164E49BB009CAA25 /* NotificationDisplayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E90F159164E49BB009CAA25 /* NotificationDisplayer.m */; };
@@ -81,6 +84,12 @@
 		2E00CCB3164EE10000A30635 /* TravisAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TravisAPI.m; sourceTree = "<group>"; };
 		2E00CCB5164EE18000A30635 /* TravisHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TravisHTTPClient.h; sourceTree = "<group>"; };
 		2E00CCB6164EE18000A30635 /* TravisHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TravisHTTPClient.m; sourceTree = "<group>"; };
+		2E00CCBF164F974800A30635 /* TravisToolbarTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TravisToolbarTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E00CCC0164F974800A30635 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		2E00CCC2164F974900A30635 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		2E00CCC6164F974900A30635 /* TravisToolbarTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TravisToolbarTests-Info.plist"; sourceTree = "<group>"; };
+		2E00CCC8164F974900A30635 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2E00CCCD164F974900A30635 /* TravisToolbarTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TravisToolbarTests-Prefix.pch"; sourceTree = "<group>"; };
 		2E759889164DF68100B87810 /* Notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Notification.h; sourceTree = "<group>"; };
 		2E75988A164DF68100B87810 /* Notification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Notification.m; sourceTree = "<group>"; };
 		2E90F155164E389F009CAA25 /* Travis Toolbar.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "Travis Toolbar.icns"; sourceTree = "<group>"; };
@@ -115,6 +124,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2E00CCBB164F974800A30635 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E00CCC1164F974800A30635 /* SenTestingKit.framework in Frameworks */,
+				2E00CCC3164F974900A30635 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8D11072E0486CEB800E47090 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -155,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				8D1107320486CEB800E47090 /* Travis Toolbar.app */,
+				2E00CCBF164F974800A30635 /* TravisToolbarTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -164,6 +183,7 @@
 			children = (
 				2EE31A611564226E004F33FE /* Travis Toolbar */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
+				2E00CCC4164F974900A30635 /* TravisToolbarTests */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 				884722F96BEB4A039C4EBD96 /* Pods.xcconfig */,
@@ -195,6 +215,8 @@
 			children = (
 				2EDA04661565B7F90043A3A6 /* Growl */,
 				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
+				2E00CCC0164F974800A30635 /* SenTestingKit.framework */,
+				2E00CCC2164F974900A30635 /* Cocoa.framework */,
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 				2ECFA87545264EC28B9D5614 /* libPods.a */,
 			);
@@ -210,6 +232,25 @@
 				2E00CCB6164EE18000A30635 /* TravisHTTPClient.m */,
 			);
 			name = "Travis API";
+			sourceTree = "<group>";
+		};
+		2E00CCC4164F974900A30635 /* TravisToolbarTests */ = {
+			isa = PBXGroup;
+			children = (
+				2E00CCC5164F974900A30635 /* Supporting Files */,
+			);
+			name = TravisToolbarTests;
+			path = test;
+			sourceTree = "<group>";
+		};
+		2E00CCC5164F974900A30635 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2E00CCC6164F974900A30635 /* TravisToolbarTests-Info.plist */,
+				2E00CCC7164F974900A30635 /* InfoPlist.strings */,
+				2E00CCCD164F974900A30635 /* TravisToolbarTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		2EDA04661565B7F90043A3A6 /* Growl */ = {
@@ -275,6 +316,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		2E00CCBE164F974800A30635 /* TravisToolbarTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2E00CCCE164F974900A30635 /* Build configuration list for PBXNativeTarget "TravisToolbarTests" */;
+			buildPhases = (
+				2E00CCBA164F974800A30635 /* Sources */,
+				2E00CCBB164F974800A30635 /* Frameworks */,
+				2E00CCBC164F974800A30635 /* Resources */,
+				2E00CCBD164F974800A30635 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TravisToolbarTests;
+			productName = TravisToolbarTests;
+			productReference = 2E00CCBF164F974800A30635 /* TravisToolbarTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
 		8D1107260486CEB800E47090 /* Travis Toolbar */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Travis Toolbar" */;
@@ -315,17 +374,27 @@
 				Japanese,
 				French,
 				German,
+				en,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* Travis Toolbar */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				8D1107260486CEB800E47090 /* Travis Toolbar */,
+				2E00CCBE164F974800A30635 /* TravisToolbarTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		2E00CCBC164F974800A30635 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E00CCC9164F974900A30635 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8D1107290486CEB800E47090 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -342,6 +411,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2E00CCBD164F974800A30635 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
 		6F955D0BF9044D9EAC683F0E /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -359,6 +441,13 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2E00CCBA164F974800A30635 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8D11072C0486CEB800E47090 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -396,9 +485,96 @@
 			name = MainMenu.xib;
 			sourceTree = "<group>";
 		};
+		2E00CCC7164F974900A30635 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2E00CCC8164F974900A30635 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		2E00CCCF164F974900A30635 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"\"$(SRCROOT)/vendor\"",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_ENABLE_OBJC_GC = unsupported;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "test/TravisToolbarTests-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_STRICT_ALIASING = YES;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				INFOPLIST_FILE = "test/TravisToolbarTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		2E00CCD0164F974900A30635 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"\"$(SRCROOT)/vendor\"",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_ENABLE_OBJC_GC = unsupported;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "test/TravisToolbarTests-Prefix.pch";
+				GCC_STRICT_ALIASING = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				INFOPLIST_FILE = "test/TravisToolbarTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
 		C01FCF4B08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 884722F96BEB4A039C4EBD96 /* Pods.xcconfig */;
@@ -483,6 +659,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2E00CCCE164F974900A30635 /* Build configuration list for PBXNativeTarget "TravisToolbarTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2E00CCCF164F974900A30635 /* Debug */,
+				2E00CCD0164F974900A30635 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Travis Toolbar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
