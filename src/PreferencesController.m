@@ -52,11 +52,11 @@
 
 - (void)windowDidBecomeKey:(NSNotification *)notification {
   if (Preferences.sharedPreferences.firehoseEnabled) {
-    self.firehoseEnabled.objectValue = @(YES);
-    self.firehoseDisabled.objectValue = @(NO);
+    self.firehoseEnabledButtonCell.objectValue = @(YES);
+    self.firehoseDisabledButtonCell.objectValue = @(NO);
   } else {
-    self.firehoseEnabled.objectValue = @(NO);
-    self.firehoseDisabled.objectValue = @(YES);
+    self.firehoseEnabledButtonCell.objectValue = @(NO);
+    self.firehoseDisabledButtonCell.objectValue = @(YES);
   }
 }
 

@@ -11,8 +11,8 @@
 @interface PreferencesController : NSObject <NSTableViewDataSource, NSWindowDelegate>
 @property (assign) IBOutlet NSTableView *reposTableView;
 @property (assign) IBOutlet NSPanel *preferencesPanel;
-@property (weak) IBOutlet NSButtonCell *firehoseEnabled;
-@property (weak) IBOutlet NSButtonCell *firehoseDisabled;
+@property (weak) IBOutlet NSButtonCell *firehoseEnabledButtonCell;
+@property (weak) IBOutlet NSButtonCell *firehoseDisabledButtonCell;
 
 - (IBAction)addRepository:(id)sender;
 - (IBAction)removeRepository:(id)sender;
