@@ -14,6 +14,7 @@
 #import "Notification.h"
 #import "NotificationDisplayer.h"
 #import "TravisAPI.h"
+#import "RepositoryFilter.h"
 
 @interface AppDelegate () <TravisEventFetcherDelegate, NSUserNotificationCenterDelegate>
 
@@ -64,23 +65,14 @@
 }
 
 - (BOOL)shouldShowNotificationFor:(TravisEvent *)eventData {
-  if ([[Preferences sharedPreferences] firehoseEnabled]) return YES;
-
-  NSArray *incomingComponents = [[eventData name] componentsSeparatedByString:@"/"];
-  NSString *incomingOwner = incomingComponents[0];
-  NSString *incomingName = incomingComponents[1];
-  NSArray *repositories = [[Preferences sharedPreferences] repositories];
-  for (NSString *repository in repositories) {
-    NSArray *filterComponents = [repository componentsSeparatedByString:@"/"];
-    NSString *filterOwner = filterComponents[0];
-    NSString *filterName = filterComponents[1];
-
-    if (![filterOwner isEqualToString:@"*"] && ![filterOwner isEqualToString:incomingOwner]) continue;
-    else if (![filterName isEqualToString:@"*"] && ![filterName isEqualToString:incomingName]) continue;
-    else return YES;
+  RepositoryFilter *filter;
+  if ([[Preferences sharedPreferences] firehoseEnabled]) {
+    filter = [RepositoryFilter filterThatAcceptsAllRepositories];
+  } else {
+    filter = [RepositoryFilter filtersWithMatches:[[Preferences sharedPreferences] repositories]];
   }
 
-  return NO;
+  return [filter acceptsRepository:[eventData name]];
 }
 
 #pragma mark - TravisEventFetcherDelegate

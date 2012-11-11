@@ -23,6 +23,9 @@
 		2E90F15A164E49BB009CAA25 /* NotificationDisplayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E90F159164E49BB009CAA25 /* NotificationDisplayer.m */; };
 		2EBA8CE9164FA582005C033E /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EDA04771565C67C0043A3A6 /* Preferences.m */; };
 		2EBA8CEA164FA582005C033E /* PreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EDA04741565C0A70043A3A6 /* PreferencesController.m */; };
+		2EBA8CF6164FAD4A005C033E /* RepositoryFilterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA8CF5164FAD4A005C033E /* RepositoryFilterTests.m */; };
+		2EBA8CFA164FAD91005C033E /* RepositoryFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA8CF9164FAD91005C033E /* RepositoryFilter.m */; };
+		2EBA8CFB164FAD9F005C033E /* RepositoryFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA8CF9164FAD91005C033E /* RepositoryFilter.m */; };
 		2EDA045915644D5D0043A3A6 /* TravisEventFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EDA045815644D5D0043A3A6 /* TravisEventFetcher.m */; };
 		2EDA045D156450750043A3A6 /* TravisEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EDA045C156450750043A3A6 /* TravisEvent.m */; };
 		2EDA0460156464FF0043A3A6 /* tray-alt.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EDA045E156464FF0043A3A6 /* tray-alt.png */; };
@@ -117,6 +120,9 @@
 		2E90F158164E49BB009CAA25 /* NotificationDisplayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationDisplayer.h; sourceTree = "<group>"; };
 		2E90F159164E49BB009CAA25 /* NotificationDisplayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationDisplayer.m; sourceTree = "<group>"; };
 		2E90F15B164E64F7009CAA25 /* TravisEventFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TravisEventFetcher.h; sourceTree = "<group>"; };
+		2EBA8CF5164FAD4A005C033E /* RepositoryFilterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RepositoryFilterTests.m; path = test/RepositoryFilterTests.m; sourceTree = SOURCE_ROOT; };
+		2EBA8CF8164FAD91005C033E /* RepositoryFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RepositoryFilter.h; sourceTree = "<group>"; };
+		2EBA8CF9164FAD91005C033E /* RepositoryFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RepositoryFilter.m; sourceTree = "<group>"; };
 		2ECFA87545264EC28B9D5614 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EDA045815644D5D0043A3A6 /* TravisEventFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TravisEventFetcher.m; sourceTree = "<group>"; };
 		2EDA045B156450750043A3A6 /* TravisEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TravisEvent.h; sourceTree = "<group>"; };
@@ -271,8 +277,9 @@
 		2E00CCC4164F974900A30635 /* TravisToolbarTests */ = {
 			isa = PBXGroup;
 			children = (
-				2E00CCC5164F974900A30635 /* Supporting Files */,
 				2E00CCD8164F9A9B00A30635 /* PreferencesControllerTests.m */,
+				2EBA8CF5164FAD4A005C033E /* RepositoryFilterTests.m */,
+				2E00CCC5164F974900A30635 /* Supporting Files */,
 			);
 			name = TravisToolbarTests;
 			path = test;
@@ -330,6 +337,8 @@
 				2EDA04741565C0A70043A3A6 /* PreferencesController.m */,
 				9DAF568D15932852002018B5 /* Reachability.h */,
 				9DAF568E15932852002018B5 /* Reachability.m */,
+				2EBA8CF8164FAD91005C033E /* RepositoryFilter.h */,
+				2EBA8CF9164FAD91005C033E /* RepositoryFilter.m */,
 				2EDA045B156450750043A3A6 /* TravisEvent.h */,
 				2EDA045C156450750043A3A6 /* TravisEvent.m */,
 				2E90F15B164E64F7009CAA25 /* TravisEventFetcher.h */,
@@ -482,8 +491,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E00CCD9164F9A9B00A30635 /* PreferencesControllerTests.m in Sources */,
+				2EBA8CF6164FAD4A005C033E /* RepositoryFilterTests.m in Sources */,
 				2EBA8CE9164FA582005C033E /* Preferences.m in Sources */,
 				2EBA8CEA164FA582005C033E /* PreferencesController.m in Sources */,
+				2EBA8CFB164FAD9F005C033E /* RepositoryFilter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,6 +513,7 @@
 				2E90F15A164E49BB009CAA25 /* NotificationDisplayer.m in Sources */,
 				2E00CCB4164EE10000A30635 /* TravisAPI.m in Sources */,
 				2E00CCB7164EE18000A30635 /* TravisHTTPClient.m in Sources */,
+				2EBA8CFA164FAD91005C033E /* RepositoryFilter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
