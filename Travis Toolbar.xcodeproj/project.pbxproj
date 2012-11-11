@@ -17,6 +17,7 @@
 		2E00CCD3164F988400A30635 /* OCHamcrest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E00CCD2164F988400A30635 /* OCHamcrest.framework */; };
 		2E00CCD5164F98EC00A30635 /* OCHamcrest.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2E00CCD2164F988400A30635 /* OCHamcrest.framework */; };
 		2E00CCD6164F98EE00A30635 /* OCMockito.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2E00CCB9164F972F00A30635 /* OCMockito.framework */; };
+		2E00CCD9164F9A9B00A30635 /* PreferencesControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E00CCD8164F9A9B00A30635 /* PreferencesControllerTests.m */; };
 		2E75988B164DF68100B87810 /* Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E75988A164DF68100B87810 /* Notification.m */; };
 		2E90F156164E389F009CAA25 /* Travis Toolbar.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2E90F155164E389F009CAA25 /* Travis Toolbar.icns */; };
 		2E90F15A164E49BB009CAA25 /* NotificationDisplayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E90F159164E49BB009CAA25 /* NotificationDisplayer.m */; };
@@ -107,6 +108,7 @@
 		2E00CCC8164F974900A30635 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2E00CCCD164F974900A30635 /* TravisToolbarTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TravisToolbarTests-Prefix.pch"; sourceTree = "<group>"; };
 		2E00CCD2164F988400A30635 /* OCHamcrest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OCHamcrest.framework; sourceTree = "<group>"; };
+		2E00CCD8164F9A9B00A30635 /* PreferencesControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesControllerTests.m; sourceTree = "<group>"; };
 		2E759889164DF68100B87810 /* Notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Notification.h; sourceTree = "<group>"; };
 		2E75988A164DF68100B87810 /* Notification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Notification.m; sourceTree = "<group>"; };
 		2E90F155164E389F009CAA25 /* Travis Toolbar.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "Travis Toolbar.icns"; sourceTree = "<group>"; };
@@ -268,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				2E00CCC5164F974900A30635 /* Supporting Files */,
+				2E00CCD8164F9A9B00A30635 /* PreferencesControllerTests.m */,
 			);
 			name = TravisToolbarTests;
 			path = test;
@@ -476,6 +479,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E00CCD9164F9A9B00A30635 /* PreferencesControllerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
