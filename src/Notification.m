@@ -19,12 +19,12 @@
 @implementation Notification
 
 + (Notification *)notificationWithEventData:(TravisEvent *)eventData {
-  if (eventData.state == TravisEventStateStarted) {
+  if ([eventData state] == TravisEventStateStarted) {
     return [[BuildStartedNotification alloc] initWithEventData:eventData];
-  } else if (eventData.state == TravisEventStateFinished) {
-    if (eventData.status == TravisEventStatusPassed) {
+  } else if ([eventData state] == TravisEventStateFinished) {
+    if ([eventData status] == TravisEventStatusPassed) {
       return [[BuildPassedNotification alloc] initWithEventData:eventData];
-    } else if (eventData.status == TravisEventStatusFailed) {
+    } else if ([eventData status] == TravisEventStatusFailed) {
       return [[BuildFailedNotification alloc] initWithEventData:eventData];
     }
   }
@@ -44,15 +44,15 @@
 }
 
 - (NSNumber *)uniqueID {
-  return self.eventData.buildID;
+  return [[self eventData] buildID];
 }
 
 - (NSString *)title {
-  return self.eventData.name;
+  return [[self eventData] name];
 }
 
 - (NSString *)subtitle {
-  return [NSString stringWithFormat:@"Build #%@", self.eventData.buildNumber];
+  return [NSString stringWithFormat:@"Build #%@", [[self eventData] buildNumber]];
 }
 
 - (NSString *)informativeText {
@@ -61,7 +61,7 @@
 }
 
 - (NSString *)URL {
-  return self.eventData.url;
+  return [[self eventData] url];
 }
 
 @end

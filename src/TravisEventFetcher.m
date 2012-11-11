@@ -31,19 +31,17 @@
 - (id)init {
   self = [super init];
   if (self) {
-    self.pusher = [PTPusher pusherWithKey:kPusherApiKey delegate:self encrypted:YES];
-    
-    self.channel = [self.pusher subscribeToChannelNamed:kPusherChannelName];
-
-    [self.channel bindToEventNamed:kPusherEventBuildStarted target:self action:@selector(handleEvent:)];
-    [self.channel bindToEventNamed:kPusherEventBuildFinished target:self action:@selector(handleEvent:)];
+    _pusher = [PTPusher pusherWithKey:kPusherApiKey delegate:self encrypted:YES];
+    _channel = [_pusher subscribeToChannelNamed:kPusherChannelName];
+    [_channel bindToEventNamed:kPusherEventBuildStarted target:self action:@selector(handleEvent:)];
+    [_channel bindToEventNamed:kPusherEventBuildFinished target:self action:@selector(handleEvent:)];
   }
   
   return self;
 }
 
 - (void)pusher:(PTPusher *)client connectionDidConnect:(PTPusherConnection *)connection {
-  self.pusher.reconnectAutomatically = YES;
+  [client setReconnectAutomatically:YES];
 }
 
 - (void)pusher:(PTPusher *)pusher connection:(PTPusherConnection *)connection didDisconnectWithError:(NSError *)error {
@@ -51,39 +49,39 @@
 }
 
 - (void)pusher:(PTPusher *)pusher connection:(PTPusherConnection *)connection failedWithError:(NSError *)error {
-  if (self.reachability == nil) {
-    self.reachability = [Reachability reachabilityForInternetConnection];
+  if ([self reachability] == nil) {
+    [self setReachability:[Reachability reachabilityForInternetConnection]];
   }
   
-  if ([self.reachability currentReachabilityStatus] == NotReachable) {
+  if ([[self reachability] currentReachabilityStatus] == NotReachable) {
     // there is no point in trying to reconnect at this point
-    self.pusher.reconnectAutomatically = NO;
+    [[self pusher] setReconnectAutomatically:NO];
     
     // start observing the reachability status to see when we come back online
     [[NSNotificationCenter defaultCenter] 
       addObserver:self 
          selector:@selector(reachabilityChanged:) 
              name:kReachabilityChangedNotification 
-           object:self.reachability];
+           object:[self reachability]];
     
-    [self.reachability startNotifier];
+    [[self reachability] startNotifier];
   }
 }
 
 - (void)reachabilityChanged:(NSNotification *)note {
-  if ([self.reachability currentReachabilityStatus] != NotReachable) {
+  if ([[self reachability] currentReachabilityStatus] != NotReachable) {
     // we seem to have some kind of network reachability, so try again
-    [self.pusher connect];
+    [[self pusher] connect];
     
     // we can stop observing reachability changes now
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    [self.reachability stopNotifier];
+    [[self reachability] stopNotifier];
   }
 }
 
 - (void)handleEvent:(PTPusherEvent *)event {
-  if ([self.delegate respondsToSelector:@selector(eventFetcher:gotEvent:)]) {
-    [self.delegate eventFetcher:self gotEvent:[[TravisEvent alloc] initWithEventData:event.data]];
+  if ([[self delegate] respondsToSelector:@selector(eventFetcher:gotEvent:)]) {
+    [[self delegate] eventFetcher:self gotEvent:[[TravisEvent alloc] initWithEventData:[event data]]];
   }
 }
 

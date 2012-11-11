@@ -19,24 +19,24 @@
 - (id)initWithEventData:(NSDictionary *)eventData {
   self = [super init];
   if (self) {
-    self.eventData = eventData;
+    _eventData = eventData;
   }
   
   return self;
 }
 
 - (void)updateBuildInfo:(NSDictionary *)build {
-  NSMutableDictionary *eventData = [self.eventData mutableCopy];
+  NSMutableDictionary *eventData = [[self eventData] mutableCopy];
   eventData[@"build"] = build;
-  self.eventData = eventData;
+  [self setEventData:eventData];
 }
 
 - (NSString *)name {
-  return (self.eventData)[@"repository"][@"slug"];
+  return [self eventData][@"repository"][@"slug"];
 }
 
 - (TravisEventStatus)status {
-  NSNumber *result = (self.eventData)[@"build"][@"result"];
+  NSNumber *result = [self eventData][@"build"][@"result"];
   if (result && [result isEqualToNumber:@0]) {
     return TravisEventStatusPassed;
   } else if (result && [result isEqualToNumber:@1]) {
@@ -47,15 +47,15 @@
 }
 
 - (NSNumber *)buildID {
-  return (self.eventData)[@"build"][@"id"];
+  return [self eventData][@"build"][@"id"];
 }
 
 - (NSNumber *)buildNumber {
-  return (self.eventData)[@"build"][@"number"];
+  return [self eventData][@"build"][@"number"];
 }
 
 - (TravisEventState)state {
-  NSString *state = (self.eventData)[@"build"][@"state"];
+  NSString *state = [self eventData][@"build"][@"state"];
 
   if ([state isEqualToString:@"started"]) {
     return TravisEventStateStarted;
@@ -67,12 +67,12 @@
 }
 
 - (NSString *)url {
-  NSNumber *build = (self.eventData)[@"build"][@"id"];
-  return [NSString stringWithFormat:@"http://travis-ci.org/%@/builds/%@", self.name, build];
+  NSNumber *build = [self eventData][@"build"][@"id"];
+  return [NSString stringWithFormat:@"http://travis-ci.org/%@/builds/%@", [self name], build];
 }
 
 - (NSString *)description {
-  return [NSString stringWithFormat:@"<%@: %@>", self.class, self.eventData];
+  return [NSString stringWithFormat:@"<%@: %@>", [self class], [self eventData]];
 }
 
 @end

@@ -24,36 +24,36 @@ static NSString * const kFirehoseSetting = @"firehose";
 }
 
 - (NSArray *)repositories {
-  NSUserDefaults *userDefault = NSUserDefaults.standardUserDefaults;
+  NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
   return [userDefault stringArrayForKey:kRepositoriesSetting];
 }
 
 - (void)addRepository:(NSString *)slug {
-  if (![self.repositories containsObject:slug]) {
-    NSArray *repositories = [self.repositories arrayByAddingObject:slug];
+  if (![[self repositories] containsObject:slug]) {
+    NSArray *repositories = [[self repositories] arrayByAddingObject:slug];
     [self updateRepositories:repositories];
   }
 }
 
 - (void)removeRepository:(NSString *)slug {
-  NSMutableArray *repositories = [self.repositories mutableCopy];
+  NSMutableArray *repositories = [[self repositories] mutableCopy];
   [repositories removeObject:slug];
   [self updateRepositories:repositories];
 }
 
 - (void)updateRepositories:(NSArray *)repositories {
-  NSUserDefaults *userDefaults = NSUserDefaults.standardUserDefaults;
+  NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
   [userDefaults setObject:repositories forKey:kRepositoriesSetting];
   [userDefaults synchronize];
 }
 
 - (BOOL)firehoseEnabled {
-  NSUserDefaults *userDefaults = NSUserDefaults.standardUserDefaults;
+  NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
   return [userDefaults boolForKey:kFirehoseSetting];
 }
 
 - (void)setFirehoseEnabled:(BOOL)firehoseEnabled {
-  NSUserDefaults *userDefaults = NSUserDefaults.standardUserDefaults;
+  NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
   [userDefaults setBool:firehoseEnabled forKey:kFirehoseSetting];
   [userDefaults synchronize];
 }

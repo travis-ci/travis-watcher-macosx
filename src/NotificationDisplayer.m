@@ -27,7 +27,7 @@
 
 
 - (void)deliverNotification:(Notification *)notification {
-  if ([notification isKindOfClass:NullNotification.class]) return;
+  if ([notification isKindOfClass:[NullNotification class]]) return;
 
   if ([self notificationCenterIsAvailable]) {
     [self deliverWithNotificationCenter:notification];
@@ -46,8 +46,8 @@
 
 - (void)deliverWithNotificationCenter:(Notification *)notification {
   NSUserNotificationCenter *notificationCenter = [NSUserNotificationCenter defaultUserNotificationCenter];
-  for (NSUserNotification *deliveredUserNotification in notificationCenter.deliveredNotifications) {
-    if ([deliveredUserNotification.userInfo[@"notificationID"] isEqualToNumber:notification.uniqueID]) {
+  for (NSUserNotification *deliveredUserNotification in [notificationCenter deliveredNotifications]) {
+    if ([[deliveredUserNotification userInfo][@"notificationID"] isEqualToNumber:[notification uniqueID]]) {
       [notificationCenter removeDeliveredNotification:deliveredUserNotification];
     }
   }
@@ -58,10 +58,10 @@
 
 - (NSUserNotification *)userNotificationForNotification:(Notification *)notification {
   NSUserNotification *userNotification = [NSUserNotification new];
-  userNotification.title = notification.title;
-  userNotification.subtitle = notification.subtitle;
-  userNotification.informativeText = notification.informativeText;
-  userNotification.userInfo = @{ @"notificationID": notification.uniqueID, @"URL": notification.URL };
+  [userNotification setTitle:[notification title]];
+  [userNotification setSubtitle:[notification subtitle]];
+  [userNotification setInformativeText:[notification informativeText]];
+  [userNotification setUserInfo:@{ @"notificationID": [notification uniqueID], @"URL": [notification URL] }];
 
   return userNotification;
 }
@@ -69,14 +69,14 @@
 - (void)deliverWithGrowl:(Notification *)notification {
   Class GAB = NSClassFromString(@"GrowlApplicationBridge");
   if ([GAB respondsToSelector:@selector(notifyWithTitle:description:notificationName:iconData:priority:isSticky:clickContext:identifier:)]) {
-    [GAB notifyWithTitle:notification.title
-             description:notification.informativeText
+    [GAB notifyWithTitle:[notification title]
+             description:[notification informativeText]
         notificationName:@"Build Information"
                 iconData:[[NSImage imageNamed:@"travis_logo.png"] TIFFRepresentation]
                 priority:0
                 isSticky:NO
             clickContext:nil
-              identifier:notification.uniqueID.stringValue];
+              identifier:[[notification uniqueID] stringValue]];
   }
 }
 
