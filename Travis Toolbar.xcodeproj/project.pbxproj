@@ -21,6 +21,8 @@
 		2E75988B164DF68100B87810 /* Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E75988A164DF68100B87810 /* Notification.m */; };
 		2E90F156164E389F009CAA25 /* Travis Toolbar.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2E90F155164E389F009CAA25 /* Travis Toolbar.icns */; };
 		2E90F15A164E49BB009CAA25 /* NotificationDisplayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E90F159164E49BB009CAA25 /* NotificationDisplayer.m */; };
+		2EBA8CE9164FA582005C033E /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EDA04771565C67C0043A3A6 /* Preferences.m */; };
+		2EBA8CEA164FA582005C033E /* PreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EDA04741565C0A70043A3A6 /* PreferencesController.m */; };
 		2EDA045915644D5D0043A3A6 /* TravisEventFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EDA045815644D5D0043A3A6 /* TravisEventFetcher.m */; };
 		2EDA045D156450750043A3A6 /* TravisEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EDA045C156450750043A3A6 /* TravisEvent.m */; };
 		2EDA0460156464FF0043A3A6 /* tray-alt.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EDA045E156464FF0043A3A6 /* tray-alt.png */; };
@@ -480,6 +482,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E00CCD9164F9A9B00A30635 /* PreferencesControllerTests.m in Sources */,
+				2EBA8CE9164FA582005C033E /* Preferences.m in Sources */,
+				2EBA8CEA164FA582005C033E /* PreferencesController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -701,6 +705,7 @@
 				2E00CCD0164F974900A30635 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Travis Toolbar" */ = {
 			isa = XCConfigurationList;
