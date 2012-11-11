@@ -8,7 +8,12 @@
 
 #import <Cocoa/Cocoa.h>
 
+@class Preferences;
+
 @interface PreferencesController : NSObject <NSTableViewDataSource, NSWindowDelegate>
+
+@property (nonatomic, strong) Preferences *preferences;
+
 @property (assign) IBOutlet NSTableView *reposTableView;
 @property (assign) IBOutlet NSPanel *preferencesPanel;
 @property (weak) IBOutlet NSButtonCell *firehoseEnabledButtonCell;

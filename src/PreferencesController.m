@@ -12,6 +12,14 @@
 
 @implementation PreferencesController
 
+- (Preferences *)preferences {
+  if (_preferences == nil) {
+    _preferences = [Preferences sharedPreferences];
+  }
+
+  return _preferences;
+}
+
 - (void)alertDidEnd:(NSAlert *)alert returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo {
   NSTextField *textField = (NSTextField *)alert.accessoryView;
 
@@ -31,7 +39,7 @@
 - (IBAction)removeRepository:(id)sender {
   if (self.reposTableView.selectedRow != -1) {
     NSString *repository = [self tableView:self.reposTableView objectValueForTableColumn:nil row:self.reposTableView.selectedRow];
-    [Preferences.sharedPreferences removeRepository:repository];
+    [self.preferences removeRepository:repository];
     [self.reposTableView reloadData];
   }
 }
@@ -41,17 +49,17 @@
 }
 
 - (IBAction)enableFirehose:(id)sender {
-  Preferences.sharedPreferences.firehoseEnabled = YES;
+  self.preferences.firehoseEnabled = YES;
 }
 
 - (IBAction)disableFirehose:(id)sender {
-  Preferences.sharedPreferences.firehoseEnabled = NO;
+  self.preferences.firehoseEnabled = NO;
 }
 
 #pragma mark - NSWindowDelegate
 
 - (void)windowDidBecomeKey:(NSNotification *)notification {
-  if (Preferences.sharedPreferences.firehoseEnabled) {
+  if (self.preferences.firehoseEnabled) {
     self.firehoseEnabledButtonCell.objectValue = @(YES);
     self.firehoseDisabledButtonCell.objectValue = @(NO);
   } else {
@@ -63,11 +71,11 @@
 #pragma mark - NSTableViewDataSource
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
-  return [Preferences.sharedPreferences.repositories count];
+  return [self.preferences.repositories count];
 }
 
 - (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
-  return (Preferences.sharedPreferences.repositories)[row];
+  return (self.preferences.repositories)[row];
 }
 
 @end
