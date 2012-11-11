@@ -8,7 +8,7 @@
 
 #import "TravisHTTPClient.h"
 
-#define TRAVIS_BASE_URL @"http://travis-ci.org"
+NSString * const kTravisBaseURL = @"http://travis-ci.org";
 
 @implementation TravisHTTPClient
 
@@ -16,7 +16,7 @@
   static TravisHTTPClient *_sharedHTTPClient = nil;
   static dispatch_once_t onceToken;
   dispatch_once(&onceToken, ^{
-    _sharedHTTPClient = [[TravisHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:TRAVIS_BASE_URL]];
+    _sharedHTTPClient = [[TravisHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:kTravisBaseURL]];
   });
 
   return _sharedHTTPClient;

@@ -8,8 +8,8 @@
 
 #import "Preferences.h"
 
-#define REPOSITORIES_SETTING @"repositories"
-#define FIREHOSE_SETTING @"firehose"
+static NSString * const kRepositoriesSetting = @"repositories";
+static NSString * const kFirehoseSetting = @"firehose";
 
 @implementation Preferences
 
@@ -25,7 +25,7 @@
 
 - (NSArray *)repositories {
   NSUserDefaults *userDefault = NSUserDefaults.standardUserDefaults;
-  return [userDefault stringArrayForKey:REPOSITORIES_SETTING];
+  return [userDefault stringArrayForKey:kRepositoriesSetting];
 }
 
 - (void)addRepository:(NSString *)slug {
@@ -43,18 +43,18 @@
 
 - (void)updateRepositories:(NSArray *)repositories {
   NSUserDefaults *userDefaults = NSUserDefaults.standardUserDefaults;
-  [userDefaults setObject:repositories forKey:REPOSITORIES_SETTING];
+  [userDefaults setObject:repositories forKey:kRepositoriesSetting];
   [userDefaults synchronize];
 }
 
 - (BOOL)firehoseEnabled {
   NSUserDefaults *userDefaults = NSUserDefaults.standardUserDefaults;
-  return [userDefaults boolForKey:FIREHOSE_SETTING];
+  return [userDefaults boolForKey:kFirehoseSetting];
 }
 
 - (void)setFirehoseEnabled:(BOOL)firehoseEnabled {
   NSUserDefaults *userDefaults = NSUserDefaults.standardUserDefaults;
-  [userDefaults setBool:firehoseEnabled forKey:FIREHOSE_SETTING];
+  [userDefaults setBool:firehoseEnabled forKey:kFirehoseSetting];
   [userDefaults synchronize];
 }
 
