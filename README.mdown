@@ -1,28 +1,36 @@
 # Travis Watcher - Mac edition
 
-Right now this app is a simple connector to the Travis PusherApp stream, with notifications shown using Notification
-Center or Growl.
+<img alt="Travis Watcher screenshot showing notifications in Notification Center and an active notification" src="http://f.cl.ly/items/3q0e2q1m1J0g1d3s1Q26/Pasted%20Image%2011:12:12%202:59%20PM.png" width="400">
 
-But big plans are in the works, so stay tuned, or better yet, get involved!
+Travis Watcher is a toolbar app for Mac that notifies you about your Travis builds.
 
 ## Installation
 
-For now, download via GitHub downloads. More to come soon.
+To install the app, download it from the [downloads page][downloads] on GitHub. Make sure you download the latest
+version under "Downloads Packages", and not the "Download as zip" button.
 
-## TODO
+[downloads]: https://github.com/travis-ci/travis-watcher-macosx/downloads
 
-* Allow for login
-* Trigger a rebuild on a particular branch
-* Travis Pro support
+## Preferences
+
+![Preferences panel][preferences-panel]
+
+If you click the Travis Icon in your toolbar (![Travis Icon][travis-icon]), you can open the preferences panel. There
+you can enable the firehose, which will give you every single build notification on Travis. If this is too much for you,
+you can enable specific repositories or users. If you want to, say, enable all build notifications for the travis-ci
+organisation, you can add `travis-ci/*` to the list of repositories.
+
+[preferences-panel]: http://f.cl.ly/items/31453a3a3T0o341w0J3R/Preferences-2.png
+[travis-icon]: http://f.cl.ly/items/053a1H3o0a1O1n3r3c0Q/tray.png
 
 ## Note on Patches/Pull Requests
 
-* Fork the project.
-* Make your feature addition or bug fix.
-* Add tests for it. This is important so it doesn't get broken in a future version unintentionally.
-* Commit. Please do not edit the version number. If you want to update it, please do it in a separate commit so it's
-  easy to ignore when merging.
-* Send a pull request. Bonus points for topic branches.
+1. Fork the project.
+2. Make your feature addition or bug fix.
+3. Add tests for it. This is important so it doesn't get broken in a future version unintentionally.
+4. Commit. Please do not edit the version number. If you want to update it, please do it in a separate commit so it's
+   easy to ignore when merging.
+5. Send a pull request. Bonus points for topic branches.
 
 ## Copyright
 
