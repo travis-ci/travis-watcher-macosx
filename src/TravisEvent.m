@@ -37,9 +37,10 @@
 
 - (TravisEventStatus)status {
   NSNumber *result = [self eventData][@"build"][@"result"];
-  if (result && [result isEqualToNumber:@0]) {
+  BOOL resultIsANumber = [result isKindOfClass:[NSNumber class]];
+  if (resultIsANumber && [result isEqualToNumber:@0]) {
     return TravisEventStatusPassed;
-  } else if (result && [result isEqualToNumber:@1]) {
+  } else if (resultIsANumber && [result isEqualToNumber:@1]) {
     return TravisEventStatusFailed;
   } else {
     return TravisEventStatusUnknown;
