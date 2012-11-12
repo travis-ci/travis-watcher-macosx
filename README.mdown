@@ -2,7 +2,7 @@
 
 <img alt="Travis Watcher screenshot showing notifications in Notification Center and an active notification" src="http://f.cl.ly/items/3q0e2q1m1J0g1d3s1Q26/Pasted%20Image%2011:12:12%202:59%20PM.png" width="400">
 
-Travis Watcher is a toolbar app for Mac that notifies you about your Travis builds.
+Travis Watcher is a toolbar app for OSX that notifies you about your Travis builds.
 
 ## Installation
 
