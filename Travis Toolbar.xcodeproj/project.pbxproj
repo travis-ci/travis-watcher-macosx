@@ -18,6 +18,9 @@
 		2E00CCD5164F98EC00A30635 /* OCHamcrest.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2E00CCD2164F988400A30635 /* OCHamcrest.framework */; };
 		2E00CCD6164F98EE00A30635 /* OCMockito.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2E00CCB9164F972F00A30635 /* OCMockito.framework */; };
 		2E00CCD9164F9A9B00A30635 /* PreferencesControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E00CCD8164F9A9B00A30635 /* PreferencesControllerTests.m */; };
+		2E12F3941652046A000048F5 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E12F3931652046A000048F5 /* Sparkle.framework */; };
+		2E12F3951652048C000048F5 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2E12F3931652046A000048F5 /* Sparkle.framework */; };
+		2E12F39716520C2A000048F5 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 2E12F39616520C2A000048F5 /* dsa_pub.pem */; };
 		2E75988B164DF68100B87810 /* Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E75988A164DF68100B87810 /* Notification.m */; };
 		2E90F156164E389F009CAA25 /* Travis Toolbar.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2E90F155164E389F009CAA25 /* Travis Toolbar.icns */; };
 		2E90F15A164E49BB009CAA25 /* NotificationDisplayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E90F159164E49BB009CAA25 /* NotificationDisplayer.m */; };
@@ -55,6 +58,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				2EE31A721564254C004F33FE /* Pusher.framework in CopyFiles */,
+				2E12F3951652048C000048F5 /* Sparkle.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,6 +118,8 @@
 		2E00CCCD164F974900A30635 /* TravisToolbarTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TravisToolbarTests-Prefix.pch"; sourceTree = "<group>"; };
 		2E00CCD2164F988400A30635 /* OCHamcrest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OCHamcrest.framework; sourceTree = "<group>"; };
 		2E00CCD8164F9A9B00A30635 /* PreferencesControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesControllerTests.m; sourceTree = "<group>"; };
+		2E12F3931652046A000048F5 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = vendor/Sparkle.framework; sourceTree = "<group>"; };
+		2E12F39616520C2A000048F5 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		2E759889164DF68100B87810 /* Notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Notification.h; sourceTree = "<group>"; };
 		2E75988A164DF68100B87810 /* Notification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Notification.m; sourceTree = "<group>"; };
 		2E90F155164E389F009CAA25 /* Travis Toolbar.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "Travis Toolbar.icns"; sourceTree = "<group>"; };
@@ -171,6 +177,7 @@
 				DD06BD7413170793007673AA /* CoreLocation.framework in Frameworks */,
 				2EE31A7115642547004F33FE /* Pusher.framework in Frameworks */,
 				FFDDA56CF7DA42118A14B692 /* libPods.a in Frameworks */,
+				2E12F3941652046A000048F5 /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,6 +187,7 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2E12F3931652046A000048F5 /* Sparkle.framework */,
 				9DAF569015932D77002018B5 /* SystemConfiguration.framework */,
 				2EE31A7015642547004F33FE /* Pusher.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
@@ -227,6 +235,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2E12F39616520C2A000048F5 /* dsa_pub.pem */,
 				DD06BDAA13170FF6007673AA /* Growl Registration Ticket.growlRegDict */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
@@ -450,6 +459,7 @@
 				2EDA0460156464FF0043A3A6 /* tray-alt.png in Resources */,
 				2EDA0461156464FF0043A3A6 /* tray.png in Resources */,
 				2E90F156164E389F009CAA25 /* Travis Toolbar.icns in Resources */,
+				2E12F39716520C2A000048F5 /* dsa_pub.pem in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
