@@ -12,6 +12,8 @@
 
 + (Preferences *)sharedPreferences;
 
+- (void)setupDefaults;
+
 - (NSArray *)repositories;
 - (void)addRepository:(NSString *)slug;
 - (void)removeRepository:(NSString *)slug;

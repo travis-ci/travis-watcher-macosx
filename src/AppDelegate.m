@@ -26,6 +26,8 @@
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)notification {
+  [[Preferences sharedPreferences] setupDefaults];
+
   [self setupGrowl];
   [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:self];
 

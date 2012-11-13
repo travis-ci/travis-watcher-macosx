@@ -23,6 +23,14 @@ static NSString * const kFirehoseSetting = @"firehose";
   return _sharedPreferences;
 }
 
+- (void)setupDefaults {
+  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+  [defaults registerDefaults:@{
+    kRepositoriesSetting: @[],
+    kFirehoseSetting: @(NO),
+  }];
+}
+
 - (NSArray *)repositories {
   NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
   return [userDefault stringArrayForKey:kRepositoriesSetting];
