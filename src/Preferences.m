@@ -10,6 +10,7 @@
 
 static NSString * const kRepositoriesSetting = @"repositories";
 static NSString * const kFirehoseSetting = @"firehose";
+static NSString * const kFailuresOnlyNotificationsEnabled = @"failuresOnly";
 
 @implementation Preferences
 
@@ -63,6 +64,17 @@ static NSString * const kFirehoseSetting = @"firehose";
 - (void)setFirehoseEnabled:(BOOL)firehoseEnabled {
   NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
   [userDefaults setBool:firehoseEnabled forKey:kFirehoseSetting];
+  [userDefaults synchronize];
+}
+
+- (BOOL)failureOnlyNotificationEnabled {
+  NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+  return [userDefaults boolForKey:kFailuresOnlyNotificationsEnabled];
+}
+
+- (void)setFailureOnlyNotificationEnabled:(BOOL)failureOnlyNotificationEnabled {
+  NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+  [userDefaults setBool:failureOnlyNotificationEnabled forKey:kFailuresOnlyNotificationsEnabled];
   [userDefaults synchronize];
 }
 

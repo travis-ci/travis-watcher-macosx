@@ -21,4 +21,7 @@
 - (BOOL)firehoseEnabled;
 - (void)setFirehoseEnabled:(BOOL)firehoseEnabled;
 
+- (BOOL)failureOnlyNotificationEnabled;
+- (void)setFailureOnlyNotificationEnabled:(BOOL)failuresOnlyNotificationsEnabled;
+
 @end

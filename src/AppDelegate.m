@@ -67,6 +67,12 @@
 }
 
 - (BOOL)shouldShowNotificationFor:(TravisEvent *)eventData {
+  if ([[Preferences sharedPreferences] failureOnlyNotificationEnabled]) {
+    if (eventData.status != TravisEventStatusFailed) {
+      return FALSE;
+    }
+  }
+
   RepositoryFilter *filter;
   if ([[Preferences sharedPreferences] firehoseEnabled]) {
     filter = [RepositoryFilter filterThatAcceptsAllRepositories];
@@ -94,9 +100,14 @@
 #pragma mark - NSUserNotificationCenterDelegate
 
 - (void)userNotificationCenter:(NSUserNotificationCenter *)center didActivateNotification:(NSUserNotification *)notification {
-  if ([notification activationType] == NSUserNotificationActivationTypeContentsClicked) {
+  if ([notification activationType] == NSUserNotificationActivationTypeContentsClicked || [notification activationType] == NSUserNotificationActivationTypeActionButtonClicked) {
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:[notification userInfo][@"URL"]]];
   }
+}
+
+- (BOOL)userNotificationCenter:(NSUserNotificationCenter *)center shouldPresentNotification:(NSUserNotification *)notification {
+  // Show notifications when the Preferences panel is visible.
+  return TRUE;
 }
 
 @end

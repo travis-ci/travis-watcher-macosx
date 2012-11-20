@@ -41,4 +41,14 @@
   [verify(_preferences) setFirehoseEnabled:NO];
 }
 
+- (void)testEnableFailureOnlyNotificationSetting {
+  [_preferencesController enableFailureOnlyNotification:nil];
+  [verify(_preferences) setFailureOnlyNotificationEnabled:YES];
+}
+
+- (void)testDisableFailureOnlyNotificationSetting {
+  [_preferencesController disableFailureOnlyNotification:nil];
+  [verify(_preferences) setFailureOnlyNotificationEnabled:NO];
+}
+
 @end
