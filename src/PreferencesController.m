@@ -56,6 +56,14 @@
   [[self preferences] setFirehoseEnabled:NO];
 }
 
+- (IBAction)enableFailureOnlyNotification:(id)sender {
+  [[self preferences] setFailureOnlyNotificationEnabled:YES];
+}
+
+- (IBAction)disableFailureOnlyNotification:(id)sender {
+  [[self preferences] setFailureOnlyNotificationEnabled:NO];
+}
+
 #pragma mark - NSWindowDelegate
 
 - (void)windowDidBecomeKey:(NSNotification *)notification {
@@ -65,6 +73,13 @@
   } else {
     [[self firehoseEnabledButtonCell] setObjectValue:@(NO)];
     [[self firehoseDisabledButtonCell] setObjectValue:@(YES)];
+  }
+  if ([[self preferences] failureOnlyNotificationEnabled]) {
+    [[self failureOnlyNotificationEnabledButtonCell] setObjectValue:@(YES)];
+    [[self failureOnlyNotificationDisabledButtonCell] setObjectValue:@(NO)];
+  } else {
+    [[self failureOnlyNotificationEnabledButtonCell] setObjectValue:@(NO)];
+    [[self failureOnlyNotificationDisabledButtonCell] setObjectValue:@(YES)];
   }
 }
 
