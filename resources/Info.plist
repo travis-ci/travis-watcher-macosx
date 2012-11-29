@@ -11,7 +11,7 @@
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFile</key>
-	<string>Travis Toolbar.icns</string>
+	<string>Travis CI.icns</string>
 	<key>CFBundleIdentifier</key>
 	<string>org.travis-ci.toolbar</string>
 	<key>CFBundleInfoDictionaryVersion</key>

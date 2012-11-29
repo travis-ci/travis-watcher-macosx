@@ -1,6 +1,6 @@
 //
 //  AppDelegate.m
-//  Travis Toolbar
+//  Travis CI
 //
 //  Created by Henrik Hodne on 5/16/12.
 //  Copyright (c) 2012 Travis CI GmbH. All rights reserved.
@@ -57,7 +57,7 @@
   [[self statusItem] setAlternateImage:[[NSImage alloc] initByReferencingFile:[[NSBundle mainBundle] pathForImageResource:@"tray-alt.png"]]];
 
   [[self statusItem] setMenu:[self statusMenu]];
-  [[self statusItem] setToolTip:@"Travis Toolbar"];
+  [[self statusItem] setToolTip:@"Travis CI"];
   [[self statusItem] setHighlightMode:YES];
 }
 

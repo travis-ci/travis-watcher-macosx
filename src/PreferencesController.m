@@ -1,6 +1,6 @@
 //
 //  PreferencesController.m
-//  Travis Toolbar
+//  Travis CI
 //
 //  Created by Henrik Hodne on 5/18/12.
 //  Copyright (c) 2012 Travis CI GmbH. All rights reserved.
