@@ -22,7 +22,7 @@
 		2E12F3951652048C000048F5 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2E12F3931652046A000048F5 /* Sparkle.framework */; };
 		2E12F39716520C2A000048F5 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 2E12F39616520C2A000048F5 /* dsa_pub.pem */; };
 		2E75988B164DF68100B87810 /* Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E75988A164DF68100B87810 /* Notification.m */; };
-		2E90F156164E389F009CAA25 /* Travis Toolbar.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2E90F155164E389F009CAA25 /* Travis Toolbar.icns */; };
+		2E90F156164E389F009CAA25 /* Travis CI.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2E90F155164E389F009CAA25 /* Travis CI.icns */; };
 		2E90F15A164E49BB009CAA25 /* NotificationDisplayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E90F159164E49BB009CAA25 /* NotificationDisplayer.m */; };
 		2EBA8CE9164FA582005C033E /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EDA04771565C67C0043A3A6 /* Preferences.m */; };
 		2EBA8CEA164FA582005C033E /* PreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EDA04741565C0A70043A3A6 /* PreferencesController.m */; };
@@ -122,7 +122,7 @@
 		2E12F39616520C2A000048F5 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		2E759889164DF68100B87810 /* Notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Notification.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		2E75988A164DF68100B87810 /* Notification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = Notification.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		2E90F155164E389F009CAA25 /* Travis Toolbar.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "Travis Toolbar.icns"; sourceTree = "<group>"; };
+		2E90F155164E389F009CAA25 /* Travis CI.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "Travis CI.icns"; sourceTree = "<group>"; };
 		2E90F158164E49BB009CAA25 /* NotificationDisplayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = NotificationDisplayer.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		2E90F159164E49BB009CAA25 /* NotificationDisplayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = NotificationDisplayer.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		2E90F15B164E64F7009CAA25 /* TravisEventFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = TravisEventFetcher.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -145,10 +145,10 @@
 		2EE31A6A156422CF004F33FE /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = AppDelegate.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		2EE31A7015642547004F33FE /* Pusher.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Pusher.framework; path = vendor/Pusher.framework; sourceTree = "<group>"; };
 		2EE31A731564259B004F33FE /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
-		2EE31A7E15644ABD004F33FE /* Travis Toolbar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Travis Toolbar.entitlements"; sourceTree = "<group>"; };
+		2EE31A7E15644ABD004F33FE /* Travis CI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Travis CI.entitlements"; sourceTree = "<group>"; };
 		884722F96BEB4A039C4EBD96 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8D1107320486CEB800E47090 /* Travis Toolbar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Travis Toolbar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D1107320486CEB800E47090 /* Travis CI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Travis CI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DAF568D15932852002018B5 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		9DAF568E15932852002018B5 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		9DAF569015932D77002018B5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
@@ -209,13 +209,13 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8D1107320486CEB800E47090 /* Travis Toolbar.app */,
+				8D1107320486CEB800E47090 /* Travis CI.app */,
 				2E00CCBF164F974800A30635 /* TravisToolbarTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		29B97314FDCFA39411CA2CEA /* Travis Toolbar */ = {
+		29B97314FDCFA39411CA2CEA /* Travis CI */ = {
 			isa = PBXGroup;
 			children = (
 				2EE31A611564226E004F33FE /* Travis CI */,
@@ -227,7 +227,7 @@
 				884722F96BEB4A039C4EBD96 /* Pods.xcconfig */,
 			);
 			indentWidth = 2;
-			name = "Travis Toolbar";
+			name = "Travis CI";
 			sourceTree = "<group>";
 			tabWidth = 2;
 			usesTabs = 0;
@@ -240,8 +240,8 @@
 				8D1107310486CEB800E47090 /* Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				2BFA9DA510CDF852007972A1 /* MainMenu.xib */,
-				2EE31A7E15644ABD004F33FE /* Travis Toolbar.entitlements */,
-				2E90F155164E389F009CAA25 /* Travis Toolbar.icns */,
+				2EE31A7E15644ABD004F33FE /* Travis CI.entitlements */,
+				2E90F155164E389F009CAA25 /* Travis CI.icns */,
 				2EDA045E156464FF0043A3A6 /* tray-alt.png */,
 				2EDA045F156464FF0043A3A6 /* tray.png */,
 			);
@@ -406,8 +406,8 @@
 			);
 			name = "Travis CI";
 			productInstallPath = "$(HOME)/Applications";
-			productName = "Travis Toolbar";
-			productReference = 8D1107320486CEB800E47090 /* Travis Toolbar.app */;
+			productName = "Travis CI";
+			productReference = 8D1107320486CEB800E47090 /* Travis CI.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -430,7 +430,7 @@
 				German,
 				en,
 			);
-			mainGroup = 29B97314FDCFA39411CA2CEA /* Travis Toolbar */;
+			mainGroup = 29B97314FDCFA39411CA2CEA /* Travis CI */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -458,7 +458,7 @@
 				2BFA9DA710CDF852007972A1 /* MainMenu.xib in Resources */,
 				2EDA0460156464FF0043A3A6 /* tray-alt.png in Resources */,
 				2EDA0461156464FF0043A3A6 /* tray.png in Resources */,
-				2E90F156164E389F009CAA25 /* Travis Toolbar.icns in Resources */,
+				2E90F156164E389F009CAA25 /* Travis CI.icns in Resources */,
 				2E12F39716520C2A000048F5 /* dsa_pub.pem in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -641,7 +641,7 @@
 			baseConfigurationReference = 884722F96BEB4A039C4EBD96 /* Pods.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_ENTITLEMENTS = "resources/Travis Toolbar.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "resources/Travis CI.entitlements";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
@@ -660,7 +660,7 @@
 				INFOPLIST_FILE = resources/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				PRODUCT_NAME = "Travis Toolbar";
+				PRODUCT_NAME = "Travis CI";
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = YES;
@@ -672,7 +672,7 @@
 			baseConfigurationReference = 884722F96BEB4A039C4EBD96 /* Pods.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_ENTITLEMENTS = "resources/Travis Toolbar.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "resources/Travis CI.entitlements";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -689,7 +689,7 @@
 				INFOPLIST_FILE = resources/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				PRODUCT_NAME = "Travis Toolbar";
+				PRODUCT_NAME = "Travis CI";
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 			};
