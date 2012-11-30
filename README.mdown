@@ -23,6 +23,13 @@ organisation, you can add `travis-ci/*` to the list of repositories.
 [preferences-panel]: http://f.cl.ly/items/31453a3a3T0o341w0J3R/Preferences-2.png
 [travis-icon]: http://f.cl.ly/items/053a1H3o0a1O1n3r3c0Q/tray.png
 
+## Development Setup
+
+The Travis CI Mac app uses [CocoaPods][] to manage dependencies. After installing CocoaPods you need to run `pod
+install` to download the dependencies.
+
+[CocoaPods]: http://cocoapods.org
+
 ## Note on Patches/Pull Requests
 
 1. Fork the project.
