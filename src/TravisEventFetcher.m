@@ -17,16 +17,22 @@
 #import "Reachability.h"
 #import "Notification.h"
 #import "NotificationDisplayer.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
 
 @interface TravisEventFetcher () <PTPusherDelegate>
 
 @property (strong) PTPusher *pusher;
 @property (strong) PTPusherChannel *channel;
 @property (strong) Reachability *reachability;
+@property (strong) RACReplaySubject *eventSubject;
 
 @end
 
 @implementation TravisEventFetcher
+
++ (TravisEventFetcher *)eventFetcher {
+  return [self new];
+}
 
 - (id)init {
   self = [super init];
@@ -35,10 +41,20 @@
     _channel = [_pusher subscribeToChannelNamed:kPusherChannelName];
     [_channel bindToEventNamed:kPusherEventBuildStarted target:self action:@selector(handleEvent:)];
     [_channel bindToEventNamed:kPusherEventBuildFinished target:self action:@selector(handleEvent:)];
+    _eventSubject = [RACReplaySubject subject];
   }
   
   return self;
 }
+
+- (RACSignal *)eventStream {
+  return [[self eventSubject]
+          map:^(PTPusherEvent *event) {
+            return [[TravisEvent alloc] initWithEventData:[event data]];
+          }];
+}
+
+#pragma mark - PTPusherDelegate
 
 - (void)pusher:(PTPusher *)client connectionDidConnect:(PTPusherConnection *)connection {
   [client setReconnectAutomatically:YES];
@@ -80,9 +96,7 @@
 }
 
 - (void)handleEvent:(PTPusherEvent *)event {
-  if ([[self delegate] respondsToSelector:@selector(eventFetcher:gotEvent:)]) {
-    [[self delegate] eventFetcher:self gotEvent:[[TravisEvent alloc] initWithEventData:[event data]]];
-  }
+  [[self eventSubject] sendNext:event];
 }
 
 @end

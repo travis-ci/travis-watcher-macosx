@@ -7,31 +7,66 @@
 //
 
 #import "TravisHTTPClient.h"
+#import <AFNetworking/AFNetworking.h>
+#import <ReactiveCocoa/ReactiveCocoa.h>
 
 NSString * const kTravisBaseURL = @"http://travis-ci.org";
 
+@interface TravisHTTPClient ()
+@property (nonatomic, strong) AFHTTPClient *HTTPClient;
+@end
+
 @implementation TravisHTTPClient
 
-+ (TravisHTTPClient *)sharedHTTPClient {
-  static TravisHTTPClient *_sharedHTTPClient = nil;
-  static dispatch_once_t onceToken;
-  dispatch_once(&onceToken, ^{
-    _sharedHTTPClient = [[TravisHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:kTravisBaseURL]];
-  });
-
-  return _sharedHTTPClient;
++ (TravisHTTPClient *)standardHTTPClient {
+  return [[self alloc] initWithBaseURL:[NSURL URLWithString:kTravisBaseURL]];
 }
 
-- (id)initWithBaseURL:(NSURL *)url {
-  self = [super initWithBaseURL:url];
-  if (!self) {
-    return nil;
-  }
+- (id)initWithBaseURL:(NSURL *)baseURL {
+  self = [super init];
+  if (self == nil) return nil;
 
-  [self registerHTTPOperationClass:[AFJSONRequestOperation class]];
-  [self setDefaultHeader:@"Accept" value:@"application/json"];
+  [self setupHTTPClientWithBaseURL:baseURL];
 
   return self;
+}
+
+- (void)setupHTTPClientWithBaseURL:(NSURL *)baseURL {
+  [self setHTTPClient:[[AFHTTPClient alloc] initWithBaseURL:baseURL]];
+  [[self HTTPClient] registerHTTPOperationClass:[AFJSONRequestOperation class]];
+  [[self HTTPClient] setDefaultHeader:@"Accept" value:@"application/json"];
+}
+
+- (RACSignal *)requestWithMethod:(TravisHTTPClientMethod)method path:(NSString *)path parameters:(NSDictionary *)parameters {
+  RACReplaySubject *subject = [RACReplaySubject subject];
+  NSURLRequest *request = [[self HTTPClient] requestWithMethod:[self methodStringForMethod:method] path:path parameters:parameters];
+  AFHTTPRequestOperation *operation = [[self HTTPClient] HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [subject sendNext:responseObject];
+    [subject sendCompleted];
+  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    [subject sendError:error];
+  }];
+
+  [[self HTTPClient] enqueueHTTPRequestOperation:operation];
+
+  return subject;
+}
+
+- (NSString *)methodStringForMethod:(TravisHTTPClientMethod)method {
+  switch (method) {
+    case TravisHTTPClientMethodDELETE:
+      return @"DELETE";
+    case TravisHTTPClientMethodGET:
+      return @"GET";
+    case TravisHTTPClientMethodHEAD:
+      return @"HEAD";
+    case TravisHTTPClientMethodPATCH:
+      return @"PATCH";
+    case TravisHTTPClientMethodPOST:
+      return @"POST";
+    case TravisHTTPClientMethodPUT:
+      return @"PUT";
+  }
 }
 
 @end

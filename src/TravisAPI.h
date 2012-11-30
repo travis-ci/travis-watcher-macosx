@@ -8,11 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
-typedef void (^BuildResponse)(NSDictionary *build);
-typedef void (^FailureResponse)(NSError *error);
+@class TravisHTTPClient;
+@class RACSignal;
 
 @interface TravisAPI : NSObject
 
-- (void)getBuildWithID:(NSNumber *)buildID forRepository:(NSString *)slug success:(BuildResponse)success failure:(FailureResponse)failure;
++ (TravisAPI *)standardAPI;
+
+- (id)initWithHTTPClient:(TravisHTTPClient *)HTTPClient;
+
+- (RACSignal *)fetchBuildWithID:(NSNumber *)buildID forRepository:(NSString *)slug;
 
 @end

@@ -9,16 +9,28 @@
 #import "TravisAPI.h"
 #import "TravisHTTPClient.h"
 
+@interface TravisAPI ()
+@property (nonatomic, strong) TravisHTTPClient *HTTPClient;
+@end
+
 @implementation TravisAPI
 
-- (void)getBuildWithID:(NSNumber *)buildID forRepository:(NSString *)slug success:(BuildResponse)success failure:(FailureResponse)failure {
-  NSString *path = [NSString stringWithFormat:@"/%@/builds/%@.json", slug, buildID];
++ (TravisAPI *)standardAPI {
+  return [[self alloc] initWithHTTPClient:[TravisHTTPClient standardHTTPClient]];
+}
 
-  [[TravisHTTPClient sharedHTTPClient] getPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, NSDictionary *build) {
-    if (success) success(build);
-  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-    if (failure) failure(error);
-  }];
+- (id)initWithHTTPClient:(TravisHTTPClient *)HTTPClient {
+  self = [super init];
+  if (self == nil) return nil;
+
+  _HTTPClient = HTTPClient;
+
+  return self;
+}
+
+- (RACSignal *)fetchBuildWithID:(NSNumber *)buildID forRepository:(NSString *)slug {
+  NSString *path = [NSString stringWithFormat:@"/%@/builds/%@.json", slug, buildID];
+  return [[self HTTPClient] requestWithMethod:TravisHTTPClientMethodGET path:path parameters:nil];
 }
 
 @end

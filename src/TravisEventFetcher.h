@@ -7,19 +7,10 @@
 //
 
 #import <Cocoa/Cocoa.h>
-
-@protocol TravisEventFetcherDelegate;
-@class TravisEvent;
+@class RACSignal;
 
 @interface TravisEventFetcher : NSObject
+@property (readonly, strong) RACSignal *eventStream;
 
-@property (weak) id<TravisEventFetcherDelegate> delegate;
-
-@end
-
-@protocol TravisEventFetcherDelegate <NSObject>
-
-@optional
-- (void)eventFetcher:(TravisEventFetcher *)eventFetcher gotEvent:(TravisEvent *)event;
-
++ (TravisEventFetcher *)eventFetcher;
 @end

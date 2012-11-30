@@ -6,10 +6,25 @@
 //  Copyright (c) 2012 Travis CI GmbH. All rights reserved.
 //
 
-#import <AFNetworking/AFNetworking.h>
+#import <Foundation/Foundation.h>
 
-@interface TravisHTTPClient : AFHTTPClient
+@class RACSignal;
 
-+ (TravisHTTPClient *)sharedHTTPClient;
+typedef NS_ENUM(NSInteger, TravisHTTPClientMethod) {
+  TravisHTTPClientMethodGET,
+  TravisHTTPClientMethodHEAD,
+  TravisHTTPClientMethodPOST,
+  TravisHTTPClientMethodPUT,
+  TravisHTTPClientMethodDELETE,
+  TravisHTTPClientMethodPATCH
+};
+
+@interface TravisHTTPClient : NSObject
+
++ (TravisHTTPClient *)standardHTTPClient;
+
+- (id)initWithBaseURL:(NSURL *)baseURL;
+
+- (RACSignal *)requestWithMethod:(TravisHTTPClientMethod)method path:(NSString *)path parameters:(NSDictionary *)parameters;
 
 @end

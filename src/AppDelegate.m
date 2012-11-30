@@ -15,8 +15,9 @@
 #import "NotificationDisplayer.h"
 #import "TravisAPI.h"
 #import "RepositoryFilter.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
 
-@interface AppDelegate () <TravisEventFetcherDelegate, NSUserNotificationCenterDelegate>
+@interface AppDelegate () <NSUserNotificationCenterDelegate>
 
 @property (strong) TravisEventFetcher *eventFetcher;
 @property (strong) NSStatusItem *statusItem;
@@ -31,8 +32,18 @@
   [self setupGrowl];
   [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:self];
 
-  [self setEventFetcher:[[TravisEventFetcher alloc] init]];
-  [[self eventFetcher] setDelegate:self];
+  [self setEventFetcher:[TravisEventFetcher eventFetcher]];
+  [[[[self eventFetcher] eventStream] filter:^(TravisEvent *event) {
+    return [self shouldShowNotificationFor:event];
+  }] subscribeNext:^(TravisEvent *event) {
+    [[[TravisAPI standardAPI] fetchBuildWithID:[event buildID] forRepository:[event name]] subscribeNext:^(NSDictionary *build) {
+      [event updateBuildInfo:build];
+      Notification *notification = [Notification notificationWithEventData:event];
+      [[NotificationDisplayer sharedNotificationDisplayer] deliverNotification:notification];
+    } error:^(NSError *error) {
+      NSLog(@"Couldn't get build info from JSON API. Error: %@.", error);
+    }];
+  }];
 
   [self setupStatusBarItem];
 }
@@ -75,20 +86,6 @@
   }
 
   return [filter acceptsRepository:[eventData name]];
-}
-
-#pragma mark - TravisEventFetcherDelegate
-
-- (void)eventFetcher:(TravisEventFetcher *)eventFetcher gotEvent:(TravisEvent *)event {
-  if ([self shouldShowNotificationFor:event]) {
-    [[TravisAPI new] getBuildWithID:[event buildID] forRepository:[event name] success:^(NSDictionary *build) {
-      [event updateBuildInfo:build];
-      Notification *notification = [Notification notificationWithEventData:event];
-      [[NotificationDisplayer sharedNotificationDisplayer] deliverNotification:notification];
-    } failure:^(NSError *error) {
-      NSLog(@"Couldn't get build info from JSON API. Error: %@.", error);
-    }];
-  }
 }
 
 #pragma mark - NSUserNotificationCenterDelegate
