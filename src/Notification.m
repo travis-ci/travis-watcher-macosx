@@ -8,6 +8,7 @@
 
 #import "Notification.h"
 
+#import <ReactiveCocoa/ReactiveCocoa.h>
 #import "TravisEvent.h"
 
 @interface Notification ()
@@ -40,28 +41,23 @@
   
   _eventData = eventData;
 
+  [self setupBindings];
+
   return self;
 }
 
-- (NSNumber *)uniqueID {
-  return [[self eventData] buildID];
-}
-
-- (NSString *)title {
-  return [[self eventData] name];
-}
-
-- (NSString *)subtitle {
-  return [NSString stringWithFormat:@"Build #%@", [[self eventData] buildNumber]];
+- (void)setupBindings {
+  RAC(self.uniqueID) = RACAbleWithStart(self.eventData.buildID);
+  RAC(self.title) = RACAbleWithStart(self.eventData.name);
+  RAC(self.subtitle) = [RACAbleWithStart(self.eventData.buildNumber) map:^(NSNumber *buildNumber) {
+    return [NSString stringWithFormat:@"Build #%@", buildNumber];
+  }];
+  RAC(self.URL) = RACAbleWithStart(self.eventData.url);
 }
 
 - (NSString *)informativeText {
   NSAssert(NO, @"Method informativeText not implemented on %@", self);
   return nil;
-}
-
-- (NSString *)URL {
-  return [[self eventData] url];
 }
 
 @end
