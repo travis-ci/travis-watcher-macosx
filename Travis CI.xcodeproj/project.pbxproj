@@ -22,6 +22,7 @@
 		2E12F3951652048C000048F5 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2E12F3931652046A000048F5 /* Sparkle.framework */; };
 		2E12F39716520C2A000048F5 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 2E12F39616520C2A000048F5 /* dsa_pub.pem */; };
 		2E72AF3B1669DA6000F2631C /* BuildEventStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E72AF3A1669DA6000F2631C /* BuildEventStream.m */; };
+		2E72AF42166A7FEA00F2631C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ECFA87545264EC28B9D5614 /* libPods.a */; };
 		2E75988B164DF68100B87810 /* Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E75988A164DF68100B87810 /* Notification.m */; };
 		2E90F156164E389F009CAA25 /* Travis CI.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2E90F155164E389F009CAA25 /* Travis CI.icns */; };
 		2E90F15A164E49BB009CAA25 /* NotificationDisplayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E90F159164E49BB009CAA25 /* NotificationDisplayer.m */; };
@@ -160,6 +161,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E72AF42166A7FEA00F2631C /* libPods.a in Frameworks */,
 				2E00CCD3164F988400A30635 /* OCHamcrest.framework in Frameworks */,
 				2E00CCD1164F97A200A30635 /* OCMockito.framework in Frameworks */,
 				2E00CCC1164F974800A30635 /* SenTestingKit.framework in Frameworks */,
@@ -557,6 +559,7 @@
 /* Begin XCBuildConfiguration section */
 		2E00CCCF164F974900A30635 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 884722F96BEB4A039C4EBD96 /* Pods.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
@@ -600,6 +603,7 @@
 		};
 		2E00CCD0164F974900A30635 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 884722F96BEB4A039C4EBD96 /* Pods.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
