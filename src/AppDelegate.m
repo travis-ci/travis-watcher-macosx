@@ -14,7 +14,7 @@
 #import "Notification.h"
 #import "NotificationDisplayer.h"
 #import "TravisAPI.h"
-#import "RepositoryFilter.h"
+#import "FilterPreferences.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import "BuildEventStream.h"
 
@@ -78,14 +78,14 @@
 }
 
 - (BOOL)shouldShowNotificationFor:(TravisEvent *)eventData {
-  RepositoryFilter *filter;
+  FilterPreferences *filter;
   if ([[Preferences sharedPreferences] firehoseEnabled]) {
-    filter = [RepositoryFilter filterThatAcceptsAllRepositories];
+    filter = [FilterPreferences filterThatAcceptsAllRepositories];
   } else {
-    filter = [RepositoryFilter filtersWithMatches:[[Preferences sharedPreferences] repositories]];
+    filter = [FilterPreferences filtersWithMatches:[[Preferences sharedPreferences] repositories]];
   }
 
-  return [filter acceptsRepository:[eventData name]];
+  return [filter matchesSlug:[eventData name]];
 }
 
 #pragma mark - NSUserNotificationCenterDelegate

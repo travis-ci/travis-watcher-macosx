@@ -6,12 +6,12 @@
 //  Copyright (c) 2012 Travis CI GmbH. All rights reserved.
 //
 
-#import "RepositoryFilter.h"
+#import "FilterPreferences.h"
 
-@interface AcceptAllRepositoryFilter : RepositoryFilter
+@interface AcceptAllRepositoryFilter : FilterPreferences
 @end
 
-@interface MatchRepositoryFilter : RepositoryFilter
+@interface MatchRepositoryFilter : FilterPreferences
 
 @property (strong, readonly) NSString *matcher;
 
@@ -19,33 +19,33 @@
 
 @end
 
-@interface MultipleRepositoryFilter : RepositoryFilter
+@interface MultipleRepositoryFilter : FilterPreferences
 
-- (void)addFilter:(RepositoryFilter *)filter;
+- (void)addFilter:(FilterPreferences *)filter;
 
 @end
 
-@implementation RepositoryFilter
+@implementation FilterPreferences
 
-+ (RepositoryFilter *)filterThatAcceptsAllRepositories {
++ (FilterPreferences *)filterThatAcceptsAllRepositories {
   return [AcceptAllRepositoryFilter new];
 }
 
-+ (RepositoryFilter *)filterThatMatches:(NSString *)matcher {
++ (FilterPreferences *)filterThatMatches:(NSString *)matcher {
   return [[MatchRepositoryFilter alloc] initWithMatcher:matcher];
 }
 
-+ (RepositoryFilter *)filtersWithMatches:(NSArray *)matches {
++ (FilterPreferences *)filtersWithMatches:(NSArray *)matches {
   MultipleRepositoryFilter *repositoryFilter = [MultipleRepositoryFilter new];
 
   for (NSString *matcher in matches) {
-    [repositoryFilter addFilter:[RepositoryFilter filterThatMatches:matcher]];
+    [repositoryFilter addFilter:[FilterPreferences filterThatMatches:matcher]];
   }
 
   return repositoryFilter;
 }
 
-- (BOOL)acceptsRepository:(NSString *)repository {
+- (BOOL)matchesSlug:(NSString *)repository {
   NSAssert(NO, @"Method acceptsRepository: not implemented on %@.", self);
   return NO;
 }
@@ -54,7 +54,7 @@
 
 @implementation AcceptAllRepositoryFilter
 
-- (BOOL)acceptsRepository:(NSString *)repository {
+- (BOOL)matchesSlug:(NSString *)repository {
   return YES;
 }
 
@@ -73,7 +73,7 @@
   return self;
 }
 
-- (BOOL)acceptsRepository:(NSString *)repository {
+- (BOOL)matchesSlug:(NSString *)repository {
   return [self userPartMatches:repository] && [self repositoryNamePartMatches:repository];
 }
 
@@ -116,13 +116,13 @@
   return self;
 }
 
-- (void)addFilter:(RepositoryFilter *)filter {
+- (void)addFilter:(FilterPreferences *)filter {
   [_filters addObject:filter];
 }
 
-- (BOOL)acceptsRepository:(NSString *)repository {
-  for (RepositoryFilter *filter in _filters) {
-    if ([filter acceptsRepository:repository]) return YES;
+- (BOOL)matchesSlug:(NSString *)repository {
+  for (FilterPreferences *filter in _filters) {
+    if ([filter matchesSlug:repository]) return YES;
   }
 
   return NO;
