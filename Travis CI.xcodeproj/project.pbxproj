@@ -313,6 +313,42 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		2E72AF49166AB19400F2631C /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				2E72AF4A166AB1B100F2631C /* Pipeline */,
+				2EDA045B156450750043A3A6 /* BuildEvent.h */,
+				2EDA045C156450750043A3A6 /* BuildEvent.m */,
+				2EBA8CF8164FAD91005C033E /* FilterPreferences.h */,
+				2EBA8CF9164FAD91005C033E /* FilterPreferences.m */,
+				2E759889164DF68100B87810 /* Notification.h */,
+				2E75988A164DF68100B87810 /* Notification.m */,
+				2E90F158164E49BB009CAA25 /* NotificationDisplayer.h */,
+				2E90F159164E49BB009CAA25 /* NotificationDisplayer.m */,
+			);
+			name = Notifications;
+			sourceTree = "<group>";
+		};
+		2E72AF4A166AB1B100F2631C /* Pipeline */ = {
+			isa = PBXGroup;
+			children = (
+				2E72AF391669DA5F00F2631C /* BuildEventStream.h */,
+				2E72AF3A1669DA6000F2631C /* BuildEventStream.m */,
+				2E72AF3C166A7BE000F2631C /* EventFilter.h */,
+				2E72AF3D166A7BE000F2631C /* EventFilter.m */,
+			);
+			name = Pipeline;
+			sourceTree = "<group>";
+		};
+		2E72AF4B166AB1C100F2631C /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				2EDA04731565C0A70043A3A6 /* PreferencesController.h */,
+				2EDA04741565C0A70043A3A6 /* PreferencesController.m */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
 		2EDA04661565B7F90043A3A6 /* Growl */ = {
 			isa = PBXGroup;
 			children = (
@@ -341,25 +377,13 @@
 		2EE31A611564226E004F33FE /* Travis CI */ = {
 			isa = PBXGroup;
 			children = (
+				2E72AF49166AB19400F2631C /* Notifications */,
 				2E00CCB1164EE0C300A30635 /* Travis API */,
+				2E72AF4B166AB1C100F2631C /* UI */,
 				2EE31A69156422CF004F33FE /* AppDelegate.h */,
 				2EE31A6A156422CF004F33FE /* AppDelegate.m */,
-				2EDA045B156450750043A3A6 /* BuildEvent.h */,
-				2EDA045C156450750043A3A6 /* BuildEvent.m */,
-				2E72AF391669DA5F00F2631C /* BuildEventStream.h */,
-				2E72AF3A1669DA6000F2631C /* BuildEventStream.m */,
-				2E72AF3C166A7BE000F2631C /* EventFilter.h */,
-				2E72AF3D166A7BE000F2631C /* EventFilter.m */,
-				2EBA8CF8164FAD91005C033E /* FilterPreferences.h */,
-				2EBA8CF9164FAD91005C033E /* FilterPreferences.m */,
-				2E759889164DF68100B87810 /* Notification.h */,
-				2E75988A164DF68100B87810 /* Notification.m */,
-				2E90F158164E49BB009CAA25 /* NotificationDisplayer.h */,
-				2E90F159164E49BB009CAA25 /* NotificationDisplayer.m */,
 				2EDA04761565C67C0043A3A6 /* Preferences.h */,
 				2EDA04771565C67C0043A3A6 /* Preferences.m */,
-				2EDA04731565C0A70043A3A6 /* PreferencesController.h */,
-				2EDA04741565C0A70043A3A6 /* PreferencesController.m */,
 				9DAF568D15932852002018B5 /* Reachability.h */,
 				9DAF568E15932852002018B5 /* Reachability.m */,
 				2EE31A6C15642365004F33FE /* Supporting Files */,
