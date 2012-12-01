@@ -22,7 +22,10 @@
 		2E12F3951652048C000048F5 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2E12F3931652046A000048F5 /* Sparkle.framework */; };
 		2E12F39716520C2A000048F5 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 2E12F39616520C2A000048F5 /* dsa_pub.pem */; };
 		2E72AF3B1669DA6000F2631C /* BuildEventStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E72AF3A1669DA6000F2631C /* BuildEventStream.m */; };
+		2E72AF3E166A7BE100F2631C /* EventFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E72AF3D166A7BE000F2631C /* EventFilter.m */; };
+		2E72AF41166A7F4600F2631C /* EventFilterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E72AF40166A7F4600F2631C /* EventFilterTests.m */; };
 		2E72AF42166A7FEA00F2631C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ECFA87545264EC28B9D5614 /* libPods.a */; };
+		2E72AF43166A800400F2631C /* EventFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E72AF3D166A7BE000F2631C /* EventFilter.m */; };
 		2E72AF44166A812200F2631C /* BuildEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EDA045C156450750043A3A6 /* BuildEvent.m */; };
 		2E75988B164DF68100B87810 /* Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E75988A164DF68100B87810 /* Notification.m */; };
 		2E90F156164E389F009CAA25 /* Travis CI.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2E90F155164E389F009CAA25 /* Travis CI.icns */; };
@@ -124,6 +127,9 @@
 		2E12F39616520C2A000048F5 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		2E72AF391669DA5F00F2631C /* BuildEventStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildEventStream.h; sourceTree = "<group>"; };
 		2E72AF3A1669DA6000F2631C /* BuildEventStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildEventStream.m; sourceTree = "<group>"; };
+		2E72AF3C166A7BE000F2631C /* EventFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventFilter.h; sourceTree = "<group>"; };
+		2E72AF3D166A7BE000F2631C /* EventFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventFilter.m; sourceTree = "<group>"; };
+		2E72AF40166A7F4600F2631C /* EventFilterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventFilterTests.m; sourceTree = "<group>"; };
 		2E759889164DF68100B87810 /* Notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Notification.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		2E75988A164DF68100B87810 /* Notification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = Notification.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		2E90F155164E389F009CAA25 /* Travis CI.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "Travis CI.icns"; sourceTree = "<group>"; };
@@ -288,6 +294,7 @@
 		2E00CCC4164F974900A30635 /* TravisToolbarTests */ = {
 			isa = PBXGroup;
 			children = (
+				2E72AF40166A7F4600F2631C /* EventFilterTests.m */,
 				2E00CCD8164F9A9B00A30635 /* PreferencesControllerTests.m */,
 				2EBA8CF5164FAD4A005C033E /* FilterPreferencesTests.m */,
 				2E00CCC5164F974900A30635 /* Supporting Files */,
@@ -341,6 +348,8 @@
 				2EDA045C156450750043A3A6 /* BuildEvent.m */,
 				2E72AF391669DA5F00F2631C /* BuildEventStream.h */,
 				2E72AF3A1669DA6000F2631C /* BuildEventStream.m */,
+				2E72AF3C166A7BE000F2631C /* EventFilter.h */,
+				2E72AF3D166A7BE000F2631C /* EventFilter.m */,
 				2EBA8CF8164FAD91005C033E /* FilterPreferences.h */,
 				2EBA8CF9164FAD91005C033E /* FilterPreferences.m */,
 				2E759889164DF68100B87810 /* Notification.h */,
@@ -502,11 +511,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E72AF44166A812200F2631C /* BuildEvent.m in Sources */,
+				2E72AF43166A800400F2631C /* EventFilter.m in Sources */,
 				2E00CCD9164F9A9B00A30635 /* PreferencesControllerTests.m in Sources */,
 				2EBA8CF6164FAD4A005C033E /* FilterPreferencesTests.m in Sources */,
 				2EBA8CE9164FA582005C033E /* Preferences.m in Sources */,
 				2EBA8CEA164FA582005C033E /* PreferencesController.m in Sources */,
 				2EBA8CFB164FAD9F005C033E /* FilterPreferences.m in Sources */,
+				2E72AF41166A7F4600F2631C /* EventFilterTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -526,6 +537,7 @@
 				2E00CCB7164EE18000A30635 /* TravisHTTPClient.m in Sources */,
 				2EBA8CFA164FAD91005C033E /* FilterPreferences.m in Sources */,
 				2E72AF3B1669DA6000F2631C /* BuildEventStream.m in Sources */,
+				2E72AF3E166A7BE100F2631C /* EventFilter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

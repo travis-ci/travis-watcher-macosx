@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 
-#import "TravisEventFetcher.h"
 #import "BuildEvent.h"
 #import "Preferences.h"
 #import "Notification.h"
@@ -17,10 +16,12 @@
 #import "FilterPreferences.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import "BuildEventStream.h"
+#import "EventFilter.h"
 
 @interface AppDelegate () <NSUserNotificationCenterDelegate>
 @property (strong) NSStatusItem *statusItem;
 @property (strong) BuildEventStream *buildEventStream;
+@property (strong) EventFilter *eventFilter;
 @end
 
 @implementation AppDelegate
@@ -32,10 +33,9 @@
   [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:self];
 
   [self setBuildEventStream:[BuildEventStream buildEventStream]];
+  [self setEventFilter:[EventFilter eventFilterWithInputStream:[[self buildEventStream] eventStream] filterPreferences:[FilterPreferences filterWithPreferences:[Preferences sharedPreferences]]]];
 
-  [[[[self buildEventStream] eventStream] filter:^(BuildEvent *event) {
-    return [self shouldShowNotificationFor:event];
-  }] subscribeNext:^(BuildEvent *event) {
+  [[[self eventFilter] outputStream] subscribeNext:^(BuildEvent *event) {
     [[[TravisAPI standardAPI] fetchBuildWithID:[event buildID] forRepository:[event name]] subscribeNext:^(NSDictionary *build) {
       [event updateBuildInfo:build];
       Notification *notification = [Notification notificationWithEventData:event];
@@ -75,12 +75,6 @@
 - (IBAction)showPreferences:(id)sender {
   [NSApp activateIgnoringOtherApps:YES];
   [[self preferencesPanel] makeKeyAndOrderFront:self];
-}
-
-- (BOOL)shouldShowNotificationFor:(BuildEvent *)eventData {
-  FilterPreferences *filter = [FilterPreferences filterPreferencesWithPreferences:[Preferences sharedPreferences]];
-
-  return [filter matchesSlug:[eventData name]];
 }
 
 #pragma mark - NSUserNotificationCenterDelegate
