@@ -16,12 +16,11 @@
 #import "TravisAPI.h"
 #import "RepositoryFilter.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
+#import "BuildEventStream.h"
 
 @interface AppDelegate () <NSUserNotificationCenterDelegate>
-
-@property (strong) TravisEventFetcher *eventFetcher;
 @property (strong) NSStatusItem *statusItem;
-
+@property (strong) BuildEventStream *buildEventStream;
 @end
 
 @implementation AppDelegate
@@ -32,8 +31,9 @@
   [self setupGrowl];
   [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:self];
 
-  [self setEventFetcher:[TravisEventFetcher eventFetcher]];
-  [[[[self eventFetcher] eventStream] filter:^(TravisEvent *event) {
+  [self setBuildEventStream:[BuildEventStream buildEventStream]];
+
+  [[[[self buildEventStream] eventStream] filter:^(TravisEvent *event) {
     return [self shouldShowNotificationFor:event];
   }] subscribeNext:^(TravisEvent *event) {
     [[[TravisAPI standardAPI] fetchBuildWithID:[event buildID] forRepository:[event name]] subscribeNext:^(NSDictionary *build) {
