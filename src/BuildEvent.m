@@ -1,27 +1,27 @@
 //
-//  TravisEvent.m
+//  BuildEvent.m
 //  Travis CI
 //
 //  Created by Henrik Hodne on 5/16/12.
 //  Copyright (c) 2012 Travis CI GmbH. All rights reserved.
 //
 
-#import "TravisEvent.h"
+#import "BuildEvent.h"
 
-@interface TravisEvent ()
+@interface BuildEvent ()
 
 @property (strong) NSDictionary *eventData;
 
 @end
 
-@implementation TravisEvent
+@implementation BuildEvent
 
 - (id)initWithEventData:(NSDictionary *)eventData {
   self = [super init];
   if (self) {
     _eventData = eventData;
   }
-  
+
   return self;
 }
 
@@ -35,15 +35,15 @@
   return [self eventData][@"repository"][@"slug"];
 }
 
-- (TravisEventStatus)status {
+- (BuildEventStatus)status {
   NSNumber *result = [self eventData][@"build"][@"result"];
   BOOL resultIsANumber = [result isKindOfClass:[NSNumber class]];
   if (resultIsANumber && [result isEqualToNumber:@0]) {
-    return TravisEventStatusPassed;
+    return BuildEventStatusPassed;
   } else if (resultIsANumber && [result isEqualToNumber:@1]) {
-    return TravisEventStatusFailed;
+    return BuildEventStatusFailed;
   } else {
-    return TravisEventStatusUnknown;
+    return BuildEventStatusUnknown;
   }
 }
 
@@ -55,15 +55,15 @@
   return [self eventData][@"build"][@"number"];
 }
 
-- (TravisEventState)state {
+- (BuildEventState)state {
   NSString *state = [self eventData][@"build"][@"state"];
 
   if ([state isEqualToString:@"started"]) {
-    return TravisEventStateStarted;
+    return BuildEventStateStarted;
   } else if ([state isEqualToString:@"finished"]) {
-    return TravisEventStateFinished;
+    return BuildEventStateFinished;
   } else {
-    return TravisEventStateUnknown;
+    return BuildEventStateUnknown;
   }
 }
 

@@ -9,23 +9,23 @@
 #import "Notification.h"
 
 #import <ReactiveCocoa/ReactiveCocoa.h>
-#import "TravisEvent.h"
+#import "BuildEvent.h"
 
 @interface Notification ()
 
-- (id)initWithEventData:(TravisEvent *)eventData;
+- (id)initWithEventData:(BuildEvent *)eventData;
 
 @end
 
 @implementation Notification
 
-+ (Notification *)notificationWithEventData:(TravisEvent *)eventData {
-  if ([eventData state] == TravisEventStateStarted) {
++ (Notification *)notificationWithEventData:(BuildEvent *)eventData {
+  if ([eventData state] == BuildEventStateStarted) {
     return [[BuildStartedNotification alloc] initWithEventData:eventData];
-  } else if ([eventData state] == TravisEventStateFinished) {
-    if ([eventData status] == TravisEventStatusPassed) {
+  } else if ([eventData state] == BuildEventStateFinished) {
+    if ([eventData status] == BuildEventStatusPassed) {
       return [[BuildPassedNotification alloc] initWithEventData:eventData];
-    } else if ([eventData status] == TravisEventStatusFailed) {
+    } else if ([eventData status] == BuildEventStatusFailed) {
       return [[BuildFailedNotification alloc] initWithEventData:eventData];
     }
   }
@@ -33,7 +33,7 @@
   return [[NullNotification alloc] initWithEventData:eventData];
 }
 
-- (id)initWithEventData:(TravisEvent *)eventData {
+- (id)initWithEventData:(BuildEvent *)eventData {
   self = [super init];
   if (!self) {
     return nil;

@@ -13,7 +13,7 @@
 #import <Pusher/PTPusherChannel.h>
 #import <Pusher/PTPusherEvent.h>
 #import "Reachability.h"
-#import "TravisEvent.h"
+#import "BuildEvent.h"
 
 static NSString * const BuildEventStreamPusherAPIKey = @"23ed642e81512118260e";
 static NSString * const BuildEventStreamPusherChannelName = @"common";
@@ -49,7 +49,7 @@ static NSString * const BuildEventStreamPusherBuildFinishedEvent = @"build:finis
 
 - (RACSignal *)eventStream {
   return [[self eventSubject] map:^(PTPusherEvent *pusherEvent) {
-    return [[TravisEvent alloc] initWithEventData:[pusherEvent data]];
+    return [[BuildEvent alloc] initWithEventData:[pusherEvent data]];
   }];
 }
 

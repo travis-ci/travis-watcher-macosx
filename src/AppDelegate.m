@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 
 #import "TravisEventFetcher.h"
-#import "TravisEvent.h"
+#import "BuildEvent.h"
 #import "Preferences.h"
 #import "Notification.h"
 #import "NotificationDisplayer.h"
@@ -33,9 +33,9 @@
 
   [self setBuildEventStream:[BuildEventStream buildEventStream]];
 
-  [[[[self buildEventStream] eventStream] filter:^(TravisEvent *event) {
+  [[[[self buildEventStream] eventStream] filter:^(BuildEvent *event) {
     return [self shouldShowNotificationFor:event];
-  }] subscribeNext:^(TravisEvent *event) {
+  }] subscribeNext:^(BuildEvent *event) {
     [[[TravisAPI standardAPI] fetchBuildWithID:[event buildID] forRepository:[event name]] subscribeNext:^(NSDictionary *build) {
       [event updateBuildInfo:build];
       Notification *notification = [Notification notificationWithEventData:event];
@@ -77,7 +77,7 @@
   [[self preferencesPanel] makeKeyAndOrderFront:self];
 }
 
-- (BOOL)shouldShowNotificationFor:(TravisEvent *)eventData {
+- (BOOL)shouldShowNotificationFor:(BuildEvent *)eventData {
   FilterPreferences *filter;
   if ([[Preferences sharedPreferences] firehoseEnabled]) {
     filter = [FilterPreferences filterThatAcceptsAllRepositories];

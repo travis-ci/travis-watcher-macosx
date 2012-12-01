@@ -1,5 +1,5 @@
 //
-//  TravisEvent.h
+//  BuildEvent.h
 //  Travis CI
 //
 //  Created by Henrik Hodne on 5/16/12.
@@ -9,25 +9,25 @@
 #import <Foundation/Foundation.h>
 
 typedef enum {
-  TravisEventStateStarted,
-  TravisEventStateFinished,
-  TravisEventStateUnknown,
-} TravisEventState;
+  BuildEventStateStarted,
+  BuildEventStateFinished,
+  BuildEventStateUnknown,
+} BuildEventState;
 
 typedef enum {
-  TravisEventStatusPassed,
-  TravisEventStatusFailed,
-  TravisEventStatusUnknown,
-} TravisEventStatus;
+  BuildEventStatusPassed,
+  BuildEventStatusFailed,
+  BuildEventStatusUnknown,
+} BuildEventStatus;
 
-@interface TravisEvent : NSObject
+@interface BuildEvent : NSObject
 
 @property (readonly) NSString *name;
-@property (readonly) TravisEventStatus status;
+@property (readonly) BuildEventStatus status;
 @property (readonly) NSString *url;
 @property (readonly) NSNumber *buildID;
 @property (readonly) NSNumber *buildNumber;
-@property (readonly) TravisEventState state;
+@property (readonly) BuildEventState state;
 
 - (id)initWithEventData:(NSDictionary *)eventData;
 
