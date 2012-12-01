@@ -78,12 +78,7 @@
 }
 
 - (BOOL)shouldShowNotificationFor:(BuildEvent *)eventData {
-  FilterPreferences *filter;
-  if ([[Preferences sharedPreferences] firehoseEnabled]) {
-    filter = [FilterPreferences filterThatAcceptsAllRepositories];
-  } else {
-    filter = [FilterPreferences filtersWithMatches:[[Preferences sharedPreferences] repositories]];
-  }
+  FilterPreferences *filter = [FilterPreferences filterPreferencesWithPreferences:[Preferences sharedPreferences]];
 
   return [filter matchesSlug:[eventData name]];
 }

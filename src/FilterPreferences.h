@@ -8,11 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+@class Preferences;
+
 @interface FilterPreferences : NSObject
 
-+ (FilterPreferences *)filterThatAcceptsAllRepositories;
-+ (FilterPreferences *)filterThatMatches:(NSString *)matcher;
-+ (FilterPreferences *)filtersWithMatches:(NSArray *)matches;
++ (FilterPreferences *)filterWithPreferences:(Preferences *)preferences;
 
 - (BOOL)matchesSlug:(NSString *)repository;
 

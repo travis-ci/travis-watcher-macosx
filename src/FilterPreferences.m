@@ -7,11 +7,17 @@
 //
 
 #import "FilterPreferences.h"
+#import "Preferences.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
 
-@interface AcceptAllRepositoryFilter : FilterPreferences
+@protocol Filter <NSObject>
+- (BOOL)matchesSlug:(NSString *)slug;
 @end
 
-@interface MatchRepositoryFilter : FilterPreferences
+@interface AcceptAllRepositoryFilter : NSObject <Filter>
+@end
+
+@interface MatchRepositoryFilter : NSObject <Filter>
 
 @property (strong, readonly) NSString *matcher;
 
@@ -19,35 +25,53 @@
 
 @end
 
-@interface MultipleRepositoryFilter : FilterPreferences
+@interface MultipleRepositoryFilter : NSObject <Filter>
 
-- (void)addFilter:(FilterPreferences *)filter;
+- (void)addFilter:(id<Filter>)filter;
 
+@end
+
+@interface FilterPreferences ()
+@property (nonatomic, strong) Preferences *preferences;
+@property (nonatomic, strong) id<Filter> filter;
 @end
 
 @implementation FilterPreferences
 
-+ (FilterPreferences *)filterThatAcceptsAllRepositories {
-  return [AcceptAllRepositoryFilter new];
++ (FilterPreferences *)filterWithPreferences:(Preferences *)preferences {
+  return [[self alloc] initWithPreferences:preferences];
 }
 
-+ (FilterPreferences *)filterThatMatches:(NSString *)matcher {
-  return [[MatchRepositoryFilter alloc] initWithMatcher:matcher];
+- (id)initWithPreferences:(Preferences *)preferences {
+  self = [super init];
+  if (self == nil) return nil;
+
+  _preferences = preferences;
+  [self setupBindings];
+
+  return self;
 }
 
-+ (FilterPreferences *)filtersWithMatches:(NSArray *)matches {
-  MultipleRepositoryFilter *repositoryFilter = [MultipleRepositoryFilter new];
+- (void)setupBindings {
+  RAC(self.filter) = [RACSignal
+                      combineLatest:@[ RACAbleWithStart(self.preferences.firehoseEnabled), RACAbleWithStart(self.preferences.repositories) ]
+                      reduce:^ id<Filter> (NSNumber *firehoseEnabled, NSArray *repositories) {
+                        if ([firehoseEnabled boolValue]) {
+                          return [AcceptAllRepositoryFilter new];
+                        } else {
+                          MultipleRepositoryFilter *filter = [MultipleRepositoryFilter new];
 
-  for (NSString *matcher in matches) {
-    [repositoryFilter addFilter:[FilterPreferences filterThatMatches:matcher]];
-  }
-
-  return repositoryFilter;
+                          for (NSString *slug in repositories) {
+                            [filter addFilter:[[MatchRepositoryFilter alloc] initWithMatcher:slug]];
+                          }
+                          
+                          return filter;
+                        }
+                      }];
 }
 
 - (BOOL)matchesSlug:(NSString *)repository {
-  NSAssert(NO, @"Method acceptsRepository: not implemented on %@.", self);
-  return NO;
+  return [[self filter] matchesSlug:repository];
 }
 
 @end
@@ -116,12 +140,12 @@
   return self;
 }
 
-- (void)addFilter:(FilterPreferences *)filter {
+- (void)addFilter:(id<Filter>)filter {
   [_filters addObject:filter];
 }
 
 - (BOOL)matchesSlug:(NSString *)repository {
-  for (FilterPreferences *filter in _filters) {
+  for (id<Filter> filter in _filters) {
     if ([filter matchesSlug:repository]) return YES;
   }
 
