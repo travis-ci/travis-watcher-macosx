@@ -17,11 +17,14 @@
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import "BuildEventStream.h"
 #import "EventFilter.h"
+#import "EventConverter.h"
 
 @interface AppDelegate () <NSUserNotificationCenterDelegate>
 @property (strong) NSStatusItem *statusItem;
 @property (strong) BuildEventStream *buildEventStream;
 @property (strong) EventFilter *eventFilter;
+@property (strong) EventConverter *eventConverter;
+@property (strong) RACSignal *updatedBuilds;
 @end
 
 @implementation AppDelegate
@@ -35,14 +38,16 @@
   [self setBuildEventStream:[BuildEventStream buildEventStream]];
   [self setEventFilter:[EventFilter eventFilterWithInputStream:[[self buildEventStream] eventStream] filterPreferences:[FilterPreferences filterWithPreferences:[Preferences sharedPreferences]]]];
 
-  [[[self eventFilter] outputStream] subscribeNext:^(BuildEvent *event) {
-    [[[TravisAPI standardAPI] fetchBuildWithID:[event buildID] forRepository:[event name]] subscribeNext:^(NSDictionary *build) {
+  [self setUpdatedBuilds:[[[self eventFilter] outputStream] flattenMap:^(BuildEvent *event) {
+    return [[[TravisAPI standardAPI] fetchBuildWithID:[event buildID] forRepository:[event name]] map:^(NSDictionary *build) {
       [event updateBuildInfo:build];
-      Notification *notification = [Notification notificationWithEventData:event];
-      [[NotificationDisplayer sharedNotificationDisplayer] deliverNotification:notification];
-    } error:^(NSError *error) {
-      NSLog(@"Couldn't get build info from JSON API. Error: %@.", error);
+      return event;
     }];
+  }]];
+
+  [self setEventConverter:[EventConverter eventConverterWithInputStream:[self updatedBuilds]]];
+  [[[self eventConverter] outputStream] subscribeNext:^(Notification *notification) {
+    [[NotificationDisplayer sharedNotificationDisplayer] deliverNotification:notification];
   }];
 
   [self setupStatusBarItem];
