@@ -31,6 +31,11 @@
 		2E72AF4F166AB20C00F2631C /* EventConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E72AF4D166AB20C00F2631C /* EventConverter.m */; };
 		2E72AF52166AB21E00F2631C /* EventConverterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E72AF51166AB21E00F2631C /* EventConverterTests.m */; };
 		2E72AF53166AB6C800F2631C /* Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E75988A164DF68100B87810 /* Notification.m */; };
+		2E72AF5E166AEA6500F2631C /* BuildUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E72AF5D166AEA6500F2631C /* BuildUpdater.m */; };
+		2E72AF5F166AEA6500F2631C /* BuildUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E72AF5D166AEA6500F2631C /* BuildUpdater.m */; };
+		2E72AF63166AEA9F00F2631C /* BuildUpdaterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E72AF62166AEA9F00F2631C /* BuildUpdaterTests.m */; };
+		2E72AF64166AED1400F2631C /* TravisAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E00CCB3164EE10000A30635 /* TravisAPI.m */; };
+		2E72AF65166AED2700F2631C /* TravisHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E00CCB6164EE18000A30635 /* TravisHTTPClient.m */; };
 		2E75988B164DF68100B87810 /* Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E75988A164DF68100B87810 /* Notification.m */; };
 		2E90F156164E389F009CAA25 /* Travis CI.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2E90F155164E389F009CAA25 /* Travis CI.icns */; };
 		2E90F15A164E49BB009CAA25 /* NotificationDisplayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E90F159164E49BB009CAA25 /* NotificationDisplayer.m */; };
@@ -137,6 +142,9 @@
 		2E72AF4C166AB20C00F2631C /* EventConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventConverter.h; sourceTree = "<group>"; };
 		2E72AF4D166AB20C00F2631C /* EventConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventConverter.m; sourceTree = "<group>"; };
 		2E72AF51166AB21E00F2631C /* EventConverterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventConverterTests.m; sourceTree = "<group>"; };
+		2E72AF5C166AEA6500F2631C /* BuildUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildUpdater.h; sourceTree = "<group>"; };
+		2E72AF5D166AEA6500F2631C /* BuildUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildUpdater.m; sourceTree = "<group>"; };
+		2E72AF62166AEA9F00F2631C /* BuildUpdaterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildUpdaterTests.m; sourceTree = "<group>"; };
 		2E759889164DF68100B87810 /* Notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Notification.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		2E75988A164DF68100B87810 /* Notification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = Notification.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		2E90F155164E389F009CAA25 /* Travis CI.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "Travis CI.icns"; sourceTree = "<group>"; };
@@ -301,6 +309,7 @@
 		2E00CCC4164F974900A30635 /* TravisToolbarTests */ = {
 			isa = PBXGroup;
 			children = (
+				2E72AF62166AEA9F00F2631C /* BuildUpdaterTests.m */,
 				2E72AF51166AB21E00F2631C /* EventConverterTests.m */,
 				2E72AF40166A7F4600F2631C /* EventFilterTests.m */,
 				2EBA8CF5164FAD4A005C033E /* FilterPreferencesTests.m */,
@@ -342,10 +351,12 @@
 			children = (
 				2E72AF391669DA5F00F2631C /* BuildEventStream.h */,
 				2E72AF3A1669DA6000F2631C /* BuildEventStream.m */,
-				2E72AF3C166A7BE000F2631C /* EventFilter.h */,
-				2E72AF3D166A7BE000F2631C /* EventFilter.m */,
+				2E72AF5C166AEA6500F2631C /* BuildUpdater.h */,
+				2E72AF5D166AEA6500F2631C /* BuildUpdater.m */,
 				2E72AF4C166AB20C00F2631C /* EventConverter.h */,
 				2E72AF4D166AB20C00F2631C /* EventConverter.m */,
+				2E72AF3C166A7BE000F2631C /* EventFilter.h */,
+				2E72AF3D166A7BE000F2631C /* EventFilter.m */,
 			);
 			name = Pipeline;
 			sourceTree = "<group>";
@@ -544,6 +555,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E72AF65166AED2700F2631C /* TravisHTTPClient.m in Sources */,
+				2E72AF64166AED1400F2631C /* TravisAPI.m in Sources */,
 				2E72AF53166AB6C800F2631C /* Notification.m in Sources */,
 				2E72AF44166A812200F2631C /* BuildEvent.m in Sources */,
 				2E72AF43166A800400F2631C /* EventFilter.m in Sources */,
@@ -555,6 +568,8 @@
 				2E72AF41166A7F4600F2631C /* EventFilterTests.m in Sources */,
 				2E72AF4F166AB20C00F2631C /* EventConverter.m in Sources */,
 				2E72AF52166AB21E00F2631C /* EventConverterTests.m in Sources */,
+				2E72AF5F166AEA6500F2631C /* BuildUpdater.m in Sources */,
+				2E72AF63166AEA9F00F2631C /* BuildUpdaterTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -576,6 +591,7 @@
 				2E72AF3B1669DA6000F2631C /* BuildEventStream.m in Sources */,
 				2E72AF3E166A7BE100F2631C /* EventFilter.m in Sources */,
 				2E72AF4E166AB20C00F2631C /* EventConverter.m in Sources */,
+				2E72AF5E166AEA6500F2631C /* BuildUpdater.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

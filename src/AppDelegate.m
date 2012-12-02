@@ -18,13 +18,14 @@
 #import "BuildEventStream.h"
 #import "EventFilter.h"
 #import "EventConverter.h"
+#import "BuildUpdater.h"
 
 @interface AppDelegate () <NSUserNotificationCenterDelegate>
 @property (strong) NSStatusItem *statusItem;
 @property (strong) BuildEventStream *buildEventStream;
 @property (strong) EventFilter *eventFilter;
 @property (strong) EventConverter *eventConverter;
-@property (strong) RACSignal *updatedBuilds;
+@property (strong) BuildUpdater *buildUpdater;
 @end
 
 @implementation AppDelegate
@@ -37,15 +38,9 @@
 
   [self setBuildEventStream:[BuildEventStream buildEventStream]];
   [self setEventFilter:[EventFilter eventFilterWithInputStream:[[self buildEventStream] eventStream] filterPreferences:[FilterPreferences filterWithPreferences:[Preferences sharedPreferences]]]];
-
-  [self setUpdatedBuilds:[[[self eventFilter] outputStream] flattenMap:^(BuildEvent *event) {
-    return [[[TravisAPI standardAPI] fetchBuildWithID:[event buildID] forRepository:[event name]] map:^(NSDictionary *build) {
-      [event updateBuildInfo:build];
-      return event;
-    }];
-  }]];
-
-  [self setEventConverter:[EventConverter eventConverterWithInputStream:[self updatedBuilds]]];
+  [self setBuildUpdater:[BuildUpdater buildUpdaterWithInputStream:[[self eventFilter] outputStream] API:[TravisAPI standardAPI]]];
+  [self setEventConverter:[EventConverter eventConverterWithInputStream:[[self buildUpdater] outputStream]]];
+  
   [[[self eventConverter] outputStream] subscribeNext:^(Notification *notification) {
     [[NotificationDisplayer sharedNotificationDisplayer] deliverNotification:notification];
   }];
