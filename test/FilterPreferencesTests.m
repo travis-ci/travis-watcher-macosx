@@ -15,53 +15,65 @@
 #import <OCMockito/OCMockito.h>
 
 #import "FilterPreferences.h"
+#import "Preferences.h"
+
+@interface FakePreferences : Preferences
+@property (nonatomic, assign) BOOL firehoseEnabled;
+@property (nonatomic, strong) NSArray *repositories;
+@end
+
+@implementation FakePreferences
+@end
 
 @interface FilterPreferencesTests : SenTestCase
 @end
 
-@implementation FilterPreferencesTests
+@implementation FilterPreferencesTests {
+  FakePreferences *_preferences;
+  FilterPreferences *_filter;
+}
+
+- (void)setUp {
+  _preferences = [FakePreferences new];
+  [_preferences setFirehoseEnabled:NO];
+  [_preferences setRepositories:@[]];
+  _filter = [FilterPreferences filterWithPreferences:_preferences];
+}
 
 - (void)testFilterThatAcceptsAllRepositories {
-  FilterPreferences *filter = [FilterPreferences filterThatAcceptsAllRepositories];
-
-  assertThatBool([filter matchesSlug:@"travis-ci/travis-ci"], equalToBool(YES));
+  [_preferences setFirehoseEnabled:YES];
+  assertThatBool([_filter matchesSlug:@"travis-ci/travis-ci"], equalToBool(YES));
 }
 
 - (void)testFilterAcceptsExactMatch {
-  FilterPreferences *filter = [FilterPreferences filterThatMatches:@"travis-ci/travis-ci"];
-
-  assertThatBool([filter matchesSlug:@"travis-ci/travis-ci"], equalToBool(YES));
+  [_preferences setRepositories:@[ @"travis-ci/travis-ci" ]];
+  assertThatBool([_filter matchesSlug:@"travis-ci/travis-ci"], equalToBool(YES));
 }
 
 - (void)testFilterDoesNotAcceptWrongExactMatch {
-  FilterPreferences *filter = [FilterPreferences filterThatMatches:@"travis-ci/travis-ci"];
-
-  assertThatBool([filter matchesSlug:@"travis-ci/travis-core"], equalToBool(NO));
+  [_preferences setRepositories:@[ @"travis-ci/travis-ci"] ];
+  assertThatBool([_filter matchesSlug:@"travis-ci/travis-core"], equalToBool(NO));
 }
 
 - (void)testFilterAcceptsRepositoryNameWildcard {
-  FilterPreferences *filter = [FilterPreferences filterThatMatches:@"travis-ci/*"];
-
-  assertThatBool([filter matchesSlug:@"travis-ci/travis-hub"], equalToBool(YES));
+  [_preferences setRepositories:@[ @"travis-ci/*" ]];
+  assertThatBool([_filter matchesSlug:@"travis-ci/travis-hub"], equalToBool(YES));
 }
 
 - (void)testFilterDoesNotAcceptWrongRepositoryNameWildcard {
-  FilterPreferences *filter = [FilterPreferences filterThatMatches:@"travis-ci/*"];
-
-  assertThatBool([filter matchesSlug:@"not-travis-ci/travic-ci"], equalToBool(NO));
+  [_preferences setRepositories:@[ @"travis-ci/*" ]];
+  assertThatBool([_filter matchesSlug:@"not-travis-ci/travic-ci"], equalToBool(NO));
 }
 
 - (void)testFilterAcceptsUserNameWildcard {
-  FilterPreferences *filter = [FilterPreferences filterThatMatches:@"*/travis-ci"];
-
-  assertThatBool([filter matchesSlug:@"john-doe/travis-ci"], equalToBool(YES));
+  [_preferences setRepositories:@[ @"*/travis-ci" ]];
+  assertThatBool([_filter matchesSlug:@"john-doe/travis-ci"], equalToBool(YES));
 }
 
 - (void)testFilterThatAcceptsMultipleMatches {
-  FilterPreferences *filter = [FilterPreferences filtersWithMatches:@[ @"travis-ci/travis-ci", @"travis-ci/travis-hub" ]];
-
-  assertThatBool([filter matchesSlug:@"travis-ci/travis-ci"], equalToBool(YES));
-  assertThatBool([filter matchesSlug:@"travis-ci/travis-hub"], equalToBool(YES));
+  [_preferences setRepositories:@[ @"travis-ci/travis-ci", @"travis-ci/travis-hub" ]];
+  assertThatBool([_filter matchesSlug:@"travis-ci/travis-ci"], equalToBool(YES));
+  assertThatBool([_filter matchesSlug:@"travis-ci/travis-hub"], equalToBool(YES));
 }
 
 @end
