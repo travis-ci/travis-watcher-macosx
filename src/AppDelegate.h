@@ -11,9 +11,7 @@
 @class TravisEventFetcher;
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
-
 @property (assign) IBOutlet NSMenu *statusMenu;
-@property (assign) IBOutlet NSPanel *preferencesPanel;
 
 - (IBAction)showPreferences:(id)sender;
 

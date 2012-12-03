@@ -17,6 +17,8 @@
 #import "FilterPreferences.h"
 #import "TravisAPI.h"
 
+#import "PreferencesWindowController.h"
+
 @interface AppDelegate () <NSUserNotificationCenterDelegate>
 @property (strong) NSStatusItem *statusItem;
 @property (strong) BuildEventStream *buildEventStream;
@@ -24,6 +26,7 @@
 @property (strong) EventConverter *eventConverter;
 @property (strong) BuildUpdater *buildUpdater;
 @property (strong) UserNotifier *userNotifier;
+@property (strong) PreferencesWindowController *preferencesWindowController;
 @end
 
 @implementation AppDelegate
@@ -55,7 +58,8 @@
 
 - (IBAction)showPreferences:(id)sender {
   [NSApp activateIgnoringOtherApps:YES];
-  [[self preferencesPanel] makeKeyAndOrderFront:self];
+  [self setPreferencesWindowController:[[PreferencesWindowController alloc] init]];
+  [[[self preferencesWindowController] window] makeKeyAndOrderFront:nil];
 }
 
 #pragma mark - NSUserNotificationCenterDelegate
