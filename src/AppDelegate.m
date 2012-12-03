@@ -8,18 +8,14 @@
 
 #import "AppDelegate.h"
 
-#import "BuildEvent.h"
-#import "Preferences.h"
-#import "Notification.h"
-#import "NotificationDisplayer.h"
-#import "TravisAPI.h"
-#import "FilterPreferences.h"
-#import <ReactiveCocoa/ReactiveCocoa.h>
 #import "BuildEventStream.h"
 #import "EventFilter.h"
 #import "EventConverter.h"
 #import "BuildUpdater.h"
 #import "UserNotifier.h"
+#import "Preferences.h"
+#import "FilterPreferences.h"
+#import "TravisAPI.h"
 
 @interface AppDelegate () <NSUserNotificationCenterDelegate>
 @property (strong) NSStatusItem *statusItem;

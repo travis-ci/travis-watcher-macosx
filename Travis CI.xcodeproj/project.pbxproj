@@ -38,7 +38,6 @@
 		2E72AF65166AED2700F2631C /* TravisHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E00CCB6164EE18000A30635 /* TravisHTTPClient.m */; };
 		2E75988B164DF68100B87810 /* Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E75988A164DF68100B87810 /* Notification.m */; };
 		2E90F156164E389F009CAA25 /* Travis CI.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2E90F155164E389F009CAA25 /* Travis CI.icns */; };
-		2E90F15A164E49BB009CAA25 /* NotificationDisplayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E90F159164E49BB009CAA25 /* NotificationDisplayer.m */; };
 		2EADDD39166C8FDC002F3B82 /* UserNotifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EADDD38166C8FDC002F3B82 /* UserNotifier.m */; };
 		2EBA8CE9164FA582005C033E /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EDA04771565C67C0043A3A6 /* Preferences.m */; };
 		2EBA8CEA164FA582005C033E /* PreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EDA04741565C0A70043A3A6 /* PreferencesController.m */; };
@@ -149,8 +148,6 @@
 		2E759889164DF68100B87810 /* Notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Notification.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		2E75988A164DF68100B87810 /* Notification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = Notification.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		2E90F155164E389F009CAA25 /* Travis CI.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "Travis CI.icns"; sourceTree = "<group>"; };
-		2E90F158164E49BB009CAA25 /* NotificationDisplayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = NotificationDisplayer.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		2E90F159164E49BB009CAA25 /* NotificationDisplayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = NotificationDisplayer.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		2EADDD37166C8FDC002F3B82 /* UserNotifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserNotifier.h; sourceTree = "<group>"; };
 		2EADDD38166C8FDC002F3B82 /* UserNotifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserNotifier.m; sourceTree = "<group>"; };
 		2EBA8CF5164FAD4A005C033E /* FilterPreferencesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = FilterPreferencesTests.m; path = test/FilterPreferencesTests.m; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
@@ -343,8 +340,6 @@
 				2EBA8CF9164FAD91005C033E /* FilterPreferences.m */,
 				2E759889164DF68100B87810 /* Notification.h */,
 				2E75988A164DF68100B87810 /* Notification.m */,
-				2E90F158164E49BB009CAA25 /* NotificationDisplayer.h */,
-				2E90F159164E49BB009CAA25 /* NotificationDisplayer.m */,
 			);
 			name = Notifications;
 			sourceTree = "<group>";
@@ -589,7 +584,6 @@
 				2EDA04781565C67C0043A3A6 /* Preferences.m in Sources */,
 				9DAF568F15932852002018B5 /* Reachability.m in Sources */,
 				2E75988B164DF68100B87810 /* Notification.m in Sources */,
-				2E90F15A164E49BB009CAA25 /* NotificationDisplayer.m in Sources */,
 				2E00CCB4164EE10000A30635 /* TravisAPI.m in Sources */,
 				2E00CCB7164EE18000A30635 /* TravisHTTPClient.m in Sources */,
 				2EBA8CFA164FAD91005C033E /* FilterPreferences.m in Sources */,
