@@ -29,8 +29,16 @@
 }
 
 - (RACSignal *)fetchBuildWithID:(NSNumber *)buildID forRepository:(NSString *)slug {
-  NSString *path = [NSString stringWithFormat:@"/%@/builds/%@.json", slug, buildID];
+  NSString *path = [NSString stringWithFormat:@"/repos/%@/builds/%@", slug, buildID];
   return [[self HTTPClient] requestWithMethod:TravisHTTPClientMethodGET path:path parameters:nil];
+}
+
+- (RACSignal *)fetchAccessTokenForGitHubToken:(NSString *)githubToken {
+  return [[self HTTPClient] requestWithMethod:TravisHTTPClientMethodPOST path:@"/auth/github" parameters:@{ @"token": githubToken }];
+}
+
+- (RACSignal *)fetchUserInfo {
+  return [[self HTTPClient] requestWithMethod:TravisHTTPClientMethodGET path:@"/users/" parameters:nil];
 }
 
 @end

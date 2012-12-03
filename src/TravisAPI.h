@@ -18,5 +18,7 @@
 - (id)initWithHTTPClient:(TravisHTTPClient *)HTTPClient;
 
 - (RACSignal *)fetchBuildWithID:(NSNumber *)buildID forRepository:(NSString *)slug;
+- (RACSignal *)fetchAccessTokenForGitHubToken:(NSString *)githubToken;
+- (RACSignal *)fetchUserInfo;
 
 @end

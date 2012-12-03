@@ -17,6 +17,8 @@
 #import "FilterPreferences.h"
 #import "TravisAPI.h"
 
+#import "GitHubAuthentication.h"
+
 #import "PreferencesWindowController.h"
 
 @interface AppDelegate () <NSUserNotificationCenterDelegate>
@@ -30,6 +32,16 @@
 @end
 
 @implementation AppDelegate
+
+- (void)applicationWillFinishLaunching:(NSNotification *)notification {
+  [[NSAppleEventManager sharedAppleEventManager] setEventHandler:self andSelector:@selector(handleAppleEvent:withReplyEvent:) forEventClass:kInternetEventClass andEventID:kAEGetURL];
+}
+
+- (void)handleAppleEvent:(NSAppleEventDescriptor *)event withReplyEvent:(NSAppleEventDescriptor *)replyEvent {
+  NSURL *URL = [NSURL URLWithString:[[event paramDescriptorForKeyword:keyDirectObject] stringValue]];
+
+  [[GitHubAuthentication sharedAuthenticator] handleRedirect:URL];
+}
 
 - (void)applicationDidFinishLaunching:(NSNotification *)notification {
   [[Preferences sharedPreferences] setupDefaults];

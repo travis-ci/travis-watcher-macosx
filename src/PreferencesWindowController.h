@@ -9,5 +9,9 @@
 #import <Cocoa/Cocoa.h>
 
 @interface PreferencesWindowController : NSWindowController
+@property (weak) IBOutlet NSToolbar *toolbar;
+
+- (IBAction)selectGeneralTab:(id)sender;
+- (IBAction)selectAuthenticationTab:(id)sender;
 
 @end
