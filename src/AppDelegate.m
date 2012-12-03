@@ -38,13 +38,15 @@
   [self setupGrowl];
   [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:self];
 
+  [self setupStatusBarItem];
+}
+
+- (void)setupPipeline {
   [self setBuildEventStream:[BuildEventStream buildEventStream]];
   [self setEventFilter:[EventFilter eventFilterWithInputStream:[[self buildEventStream] eventStream] filterPreferences:[FilterPreferences filterWithPreferences:[Preferences sharedPreferences]]]];
   [self setBuildUpdater:[BuildUpdater buildUpdaterWithInputStream:[[self eventFilter] outputStream] API:[TravisAPI standardAPI]]];
   [self setEventConverter:[EventConverter eventConverterWithInputStream:[[self buildUpdater] outputStream]]];
   [self setUserNotifier:[UserNotifier userNotifierWithInputStream:[[self eventConverter] outputStream] notificationCenter:[NSUserNotificationCenter defaultUserNotificationCenter]]];
-
-  [self setupStatusBarItem];
 }
 
 - (void)setupGrowl {
