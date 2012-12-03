@@ -19,6 +19,7 @@
 #import "EventFilter.h"
 #import "EventConverter.h"
 #import "BuildUpdater.h"
+#import "UserNotifier.h"
 
 @interface AppDelegate () <NSUserNotificationCenterDelegate>
 @property (strong) NSStatusItem *statusItem;
@@ -26,6 +27,7 @@
 @property (strong) EventFilter *eventFilter;
 @property (strong) EventConverter *eventConverter;
 @property (strong) BuildUpdater *buildUpdater;
+@property (strong) UserNotifier *userNotifier;
 @end
 
 @implementation AppDelegate
@@ -40,10 +42,7 @@
   [self setEventFilter:[EventFilter eventFilterWithInputStream:[[self buildEventStream] eventStream] filterPreferences:[FilterPreferences filterWithPreferences:[Preferences sharedPreferences]]]];
   [self setBuildUpdater:[BuildUpdater buildUpdaterWithInputStream:[[self eventFilter] outputStream] API:[TravisAPI standardAPI]]];
   [self setEventConverter:[EventConverter eventConverterWithInputStream:[[self buildUpdater] outputStream]]];
-  
-  [[[self eventConverter] outputStream] subscribeNext:^(Notification *notification) {
-    [[NotificationDisplayer sharedNotificationDisplayer] deliverNotification:notification];
-  }];
+  [self setUserNotifier:[UserNotifier userNotifierWithInputStream:[[self eventConverter] outputStream] notificationCenter:[NSUserNotificationCenter defaultUserNotificationCenter]]];
 
   [self setupStatusBarItem];
 }

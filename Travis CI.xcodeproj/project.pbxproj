@@ -39,6 +39,7 @@
 		2E75988B164DF68100B87810 /* Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E75988A164DF68100B87810 /* Notification.m */; };
 		2E90F156164E389F009CAA25 /* Travis CI.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2E90F155164E389F009CAA25 /* Travis CI.icns */; };
 		2E90F15A164E49BB009CAA25 /* NotificationDisplayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E90F159164E49BB009CAA25 /* NotificationDisplayer.m */; };
+		2EADDD39166C8FDC002F3B82 /* UserNotifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EADDD38166C8FDC002F3B82 /* UserNotifier.m */; };
 		2EBA8CE9164FA582005C033E /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EDA04771565C67C0043A3A6 /* Preferences.m */; };
 		2EBA8CEA164FA582005C033E /* PreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EDA04741565C0A70043A3A6 /* PreferencesController.m */; };
 		2EBA8CF6164FAD4A005C033E /* FilterPreferencesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA8CF5164FAD4A005C033E /* FilterPreferencesTests.m */; };
@@ -150,6 +151,8 @@
 		2E90F155164E389F009CAA25 /* Travis CI.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "Travis CI.icns"; sourceTree = "<group>"; };
 		2E90F158164E49BB009CAA25 /* NotificationDisplayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = NotificationDisplayer.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		2E90F159164E49BB009CAA25 /* NotificationDisplayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = NotificationDisplayer.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		2EADDD37166C8FDC002F3B82 /* UserNotifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserNotifier.h; sourceTree = "<group>"; };
+		2EADDD38166C8FDC002F3B82 /* UserNotifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserNotifier.m; sourceTree = "<group>"; };
 		2EBA8CF5164FAD4A005C033E /* FilterPreferencesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = FilterPreferencesTests.m; path = test/FilterPreferencesTests.m; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		2EBA8CF8164FAD91005C033E /* FilterPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = FilterPreferences.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		2EBA8CF9164FAD91005C033E /* FilterPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = FilterPreferences.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
@@ -357,6 +360,8 @@
 				2E72AF4D166AB20C00F2631C /* EventConverter.m */,
 				2E72AF3C166A7BE000F2631C /* EventFilter.h */,
 				2E72AF3D166A7BE000F2631C /* EventFilter.m */,
+				2EADDD37166C8FDC002F3B82 /* UserNotifier.h */,
+				2EADDD38166C8FDC002F3B82 /* UserNotifier.m */,
 			);
 			name = Pipeline;
 			sourceTree = "<group>";
@@ -592,6 +597,7 @@
 				2E72AF3E166A7BE100F2631C /* EventFilter.m in Sources */,
 				2E72AF4E166AB20C00F2631C /* EventConverter.m in Sources */,
 				2E72AF5E166AEA6500F2631C /* BuildUpdater.m in Sources */,
+				2EADDD39166C8FDC002F3B82 /* UserNotifier.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
