@@ -14,11 +14,10 @@
 
 - (void)setupDefaults;
 
-- (NSArray *)repositories;
+@property (nonatomic, readonly) NSArray *repositories;
 - (void)addRepository:(NSString *)slug;
 - (void)removeRepository:(NSString *)slug;
 
-- (BOOL)firehoseEnabled;
-- (void)setFirehoseEnabled:(BOOL)firehoseEnabled;
+@property (nonatomic, assign) BOOL firehoseEnabled;
 
 @end

@@ -8,57 +8,38 @@
 
 #import "AppDelegate.h"
 
-#import "TravisEventFetcher.h"
-#import "TravisEvent.h"
+#import "BuildEventStream.h"
+#import "EventFilter.h"
+#import "EventConverter.h"
+#import "BuildUpdater.h"
+#import "UserNotifier.h"
 #import "Preferences.h"
-#import "Notification.h"
-#import "NotificationDisplayer.h"
+#import "FilterPreferences.h"
 #import "TravisAPI.h"
-#import "RepositoryFilter.h"
-#import <ReactiveCocoa/ReactiveCocoa.h>
 
 @interface AppDelegate () <NSUserNotificationCenterDelegate>
-
-@property (strong) TravisEventFetcher *eventFetcher;
 @property (strong) NSStatusItem *statusItem;
-
+@property (strong) BuildEventStream *buildEventStream;
+@property (strong) EventFilter *eventFilter;
+@property (strong) EventConverter *eventConverter;
+@property (strong) BuildUpdater *buildUpdater;
+@property (strong) UserNotifier *userNotifier;
 @end
 
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)notification {
   [[Preferences sharedPreferences] setupDefaults];
-
-  [self setupGrowl];
   [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:self];
-
-  [self setEventFetcher:[TravisEventFetcher eventFetcher]];
-  [[[[self eventFetcher] eventStream] filter:^(TravisEvent *event) {
-    return [self shouldShowNotificationFor:event];
-  }] subscribeNext:^(TravisEvent *event) {
-    [[[TravisAPI standardAPI] fetchBuildWithID:[event buildID] forRepository:[event name]] subscribeNext:^(NSDictionary *build) {
-      [event updateBuildInfo:build];
-      Notification *notification = [Notification notificationWithEventData:event];
-      [[NotificationDisplayer sharedNotificationDisplayer] deliverNotification:notification];
-    } error:^(NSError *error) {
-      NSLog(@"Couldn't get build info from JSON API. Error: %@.", error);
-    }];
-  }];
-
   [self setupStatusBarItem];
 }
 
-- (void)setupGrowl {
-  NSBundle *mainBundle = [NSBundle mainBundle];
-  NSString *path = [[mainBundle privateFrameworksPath] stringByAppendingPathComponent:@"Growl"];
-  if (NSAppKitVersionNumber >= 1038)
-    path = [path stringByAppendingPathComponent:@"1.3"];
-  else
-    path = [path stringByAppendingPathComponent:@"1.2.3"];
-
-  path = [path stringByAppendingPathComponent:@"Growl.framework"];
-  NSBundle *growlFramework = [NSBundle bundleWithPath:path];
-  [growlFramework load];
+- (void)setupPipeline {
+  [self setBuildEventStream:[BuildEventStream buildEventStream]];
+  [self setEventFilter:[EventFilter eventFilterWithInputStream:[[self buildEventStream] eventStream] filterPreferences:[FilterPreferences filterWithPreferences:[Preferences sharedPreferences]]]];
+  [self setBuildUpdater:[BuildUpdater buildUpdaterWithInputStream:[[self eventFilter] outputStream] API:[TravisAPI standardAPI]]];
+  [self setEventConverter:[EventConverter eventConverterWithInputStream:[[self buildUpdater] outputStream]]];
+  [self setUserNotifier:[UserNotifier userNotifierWithInputStream:[[self eventConverter] outputStream] notificationCenter:[NSUserNotificationCenter defaultUserNotificationCenter]]];
 }
 
 - (void)setupStatusBarItem {
@@ -75,17 +56,6 @@
 - (IBAction)showPreferences:(id)sender {
   [NSApp activateIgnoringOtherApps:YES];
   [[self preferencesPanel] makeKeyAndOrderFront:self];
-}
-
-- (BOOL)shouldShowNotificationFor:(TravisEvent *)eventData {
-  RepositoryFilter *filter;
-  if ([[Preferences sharedPreferences] firehoseEnabled]) {
-    filter = [RepositoryFilter filterThatAcceptsAllRepositories];
-  } else {
-    filter = [RepositoryFilter filtersWithMatches:[[Preferences sharedPreferences] repositories]];
-  }
-
-  return [filter acceptsRepository:[eventData name]];
 }
 
 #pragma mark - NSUserNotificationCenterDelegate
