@@ -47,8 +47,6 @@
 		2EDA045D156450750043A3A6 /* BuildEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EDA045C156450750043A3A6 /* BuildEvent.m */; };
 		2EDA0460156464FF0043A3A6 /* tray-alt.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EDA045E156464FF0043A3A6 /* tray-alt.png */; };
 		2EDA0461156464FF0043A3A6 /* tray.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EDA045F156464FF0043A3A6 /* tray.png */; };
-		2EDA046C1565B86F0043A3A6 /* Growl.framework in Copy Growl 1.3 */ = {isa = PBXBuildFile; fileRef = 2EE31A5E15642182004F33FE /* Growl.framework */; };
-		2EDA046E1565B8850043A3A6 /* Growl.framework in Copy Growl 1.2.3 */ = {isa = PBXBuildFile; fileRef = 2EDA04691565B82C0043A3A6 /* Growl.framework */; };
 		2EDA04751565C0A70043A3A6 /* PreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EDA04741565C0A70043A3A6 /* PreferencesController.m */; };
 		2EDA04781565C67C0043A3A6 /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EDA04771565C67C0043A3A6 /* Preferences.m */; };
 		2EE31A6B156422CF004F33FE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EE31A6A156422CF004F33FE /* AppDelegate.m */; };
@@ -93,7 +91,6 @@
 			dstPath = Contents/Frameworks/Growl/1.3;
 			dstSubfolderSpec = 1;
 			files = (
-				2EDA046C1565B86F0043A3A6 /* Growl.framework in Copy Growl 1.3 */,
 			);
 			name = "Copy Growl 1.3";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -104,7 +101,6 @@
 			dstPath = Contents/Frameworks/Growl/1.2.3;
 			dstSubfolderSpec = 1;
 			files = (
-				2EDA046E1565B8850043A3A6 /* Growl.framework in Copy Growl 1.2.3 */,
 			);
 			name = "Copy Growl 1.2.3";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -158,12 +154,10 @@
 		2EDA045C156450750043A3A6 /* BuildEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BuildEvent.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		2EDA045E156464FF0043A3A6 /* tray-alt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tray-alt.png"; sourceTree = "<group>"; };
 		2EDA045F156464FF0043A3A6 /* tray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tray.png; sourceTree = "<group>"; };
-		2EDA04691565B82C0043A3A6 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = vendor/legacy/Growl.framework; sourceTree = "<group>"; };
 		2EDA04731565C0A70043A3A6 /* PreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = PreferencesController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		2EDA04741565C0A70043A3A6 /* PreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = PreferencesController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		2EDA04761565C67C0043A3A6 /* Preferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Preferences.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		2EDA04771565C67C0043A3A6 /* Preferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = Preferences.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		2EE31A5E15642182004F33FE /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = vendor/Growl.framework; sourceTree = "<group>"; };
 		2EE31A69156422CF004F33FE /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2EE31A6A156422CF004F33FE /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = AppDelegate.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		2EE31A7015642547004F33FE /* Pusher.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Pusher.framework; path = vendor/Pusher.framework; sourceTree = "<group>"; };
@@ -275,7 +269,6 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2EDA04661565B7F90043A3A6 /* Growl */,
 				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
 				2E00CCC0164F974800A30635 /* SenTestingKit.framework */,
 				2E00CCC2164F974900A30635 /* Cocoa.framework */,
@@ -368,31 +361,6 @@
 				2EDA04741565C0A70043A3A6 /* PreferencesController.m */,
 			);
 			name = UI;
-			sourceTree = "<group>";
-		};
-		2EDA04661565B7F90043A3A6 /* Growl */ = {
-			isa = PBXGroup;
-			children = (
-				2EDA04681565B8190043A3A6 /* 1.2.3 */,
-				2EDA04671565B80B0043A3A6 /* 1.3 */,
-			);
-			name = Growl;
-			sourceTree = "<group>";
-		};
-		2EDA04671565B80B0043A3A6 /* 1.3 */ = {
-			isa = PBXGroup;
-			children = (
-				2EE31A5E15642182004F33FE /* Growl.framework */,
-			);
-			name = 1.3;
-			sourceTree = "<group>";
-		};
-		2EDA04681565B8190043A3A6 /* 1.2.3 */ = {
-			isa = PBXGroup;
-			children = (
-				2EDA04691565B82C0043A3A6 /* Growl.framework */,
-			);
-			name = 1.2.3;
 			sourceTree = "<group>";
 		};
 		2EE31A611564226E004F33FE /* Travis CI */ = {

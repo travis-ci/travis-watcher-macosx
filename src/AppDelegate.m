@@ -30,10 +30,7 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)notification {
   [[Preferences sharedPreferences] setupDefaults];
-
-  [self setupGrowl];
   [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:self];
-
   [self setupStatusBarItem];
 }
 
@@ -43,19 +40,6 @@
   [self setBuildUpdater:[BuildUpdater buildUpdaterWithInputStream:[[self eventFilter] outputStream] API:[TravisAPI standardAPI]]];
   [self setEventConverter:[EventConverter eventConverterWithInputStream:[[self buildUpdater] outputStream]]];
   [self setUserNotifier:[UserNotifier userNotifierWithInputStream:[[self eventConverter] outputStream] notificationCenter:[NSUserNotificationCenter defaultUserNotificationCenter]]];
-}
-
-- (void)setupGrowl {
-  NSBundle *mainBundle = [NSBundle mainBundle];
-  NSString *path = [[mainBundle privateFrameworksPath] stringByAppendingPathComponent:@"Growl"];
-  if (NSAppKitVersionNumber >= 1038)
-    path = [path stringByAppendingPathComponent:@"1.3"];
-  else
-    path = [path stringByAppendingPathComponent:@"1.2.3"];
-
-  path = [path stringByAppendingPathComponent:@"Growl.framework"];
-  NSBundle *growlFramework = [NSBundle bundleWithPath:path];
-  [growlFramework load];
 }
 
 - (void)setupStatusBarItem {
