@@ -21,20 +21,32 @@
 		2E12F3941652046A000048F5 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E12F3931652046A000048F5 /* Sparkle.framework */; };
 		2E12F3951652048C000048F5 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2E12F3931652046A000048F5 /* Sparkle.framework */; };
 		2E12F39716520C2A000048F5 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 2E12F39616520C2A000048F5 /* dsa_pub.pem */; };
+		2E72AF3B1669DA6000F2631C /* BuildEventStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E72AF3A1669DA6000F2631C /* BuildEventStream.m */; };
+		2E72AF3E166A7BE100F2631C /* EventFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E72AF3D166A7BE000F2631C /* EventFilter.m */; };
+		2E72AF41166A7F4600F2631C /* EventFilterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E72AF40166A7F4600F2631C /* EventFilterTests.m */; };
+		2E72AF42166A7FEA00F2631C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ECFA87545264EC28B9D5614 /* libPods.a */; };
+		2E72AF43166A800400F2631C /* EventFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E72AF3D166A7BE000F2631C /* EventFilter.m */; };
+		2E72AF44166A812200F2631C /* BuildEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EDA045C156450750043A3A6 /* BuildEvent.m */; };
+		2E72AF4E166AB20C00F2631C /* EventConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E72AF4D166AB20C00F2631C /* EventConverter.m */; };
+		2E72AF4F166AB20C00F2631C /* EventConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E72AF4D166AB20C00F2631C /* EventConverter.m */; };
+		2E72AF52166AB21E00F2631C /* EventConverterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E72AF51166AB21E00F2631C /* EventConverterTests.m */; };
+		2E72AF53166AB6C800F2631C /* Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E75988A164DF68100B87810 /* Notification.m */; };
+		2E72AF5E166AEA6500F2631C /* BuildUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E72AF5D166AEA6500F2631C /* BuildUpdater.m */; };
+		2E72AF5F166AEA6500F2631C /* BuildUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E72AF5D166AEA6500F2631C /* BuildUpdater.m */; };
+		2E72AF63166AEA9F00F2631C /* BuildUpdaterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E72AF62166AEA9F00F2631C /* BuildUpdaterTests.m */; };
+		2E72AF64166AED1400F2631C /* TravisAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E00CCB3164EE10000A30635 /* TravisAPI.m */; };
+		2E72AF65166AED2700F2631C /* TravisHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E00CCB6164EE18000A30635 /* TravisHTTPClient.m */; };
 		2E75988B164DF68100B87810 /* Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E75988A164DF68100B87810 /* Notification.m */; };
 		2E90F156164E389F009CAA25 /* Travis CI.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2E90F155164E389F009CAA25 /* Travis CI.icns */; };
-		2E90F15A164E49BB009CAA25 /* NotificationDisplayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E90F159164E49BB009CAA25 /* NotificationDisplayer.m */; };
+		2EADDD39166C8FDC002F3B82 /* UserNotifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EADDD38166C8FDC002F3B82 /* UserNotifier.m */; };
 		2EBA8CE9164FA582005C033E /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EDA04771565C67C0043A3A6 /* Preferences.m */; };
 		2EBA8CEA164FA582005C033E /* PreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EDA04741565C0A70043A3A6 /* PreferencesController.m */; };
-		2EBA8CF6164FAD4A005C033E /* RepositoryFilterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA8CF5164FAD4A005C033E /* RepositoryFilterTests.m */; };
-		2EBA8CFA164FAD91005C033E /* RepositoryFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA8CF9164FAD91005C033E /* RepositoryFilter.m */; };
-		2EBA8CFB164FAD9F005C033E /* RepositoryFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA8CF9164FAD91005C033E /* RepositoryFilter.m */; };
-		2EDA045915644D5D0043A3A6 /* TravisEventFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EDA045815644D5D0043A3A6 /* TravisEventFetcher.m */; };
-		2EDA045D156450750043A3A6 /* TravisEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EDA045C156450750043A3A6 /* TravisEvent.m */; };
+		2EBA8CF6164FAD4A005C033E /* FilterPreferencesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA8CF5164FAD4A005C033E /* FilterPreferencesTests.m */; };
+		2EBA8CFA164FAD91005C033E /* FilterPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA8CF9164FAD91005C033E /* FilterPreferences.m */; };
+		2EBA8CFB164FAD9F005C033E /* FilterPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA8CF9164FAD91005C033E /* FilterPreferences.m */; };
+		2EDA045D156450750043A3A6 /* BuildEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EDA045C156450750043A3A6 /* BuildEvent.m */; };
 		2EDA0460156464FF0043A3A6 /* tray-alt.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EDA045E156464FF0043A3A6 /* tray-alt.png */; };
 		2EDA0461156464FF0043A3A6 /* tray.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EDA045F156464FF0043A3A6 /* tray.png */; };
-		2EDA046C1565B86F0043A3A6 /* Growl.framework in Copy Growl 1.3 */ = {isa = PBXBuildFile; fileRef = 2EE31A5E15642182004F33FE /* Growl.framework */; };
-		2EDA046E1565B8850043A3A6 /* Growl.framework in Copy Growl 1.2.3 */ = {isa = PBXBuildFile; fileRef = 2EDA04691565B82C0043A3A6 /* Growl.framework */; };
 		2EDA04751565C0A70043A3A6 /* PreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EDA04741565C0A70043A3A6 /* PreferencesController.m */; };
 		2EDA04781565C67C0043A3A6 /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EDA04771565C67C0043A3A6 /* Preferences.m */; };
 		2EE31A6B156422CF004F33FE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EE31A6A156422CF004F33FE /* AppDelegate.m */; };
@@ -79,7 +91,6 @@
 			dstPath = Contents/Frameworks/Growl/1.3;
 			dstSubfolderSpec = 1;
 			files = (
-				2EDA046C1565B86F0043A3A6 /* Growl.framework in Copy Growl 1.3 */,
 			);
 			name = "Copy Growl 1.3";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -90,7 +101,6 @@
 			dstPath = Contents/Frameworks/Growl/1.2.3;
 			dstSubfolderSpec = 1;
 			files = (
-				2EDA046E1565B8850043A3A6 /* Growl.framework in Copy Growl 1.2.3 */,
 			);
 			name = "Copy Growl 1.2.3";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -120,31 +130,37 @@
 		2E00CCD8164F9A9B00A30635 /* PreferencesControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = PreferencesControllerTests.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		2E12F3931652046A000048F5 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = vendor/Sparkle.framework; sourceTree = "<group>"; };
 		2E12F39616520C2A000048F5 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
+		2E72AF391669DA5F00F2631C /* BuildEventStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildEventStream.h; sourceTree = "<group>"; };
+		2E72AF3A1669DA6000F2631C /* BuildEventStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildEventStream.m; sourceTree = "<group>"; };
+		2E72AF3C166A7BE000F2631C /* EventFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventFilter.h; sourceTree = "<group>"; };
+		2E72AF3D166A7BE000F2631C /* EventFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventFilter.m; sourceTree = "<group>"; };
+		2E72AF40166A7F4600F2631C /* EventFilterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventFilterTests.m; sourceTree = "<group>"; };
+		2E72AF4C166AB20C00F2631C /* EventConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventConverter.h; sourceTree = "<group>"; };
+		2E72AF4D166AB20C00F2631C /* EventConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventConverter.m; sourceTree = "<group>"; };
+		2E72AF51166AB21E00F2631C /* EventConverterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventConverterTests.m; sourceTree = "<group>"; };
+		2E72AF5C166AEA6500F2631C /* BuildUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildUpdater.h; sourceTree = "<group>"; };
+		2E72AF5D166AEA6500F2631C /* BuildUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildUpdater.m; sourceTree = "<group>"; };
+		2E72AF62166AEA9F00F2631C /* BuildUpdaterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildUpdaterTests.m; sourceTree = "<group>"; };
 		2E759889164DF68100B87810 /* Notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Notification.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		2E75988A164DF68100B87810 /* Notification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = Notification.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		2E90F155164E389F009CAA25 /* Travis CI.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "Travis CI.icns"; sourceTree = "<group>"; };
-		2E90F158164E49BB009CAA25 /* NotificationDisplayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = NotificationDisplayer.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		2E90F159164E49BB009CAA25 /* NotificationDisplayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = NotificationDisplayer.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		2E90F15B164E64F7009CAA25 /* TravisEventFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = TravisEventFetcher.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		2EBA8CF5164FAD4A005C033E /* RepositoryFilterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = RepositoryFilterTests.m; path = test/RepositoryFilterTests.m; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		2EBA8CF8164FAD91005C033E /* RepositoryFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = RepositoryFilter.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		2EBA8CF9164FAD91005C033E /* RepositoryFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = RepositoryFilter.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		2EADDD37166C8FDC002F3B82 /* UserNotifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserNotifier.h; sourceTree = "<group>"; };
+		2EADDD38166C8FDC002F3B82 /* UserNotifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserNotifier.m; sourceTree = "<group>"; };
+		2EBA8CF5164FAD4A005C033E /* FilterPreferencesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = FilterPreferencesTests.m; path = test/FilterPreferencesTests.m; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		2EBA8CF8164FAD91005C033E /* FilterPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = FilterPreferences.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		2EBA8CF9164FAD91005C033E /* FilterPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = FilterPreferences.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		2ECFA87545264EC28B9D5614 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		2EDA045815644D5D0043A3A6 /* TravisEventFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = TravisEventFetcher.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		2EDA045B156450750043A3A6 /* TravisEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = TravisEvent.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		2EDA045C156450750043A3A6 /* TravisEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = TravisEvent.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		2EDA045B156450750043A3A6 /* BuildEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = BuildEvent.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		2EDA045C156450750043A3A6 /* BuildEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BuildEvent.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		2EDA045E156464FF0043A3A6 /* tray-alt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tray-alt.png"; sourceTree = "<group>"; };
 		2EDA045F156464FF0043A3A6 /* tray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tray.png; sourceTree = "<group>"; };
-		2EDA04691565B82C0043A3A6 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = vendor/legacy/Growl.framework; sourceTree = "<group>"; };
 		2EDA04731565C0A70043A3A6 /* PreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = PreferencesController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		2EDA04741565C0A70043A3A6 /* PreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = PreferencesController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		2EDA04761565C67C0043A3A6 /* Preferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Preferences.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		2EDA04771565C67C0043A3A6 /* Preferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = Preferences.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		2EE31A5E15642182004F33FE /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = vendor/Growl.framework; sourceTree = "<group>"; };
 		2EE31A69156422CF004F33FE /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2EE31A6A156422CF004F33FE /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = AppDelegate.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		2EE31A7015642547004F33FE /* Pusher.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Pusher.framework; path = vendor/Pusher.framework; sourceTree = "<group>"; };
-		2EE31A731564259B004F33FE /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		2EE31A7E15644ABD004F33FE /* Travis CI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Travis CI.entitlements"; sourceTree = "<group>"; };
 		884722F96BEB4A039C4EBD96 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -161,6 +177,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E72AF42166A7FEA00F2631C /* libPods.a in Frameworks */,
 				2E00CCD3164F988400A30635 /* OCHamcrest.framework in Frameworks */,
 				2E00CCD1164F97A200A30635 /* OCMockito.framework in Frameworks */,
 				2E00CCC1164F974800A30635 /* SenTestingKit.framework in Frameworks */,
@@ -252,7 +269,6 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2EDA04661565B7F90043A3A6 /* Growl */,
 				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
 				2E00CCC0164F974800A30635 /* SenTestingKit.framework */,
 				2E00CCC2164F974900A30635 /* Cocoa.framework */,
@@ -286,8 +302,11 @@
 		2E00CCC4164F974900A30635 /* TravisToolbarTests */ = {
 			isa = PBXGroup;
 			children = (
+				2E72AF62166AEA9F00F2631C /* BuildUpdaterTests.m */,
+				2E72AF51166AB21E00F2631C /* EventConverterTests.m */,
+				2E72AF40166A7F4600F2631C /* EventFilterTests.m */,
+				2EBA8CF5164FAD4A005C033E /* FilterPreferencesTests.m */,
 				2E00CCD8164F9A9B00A30635 /* PreferencesControllerTests.m */,
-				2EBA8CF5164FAD4A005C033E /* RepositoryFilterTests.m */,
 				2E00CCC5164F974900A30635 /* Supporting Files */,
 			);
 			name = TravisToolbarTests;
@@ -304,54 +323,58 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		2EDA04661565B7F90043A3A6 /* Growl */ = {
+		2E72AF49166AB19400F2631C /* Notifications */ = {
 			isa = PBXGroup;
 			children = (
-				2EDA04681565B8190043A3A6 /* 1.2.3 */,
-				2EDA04671565B80B0043A3A6 /* 1.3 */,
+				2E72AF4A166AB1B100F2631C /* Pipeline */,
+				2EDA045B156450750043A3A6 /* BuildEvent.h */,
+				2EDA045C156450750043A3A6 /* BuildEvent.m */,
+				2EBA8CF8164FAD91005C033E /* FilterPreferences.h */,
+				2EBA8CF9164FAD91005C033E /* FilterPreferences.m */,
+				2E759889164DF68100B87810 /* Notification.h */,
+				2E75988A164DF68100B87810 /* Notification.m */,
 			);
-			name = Growl;
+			name = Notifications;
 			sourceTree = "<group>";
 		};
-		2EDA04671565B80B0043A3A6 /* 1.3 */ = {
+		2E72AF4A166AB1B100F2631C /* Pipeline */ = {
 			isa = PBXGroup;
 			children = (
-				2EE31A5E15642182004F33FE /* Growl.framework */,
+				2E72AF391669DA5F00F2631C /* BuildEventStream.h */,
+				2E72AF3A1669DA6000F2631C /* BuildEventStream.m */,
+				2E72AF5C166AEA6500F2631C /* BuildUpdater.h */,
+				2E72AF5D166AEA6500F2631C /* BuildUpdater.m */,
+				2E72AF4C166AB20C00F2631C /* EventConverter.h */,
+				2E72AF4D166AB20C00F2631C /* EventConverter.m */,
+				2E72AF3C166A7BE000F2631C /* EventFilter.h */,
+				2E72AF3D166A7BE000F2631C /* EventFilter.m */,
+				2EADDD37166C8FDC002F3B82 /* UserNotifier.h */,
+				2EADDD38166C8FDC002F3B82 /* UserNotifier.m */,
 			);
-			name = 1.3;
+			name = Pipeline;
 			sourceTree = "<group>";
 		};
-		2EDA04681565B8190043A3A6 /* 1.2.3 */ = {
+		2E72AF4B166AB1C100F2631C /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				2EDA04691565B82C0043A3A6 /* Growl.framework */,
+				2EDA04731565C0A70043A3A6 /* PreferencesController.h */,
+				2EDA04741565C0A70043A3A6 /* PreferencesController.m */,
 			);
-			name = 1.2.3;
+			name = UI;
 			sourceTree = "<group>";
 		};
 		2EE31A611564226E004F33FE /* Travis CI */ = {
 			isa = PBXGroup;
 			children = (
+				2E72AF49166AB19400F2631C /* Notifications */,
 				2E00CCB1164EE0C300A30635 /* Travis API */,
+				2E72AF4B166AB1C100F2631C /* UI */,
 				2EE31A69156422CF004F33FE /* AppDelegate.h */,
 				2EE31A6A156422CF004F33FE /* AppDelegate.m */,
-				2EE31A731564259B004F33FE /* Constants.h */,
-				2E759889164DF68100B87810 /* Notification.h */,
-				2E75988A164DF68100B87810 /* Notification.m */,
-				2E90F158164E49BB009CAA25 /* NotificationDisplayer.h */,
-				2E90F159164E49BB009CAA25 /* NotificationDisplayer.m */,
 				2EDA04761565C67C0043A3A6 /* Preferences.h */,
 				2EDA04771565C67C0043A3A6 /* Preferences.m */,
-				2EDA04731565C0A70043A3A6 /* PreferencesController.h */,
-				2EDA04741565C0A70043A3A6 /* PreferencesController.m */,
 				9DAF568D15932852002018B5 /* Reachability.h */,
 				9DAF568E15932852002018B5 /* Reachability.m */,
-				2EBA8CF8164FAD91005C033E /* RepositoryFilter.h */,
-				2EBA8CF9164FAD91005C033E /* RepositoryFilter.m */,
-				2EDA045B156450750043A3A6 /* TravisEvent.h */,
-				2EDA045C156450750043A3A6 /* TravisEvent.m */,
-				2E90F15B164E64F7009CAA25 /* TravisEventFetcher.h */,
-				2EDA045815644D5D0043A3A6 /* TravisEventFetcher.m */,
 				2EE31A6C15642365004F33FE /* Supporting Files */,
 			);
 			name = "Travis CI";
@@ -500,11 +523,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E72AF65166AED2700F2631C /* TravisHTTPClient.m in Sources */,
+				2E72AF64166AED1400F2631C /* TravisAPI.m in Sources */,
+				2E72AF53166AB6C800F2631C /* Notification.m in Sources */,
+				2E72AF44166A812200F2631C /* BuildEvent.m in Sources */,
+				2E72AF43166A800400F2631C /* EventFilter.m in Sources */,
 				2E00CCD9164F9A9B00A30635 /* PreferencesControllerTests.m in Sources */,
-				2EBA8CF6164FAD4A005C033E /* RepositoryFilterTests.m in Sources */,
+				2EBA8CF6164FAD4A005C033E /* FilterPreferencesTests.m in Sources */,
 				2EBA8CE9164FA582005C033E /* Preferences.m in Sources */,
 				2EBA8CEA164FA582005C033E /* PreferencesController.m in Sources */,
-				2EBA8CFB164FAD9F005C033E /* RepositoryFilter.m in Sources */,
+				2EBA8CFB164FAD9F005C033E /* FilterPreferences.m in Sources */,
+				2E72AF41166A7F4600F2631C /* EventFilterTests.m in Sources */,
+				2E72AF4F166AB20C00F2631C /* EventConverter.m in Sources */,
+				2E72AF52166AB21E00F2631C /* EventConverterTests.m in Sources */,
+				2E72AF5F166AEA6500F2631C /* BuildUpdater.m in Sources */,
+				2E72AF63166AEA9F00F2631C /* BuildUpdaterTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,16 +547,19 @@
 			files = (
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
 				2EE31A6B156422CF004F33FE /* AppDelegate.m in Sources */,
-				2EDA045915644D5D0043A3A6 /* TravisEventFetcher.m in Sources */,
-				2EDA045D156450750043A3A6 /* TravisEvent.m in Sources */,
+				2EDA045D156450750043A3A6 /* BuildEvent.m in Sources */,
 				2EDA04751565C0A70043A3A6 /* PreferencesController.m in Sources */,
 				2EDA04781565C67C0043A3A6 /* Preferences.m in Sources */,
 				9DAF568F15932852002018B5 /* Reachability.m in Sources */,
 				2E75988B164DF68100B87810 /* Notification.m in Sources */,
-				2E90F15A164E49BB009CAA25 /* NotificationDisplayer.m in Sources */,
 				2E00CCB4164EE10000A30635 /* TravisAPI.m in Sources */,
 				2E00CCB7164EE18000A30635 /* TravisHTTPClient.m in Sources */,
-				2EBA8CFA164FAD91005C033E /* RepositoryFilter.m in Sources */,
+				2EBA8CFA164FAD91005C033E /* FilterPreferences.m in Sources */,
+				2E72AF3B1669DA6000F2631C /* BuildEventStream.m in Sources */,
+				2E72AF3E166A7BE100F2631C /* EventFilter.m in Sources */,
+				2E72AF4E166AB20C00F2631C /* EventConverter.m in Sources */,
+				2E72AF5E166AEA6500F2631C /* BuildUpdater.m in Sources */,
+				2EADDD39166C8FDC002F3B82 /* UserNotifier.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -559,6 +595,7 @@
 /* Begin XCBuildConfiguration section */
 		2E00CCCF164F974900A30635 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 884722F96BEB4A039C4EBD96 /* Pods.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
@@ -602,6 +639,7 @@
 		};
 		2E00CCD0164F974900A30635 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 884722F96BEB4A039C4EBD96 /* Pods.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";

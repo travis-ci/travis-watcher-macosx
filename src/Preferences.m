@@ -39,17 +39,17 @@ static NSString * const kFirehoseSetting = @"firehose";
 - (void)addRepository:(NSString *)slug {
   if (![[self repositories] containsObject:slug]) {
     NSArray *repositories = [[self repositories] arrayByAddingObject:slug];
-    [self updateRepositories:repositories];
+    [self setRepositories:repositories];
   }
 }
 
 - (void)removeRepository:(NSString *)slug {
   NSMutableArray *repositories = [[self repositories] mutableCopy];
   [repositories removeObject:slug];
-  [self updateRepositories:repositories];
+  [self setRepositories:repositories];
 }
 
-- (void)updateRepositories:(NSArray *)repositories {
+- (void)setRepositories:(NSArray *)repositories {
   NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
   [userDefaults setObject:repositories forKey:kRepositoriesSetting];
   [userDefaults synchronize];
