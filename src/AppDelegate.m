@@ -47,6 +47,7 @@
   [[Preferences sharedPreferences] setupDefaults];
   [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:self];
   [self setupStatusBarItem];
+  [self setupPipeline];
 }
 
 - (void)setupPipeline {
