@@ -24,6 +24,7 @@
 }
 
 - (RACSignal *)fetchAccessTokenWithGitHubToken:(NSString *)githubToken {
+  NSParameterAssert(githubToken != nil);
   return [[[TravisAPI standardAPI] fetchAccessTokenForGitHubToken:githubToken] map:^(NSDictionary *response) {
     return response[@"access_token"];
   }];

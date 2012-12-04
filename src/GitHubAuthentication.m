@@ -51,6 +51,21 @@
 - (void)handleRedirect:(NSURL *)URL {
   NSString *code = [self getCodeFromURL:URL];
 
+  NSLog(@"Our code: %@ (class: %@)", code, [code class]);
+
+  if ([code isEqualToString:@""]) {
+    NSString *error = [self getErrorFromURL:URL];
+    if ([error isEqualToString:@"access_denied"]) {
+      NSLog(@"Access denied");
+      [[self authentication] sendError:[NSError errorWithDomain:GitHubAuthenticationErrorDomain code:GitHubAuthenticationAccessDeniedError userInfo:nil]];
+    } else {
+      NSLog(@"Unknown error: %@", error);
+      [[self authentication] sendError:[NSError errorWithDomain:GitHubAuthenticationErrorDomain code:GitHubAuthenticationUnknownError userInfo:nil]];
+    }
+    
+    return;
+  }
+
   AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:@"https://github.com"]];
   [client registerHTTPOperationClass:[AFJSONRequestOperation class]];
   [client setDefaultHeader:@"Accept" value:@"application/json"];
@@ -62,13 +77,21 @@
   }];
 }
 
+- (NSString *)getErrorFromURL:(NSURL *)URL {
+  return [self getKey:@"error" fromURL:URL];
+}
+
 - (NSString *)getCodeFromURL:(NSURL *)URL {
+  return [self getKey:@"code" fromURL:URL];
+}
+
+- (NSString *)getKey:(NSString *)key fromURL:(NSURL *)URL {
   for (NSString *component in [[URL query] componentsSeparatedByString:@"&"]) {
     NSArray *key_value = [component componentsSeparatedByString:@"="];
-    NSString *key = key_value[0];
+    NSString *thisKey = key_value[0];
     NSString *value = key_value[1];
 
-    if ([key isEqualToString:@"code"]) return value;
+    if ([key isEqualToString:thisKey]) return value;
   }
 
   return @"";
@@ -83,3 +106,5 @@
 }
 
 @end
+
+NSString * const GitHubAuthenticationErrorDomain = @"GitHubAuthenticatinoErrorDomain";

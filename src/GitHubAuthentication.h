@@ -10,6 +10,11 @@
 
 @class RACSignal;
 
+typedef NS_ENUM(NSInteger, GitHubAuthenticationErrorCode) {
+  GitHubAuthenticationAccessDeniedError,
+  GitHubAuthenticationUnknownError,
+};
+
 @interface GitHubAuthentication : NSObject
 
 + (GitHubAuthentication *)sharedAuthenticator;
@@ -22,3 +27,5 @@
 - (RACSignal *)fetchAccessToken;
 
 @end
+
+FOUNDATION_EXPORT NSString * const GitHubAuthenticationErrorDomain;

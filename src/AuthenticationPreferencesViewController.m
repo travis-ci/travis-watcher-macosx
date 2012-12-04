@@ -71,15 +71,28 @@
   [[[self authenticationPreferencesView] signInButton] setHidden:YES];
   [[[self authenticationPreferencesView] progressIndicator] startAnimation:self];
 
-  [[[[GitHubAuthentication sharedAuthenticator] fetchAccessToken]
-   flattenMap:^(NSString *githubToken) {
-     return [[TravisAuthenticator sharedAuthenticator] fetchAccessTokenWithGitHubToken:githubToken];
-   }]
-   subscribeNext:^(NSString *accessToken) {
-     [TravisKeychain setAccessToken:accessToken];
-     [[[self authenticationPreferencesView] progressIndicator] stopAnimation:self];
-     [self setupForLoggedInUser];
-   }];
+  @weakify(self);
+
+  [[[GitHubAuthentication sharedAuthenticator] fetchAccessToken] subscribeNext:^(NSString *githubToken) {
+    [[[TravisAuthenticator sharedAuthenticator] fetchAccessTokenWithGitHubToken:githubToken] subscribeNext:^(NSString *accessToken) {
+      @strongify(self);
+      [TravisKeychain setAccessToken:accessToken];
+      [[[self authenticationPreferencesView] progressIndicator] stopAnimation:self];
+      [self setupForLoggedInUser];
+    } error:^(NSError *error) {
+      @strongify(self);
+      [[[self authenticationPreferencesView] statusLabel] setStringValue:@"There was an error authenticating with Travis."];
+      [[[self authenticationPreferencesView] progressIndicator] stopAnimation:self];
+      [self setupForLoggedOutUser];
+      NSLog(@"Travis Error: %@", error);
+    }];
+  } error:^(NSError *error) {
+    @strongify(self);
+    [[[self authenticationPreferencesView] statusLabel] setStringValue:@"There was an error authenticating with GitHub."];
+    [[[self authenticationPreferencesView] progressIndicator] stopAnimation:self];
+    [self setupForLoggedOutUser];
+    NSLog(@"GitHub Error: %@", error);
+  }];
 }
 
 - (void)setupForLoggedInUser {

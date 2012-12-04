@@ -34,6 +34,7 @@
 }
 
 - (RACSignal *)fetchAccessTokenForGitHubToken:(NSString *)githubToken {
+  NSParameterAssert(githubToken != nil);
   return [[self HTTPClient] requestWithMethod:TravisHTTPClientMethodPOST path:@"/auth/github" parameters:@{ @"token": githubToken }];
 }
 
