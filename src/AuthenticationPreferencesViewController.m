@@ -17,11 +17,13 @@
 #import "TravisAuthenticator.h"
 #import "TravisAPI.h"
 #import "TravisKeychain.h"
+#import "Preferences.h"
 
 @interface AuthenticationPreferencesViewController ()
 @property (nonatomic, strong) AuthenticationPreferencesView *authenticationPreferencesView;
 @property (nonatomic, strong) RACAsyncCommand *signInCommand;
 @property (nonatomic, strong) RACAsyncCommand *signOutCommand;
+@property (nonatomic, strong) RACAsyncCommand *enableSelfNotificationsCommand;
 @end
 
 @implementation AuthenticationPreferencesViewController
@@ -32,6 +34,7 @@
 
   _signInCommand = [RACAsyncCommand command];
   _signOutCommand = [RACAsyncCommand command];
+  _enableSelfNotificationsCommand = [RACAsyncCommand command];
 
   return self;
 }
@@ -60,6 +63,7 @@
   [[[self authenticationPreferencesView] signInButton] setRac_command:[self signInCommand]];
   [[[self authenticationPreferencesView] signInButton] setTitle:@"Log In With GitHub"];
   [[[self authenticationPreferencesView] signInButton] setHidden:NO];
+  [[[self authenticationPreferencesView] enableSelfNotificationsButton] setHidden:YES];
   RAC(self.authenticationPreferencesView.statusLabel.stringValue) = [[GitHubAuthentication sharedAuthenticator] authenticationStatus];
 
   [[[self signInCommand] deliverOn:[RACScheduler mainQueueScheduler]] subscribeNext:^(id _) {
@@ -99,12 +103,19 @@
   [[[self authenticationPreferencesView] signInButton] setRac_command:[self signOutCommand]];
   [[[self authenticationPreferencesView] signInButton] setTitle:@"Sign Out"];
   [[[self authenticationPreferencesView] signInButton] setHidden:NO];
-  [[[self authenticationPreferencesView] progressIndicator] startAnimation:self];
-  [[[TravisAPI standardAPI] fetchUserInfo] subscribeNext:^(NSDictionary *userInfo) {
-    NSString *newLabel = [NSString stringWithFormat:@"Logged in as %@", userInfo[@"login"]];
+  [[[self authenticationPreferencesView] enableSelfNotificationsButton] setHidden:NO];
+  if ([[Preferences sharedPreferences] loggedInAs]) {
+    NSString *newLabel = [NSString stringWithFormat:@"Logged in as %@", [[Preferences sharedPreferences] loggedInAs]];
     [[[self authenticationPreferencesView] statusLabel] setStringValue:newLabel];
-    [[[self authenticationPreferencesView] progressIndicator] stopAnimation:self];
-  }];
+  } else {
+    [[[self authenticationPreferencesView] progressIndicator] startAnimation:self];
+    [[[TravisAPI standardAPI] fetchUserInfo] subscribeNext:^(NSDictionary *userInfo) {
+      [[Preferences sharedPreferences] setLoggedInAs:userInfo[@"login"]];
+      NSString *newLabel = [NSString stringWithFormat:@"Logged in as %@", userInfo[@"login"]];
+      [[[self authenticationPreferencesView] statusLabel] setStringValue:newLabel];
+      [[[self authenticationPreferencesView] progressIndicator] stopAnimation:self];
+    }];
+  }
 
   [[self signOutCommand] subscribeNext:^(id _) {
     [TravisKeychain deleteAccessToken];
@@ -119,6 +130,12 @@
   } else {
     [self setupForLoggedOutUser];
   }
+
+  [[[self authenticationPreferencesView] enableSelfNotificationsButton] setState:([[Preferences sharedPreferences] selfNotifications] ? NSOnState : NSOffState)];
+  [[[self authenticationPreferencesView] enableSelfNotificationsButton] setRac_command:[self enableSelfNotificationsCommand]];
+  [[self enableSelfNotificationsCommand] subscribeNext:^(NSButton *sender) {
+    [[Preferences sharedPreferences] setSelfNotifications:[sender state] == NSOnState];
+  }];
 }
 
 

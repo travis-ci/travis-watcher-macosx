@@ -10,6 +10,8 @@
 
 static NSString * const kRepositoriesSetting = @"repositories";
 static NSString * const kFirehoseSetting = @"firehose";
+static NSString * const kSelfNotificationsSetting = @"self_notifications";
+static NSString * const kLoggedInAsSetting = @"logged_in_as";
 
 @implementation Preferences
 
@@ -28,6 +30,7 @@ static NSString * const kFirehoseSetting = @"firehose";
   [defaults registerDefaults:@{
     kRepositoriesSetting: @[],
     kFirehoseSetting: @(NO),
+    kSelfNotificationsSetting: @(YES),
   }];
 }
 
@@ -63,6 +66,28 @@ static NSString * const kFirehoseSetting = @"firehose";
 - (void)setFirehoseEnabled:(BOOL)firehoseEnabled {
   NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
   [userDefaults setBool:firehoseEnabled forKey:kFirehoseSetting];
+  [userDefaults synchronize];
+}
+
+- (BOOL)selfNotifications {
+  NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+  return [userDefaults boolForKey:kSelfNotificationsSetting];
+}
+
+- (void)setSelfNotifications:(BOOL)selfNotifications {
+  NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+  [userDefaults setBool:selfNotifications forKey:kSelfNotificationsSetting];
+  [userDefaults synchronize];
+}
+
+- (NSString *)loggedInAs {
+  NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+  return [userDefaults objectForKey:kLoggedInAsSetting];
+}
+
+- (void)setLoggedInAs:(NSString *)loggedInAs {
+  NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+  [userDefaults setObject:loggedInAs forKey:kLoggedInAsSetting];
   [userDefaults synchronize];
 }
 

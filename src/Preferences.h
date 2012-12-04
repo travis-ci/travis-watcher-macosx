@@ -19,5 +19,7 @@
 - (void)removeRepository:(NSString *)slug;
 
 @property (nonatomic, assign) BOOL firehoseEnabled;
+@property (nonatomic, assign) BOOL selfNotifications;
+@property (nonatomic, strong) NSString *loggedInAs;
 
 @end
