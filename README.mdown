@@ -6,10 +6,9 @@ Travis Watcher is a toolbar app for OSX that notifies you about your Travis buil
 
 ## Installation
 
-To install the app, download it from the [downloads page][downloads] on GitHub. Make sure you download the latest
-version under "Downloads Packages", and not the "Download as zip" button.
+To install the app, download it from [here][last-download].
 
-[downloads]: https://github.com/travis-ci/travis-watcher-macosx/downloads
+[last-download]: https://github.com/downloads/travis-ci/travis-watcher-macosx/TravisCI-v0.2.4.zip
 
 ## Preferences
 
