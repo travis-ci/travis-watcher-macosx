@@ -17,6 +17,10 @@
 #import "FilterPreferences.h"
 #import "TravisAPI.h"
 
+#import "GitHubAuthentication.h"
+
+#import "PreferencesWindowController.h"
+
 @interface AppDelegate () <NSUserNotificationCenterDelegate>
 @property (strong) NSStatusItem *statusItem;
 @property (strong) BuildEventStream *buildEventStream;
@@ -24,14 +28,26 @@
 @property (strong) EventConverter *eventConverter;
 @property (strong) BuildUpdater *buildUpdater;
 @property (strong) UserNotifier *userNotifier;
+@property (strong) PreferencesWindowController *preferencesWindowController;
 @end
 
 @implementation AppDelegate
+
+- (void)applicationWillFinishLaunching:(NSNotification *)notification {
+  [[NSAppleEventManager sharedAppleEventManager] setEventHandler:self andSelector:@selector(handleAppleEvent:withReplyEvent:) forEventClass:kInternetEventClass andEventID:kAEGetURL];
+}
+
+- (void)handleAppleEvent:(NSAppleEventDescriptor *)event withReplyEvent:(NSAppleEventDescriptor *)replyEvent {
+  NSURL *URL = [NSURL URLWithString:[[event paramDescriptorForKeyword:keyDirectObject] stringValue]];
+
+  [[GitHubAuthentication sharedAuthenticator] handleRedirect:URL];
+}
 
 - (void)applicationDidFinishLaunching:(NSNotification *)notification {
   [[Preferences sharedPreferences] setupDefaults];
   [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:self];
   [self setupStatusBarItem];
+  [self setupPipeline];
 }
 
 - (void)setupPipeline {
@@ -55,7 +71,8 @@
 
 - (IBAction)showPreferences:(id)sender {
   [NSApp activateIgnoringOtherApps:YES];
-  [[self preferencesPanel] makeKeyAndOrderFront:self];
+  [self setPreferencesWindowController:[[PreferencesWindowController alloc] init]];
+  [[[self preferencesWindowController] window] makeKeyAndOrderFront:nil];
 }
 
 #pragma mark - NSUserNotificationCenterDelegate

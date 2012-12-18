@@ -12,6 +12,7 @@ PODS:
   - libextobjc/EXTScope (~> 0.2.3)
 - ReactiveCocoa/RACExtensions (0.10.0):
   - ReactiveCocoa/Core
+- SSKeychain (0.1.4)
 - libextobjc/EXTConcreteProtocol (0.2.3)
 - libextobjc/EXTKeyPathCoding (0.2.3)
 - libextobjc/EXTScope (0.2.3)
@@ -19,6 +20,7 @@ PODS:
 DEPENDENCIES:
 - AFNetworking (~> 1.0)
 - ReactiveCocoa (~> 0.10.0)
+- SSKeychain (~> 0.1.0)
 
 SPEC CHECKSUMS:
   AFNetworking: 4c11f857c9a18d65f4257c90a1e74ac49f0ac422
@@ -26,6 +28,7 @@ SPEC CHECKSUMS:
   ReactiveCocoa: 1d0b1bca0092ca3088d7ae66799ce0116c25a612
   ReactiveCocoa/Core: 1d0b1bca0092ca3088d7ae66799ce0116c25a612
   ReactiveCocoa/RACExtensions: 1d0b1bca0092ca3088d7ae66799ce0116c25a612
+  SSKeychain: bae692a4354f48691ca3463a121dc8060f781a7d
   libextobjc/EXTConcreteProtocol: 7dcd66faf065d3b7fcb5f85a1646efaed28bcadf
   libextobjc/EXTKeyPathCoding: 7dcd66faf065d3b7fcb5f85a1646efaed28bcadf
   libextobjc/EXTScope: 7dcd66faf065d3b7fcb5f85a1646efaed28bcadf

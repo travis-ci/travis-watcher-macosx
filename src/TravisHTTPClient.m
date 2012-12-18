@@ -9,8 +9,9 @@
 #import "TravisHTTPClient.h"
 #import <AFNetworking/AFNetworking.h>
 #import <ReactiveCocoa/ReactiveCocoa.h>
+#import "TravisKeychain.h"
 
-NSString * const kTravisBaseURL = @"http://travis-ci.org";
+NSString * const kTravisBaseURL = @"https://api.travis-ci.org";
 
 @interface TravisHTTPClient ()
 @property (nonatomic, strong) AFHTTPClient *HTTPClient;
@@ -39,7 +40,12 @@ NSString * const kTravisBaseURL = @"http://travis-ci.org";
 
 - (RACSignal *)requestWithMethod:(TravisHTTPClientMethod)method path:(NSString *)path parameters:(NSDictionary *)parameters {
   RACReplaySubject *subject = [RACReplaySubject subject];
-  NSURLRequest *request = [[self HTTPClient] requestWithMethod:[self methodStringForMethod:method] path:path parameters:parameters];
+  NSMutableURLRequest *request = [[[self HTTPClient] requestWithMethod:[self methodStringForMethod:method] path:path parameters:parameters] mutableCopy];
+
+  if ([TravisKeychain accessToken]) {
+    [request setValue:[NSString stringWithFormat:@"Token \"%@\"", [TravisKeychain accessToken]] forHTTPHeaderField:@"Authorization"];
+  }
+
   AFHTTPRequestOperation *operation = [[self HTTPClient] HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject) {
     [subject sendNext:responseObject];
     [subject sendCompleted];

@@ -20,6 +20,21 @@
 	<string>0.2.4</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Viewer</string>
+			<key>CFBundleURLIconFile</key>
+			<string>tray</string>
+			<key>CFBundleURLName</key>
+			<string>travis-ci</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>travis-ci</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>0.2.4</string>
 	<key>LSApplicationCategoryType</key>

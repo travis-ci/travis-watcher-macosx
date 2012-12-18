@@ -17,3 +17,6 @@ DerivedData
 
 # CocoaPods
 Pods
+
+# Travis CI
+src/GitHubDefines.h

@@ -54,8 +54,13 @@
 
 - (void)setupBindings {
   RAC(self.filter) = [RACSignal
-                      combineLatest:@[ RACAbleWithStart(self.preferences.firehoseEnabled), RACAbleWithStart(self.preferences.repositories) ]
-                      reduce:^ id<Filter> (NSNumber *firehoseEnabled, NSArray *repositories) {
+                      combineLatest:@[
+                        RACAbleWithStart(self.preferences.firehoseEnabled),
+                        RACAbleWithStart(self.preferences.repositories),
+                        RACAbleWithStart(self.preferences.selfNotifications),
+                        RACAbleWithStart(self.preferences.loggedInAs)
+                      ]
+                      reduce:^ id<Filter> (NSNumber *firehoseEnabled, NSArray *repositories, NSNumber *selfNotifications, NSString *loggedInAs) {
                         if ([firehoseEnabled boolValue]) {
                           return [AcceptAllRepositoryFilter new];
                         } else {
@@ -63,6 +68,10 @@
 
                           for (NSString *slug in repositories) {
                             [filter addFilter:[[MatchRepositoryFilter alloc] initWithMatcher:slug]];
+                          }
+
+                          if ([selfNotifications boolValue] && loggedInAs) {
+                            [filter addFilter:[[MatchRepositoryFilter alloc] initWithMatcher:[NSString stringWithFormat:@"%@/*", loggedInAs]]];
                           }
                           
                           return filter;

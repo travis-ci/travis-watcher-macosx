@@ -39,19 +39,29 @@
 		2E75988B164DF68100B87810 /* Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E75988A164DF68100B87810 /* Notification.m */; };
 		2E90F156164E389F009CAA25 /* Travis CI.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2E90F155164E389F009CAA25 /* Travis CI.icns */; };
 		2EADDD39166C8FDC002F3B82 /* UserNotifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EADDD38166C8FDC002F3B82 /* UserNotifier.m */; };
+		2EADDD41166C972A002F3B82 /* PreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EADDD3F166C972A002F3B82 /* PreferencesWindowController.m */; };
+		2EADDD42166C972A002F3B82 /* PreferencesWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EADDD40166C972A002F3B82 /* PreferencesWindowController.xib */; };
+		2EADDD60166C978F002F3B82 /* GeneralPreferencesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EADDD5F166C978F002F3B82 /* GeneralPreferencesView.m */; };
+		2EADDD62166C979E002F3B82 /* GeneralPreferencesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EADDD61166C979E002F3B82 /* GeneralPreferencesView.xib */; };
+		2EADDD75166C9B27002F3B82 /* GeneralPreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EADDD74166C9B27002F3B82 /* GeneralPreferencesViewController.m */; };
+		2EADDD79166CA9AE002F3B82 /* AuthenticationPreferencesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EADDD78166CA9AE002F3B82 /* AuthenticationPreferencesView.m */; };
+		2EADDD7B166CA9BD002F3B82 /* AuthenticationPreferencesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EADDD7A166CA9BD002F3B82 /* AuthenticationPreferencesView.xib */; };
+		2EADDD7E166CAE11002F3B82 /* AuthenticationPreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EADDD7D166CAE11002F3B82 /* AuthenticationPreferencesViewController.m */; };
 		2EBA8CE9164FA582005C033E /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EDA04771565C67C0043A3A6 /* Preferences.m */; };
-		2EBA8CEA164FA582005C033E /* PreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EDA04741565C0A70043A3A6 /* PreferencesController.m */; };
 		2EBA8CF6164FAD4A005C033E /* FilterPreferencesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA8CF5164FAD4A005C033E /* FilterPreferencesTests.m */; };
 		2EBA8CFA164FAD91005C033E /* FilterPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA8CF9164FAD91005C033E /* FilterPreferences.m */; };
 		2EBA8CFB164FAD9F005C033E /* FilterPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA8CF9164FAD91005C033E /* FilterPreferences.m */; };
 		2EDA045D156450750043A3A6 /* BuildEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EDA045C156450750043A3A6 /* BuildEvent.m */; };
 		2EDA0460156464FF0043A3A6 /* tray-alt.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EDA045E156464FF0043A3A6 /* tray-alt.png */; };
 		2EDA0461156464FF0043A3A6 /* tray.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EDA045F156464FF0043A3A6 /* tray.png */; };
-		2EDA04751565C0A70043A3A6 /* PreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EDA04741565C0A70043A3A6 /* PreferencesController.m */; };
 		2EDA04781565C67C0043A3A6 /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EDA04771565C67C0043A3A6 /* Preferences.m */; };
 		2EE31A6B156422CF004F33FE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EE31A6A156422CF004F33FE /* AppDelegate.m */; };
 		2EE31A7115642547004F33FE /* Pusher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE31A7015642547004F33FE /* Pusher.framework */; };
 		2EE31A721564254C004F33FE /* Pusher.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2EE31A7015642547004F33FE /* Pusher.framework */; };
+		2EE514D6166CC41A0098D96D /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE514D5166CC41A0098D96D /* WebKit.framework */; };
+		2EE514DB166CCA850098D96D /* GitHubAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EE514DA166CCA850098D96D /* GitHubAuthentication.m */; };
+		2EE514F5166CF67C0098D96D /* TravisKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EE514F4166CF67C0098D96D /* TravisKeychain.m */; };
+		2EE514F9166CF8880098D96D /* TravisAuthenticator.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EE514F8166CF8870098D96D /* TravisAuthenticator.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -146,6 +156,19 @@
 		2E90F155164E389F009CAA25 /* Travis CI.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "Travis CI.icns"; sourceTree = "<group>"; };
 		2EADDD37166C8FDC002F3B82 /* UserNotifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserNotifier.h; sourceTree = "<group>"; };
 		2EADDD38166C8FDC002F3B82 /* UserNotifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserNotifier.m; sourceTree = "<group>"; };
+		2EADDD3E166C972A002F3B82 /* PreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesWindowController.h; sourceTree = "<group>"; };
+		2EADDD3F166C972A002F3B82 /* PreferencesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesWindowController.m; sourceTree = "<group>"; };
+		2EADDD40166C972A002F3B82 /* PreferencesWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencesWindowController.xib; sourceTree = "<group>"; };
+		2EADDD5E166C978F002F3B82 /* GeneralPreferencesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeneralPreferencesView.h; sourceTree = "<group>"; };
+		2EADDD5F166C978F002F3B82 /* GeneralPreferencesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneralPreferencesView.m; sourceTree = "<group>"; };
+		2EADDD61166C979E002F3B82 /* GeneralPreferencesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GeneralPreferencesView.xib; sourceTree = "<group>"; };
+		2EADDD73166C9B27002F3B82 /* GeneralPreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeneralPreferencesViewController.h; sourceTree = "<group>"; };
+		2EADDD74166C9B27002F3B82 /* GeneralPreferencesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneralPreferencesViewController.m; sourceTree = "<group>"; };
+		2EADDD77166CA9AE002F3B82 /* AuthenticationPreferencesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthenticationPreferencesView.h; sourceTree = "<group>"; };
+		2EADDD78166CA9AE002F3B82 /* AuthenticationPreferencesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthenticationPreferencesView.m; sourceTree = "<group>"; };
+		2EADDD7A166CA9BD002F3B82 /* AuthenticationPreferencesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AuthenticationPreferencesView.xib; sourceTree = "<group>"; };
+		2EADDD7C166CAE11002F3B82 /* AuthenticationPreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthenticationPreferencesViewController.h; sourceTree = "<group>"; };
+		2EADDD7D166CAE11002F3B82 /* AuthenticationPreferencesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthenticationPreferencesViewController.m; sourceTree = "<group>"; };
 		2EBA8CF5164FAD4A005C033E /* FilterPreferencesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = FilterPreferencesTests.m; path = test/FilterPreferencesTests.m; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		2EBA8CF8164FAD91005C033E /* FilterPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = FilterPreferences.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		2EBA8CF9164FAD91005C033E /* FilterPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = FilterPreferences.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
@@ -154,14 +177,21 @@
 		2EDA045C156450750043A3A6 /* BuildEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BuildEvent.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		2EDA045E156464FF0043A3A6 /* tray-alt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tray-alt.png"; sourceTree = "<group>"; };
 		2EDA045F156464FF0043A3A6 /* tray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tray.png; sourceTree = "<group>"; };
-		2EDA04731565C0A70043A3A6 /* PreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = PreferencesController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		2EDA04741565C0A70043A3A6 /* PreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = PreferencesController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		2EDA04761565C67C0043A3A6 /* Preferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Preferences.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		2EDA04771565C67C0043A3A6 /* Preferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = Preferences.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		2EE31A69156422CF004F33FE /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2EE31A6A156422CF004F33FE /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = AppDelegate.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		2EE31A7015642547004F33FE /* Pusher.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Pusher.framework; path = vendor/Pusher.framework; sourceTree = "<group>"; };
 		2EE31A7E15644ABD004F33FE /* Travis CI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Travis CI.entitlements"; sourceTree = "<group>"; };
+		2EE514D5166CC41A0098D96D /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/WebKit.framework; sourceTree = DEVELOPER_DIR; };
+		2EE514D9166CCA850098D96D /* GitHubAuthentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GitHubAuthentication.h; sourceTree = "<group>"; };
+		2EE514DA166CCA850098D96D /* GitHubAuthentication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GitHubAuthentication.m; sourceTree = "<group>"; };
+		2EE514DC166CCB2E0098D96D /* GitHubDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GitHubDefines.h; sourceTree = "<group>"; };
+		2EE514DD166CCB360098D96D /* GitHubDefinesExample.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GitHubDefinesExample.h; sourceTree = "<group>"; };
+		2EE514F3166CF67C0098D96D /* TravisKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TravisKeychain.h; sourceTree = "<group>"; };
+		2EE514F4166CF67C0098D96D /* TravisKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TravisKeychain.m; sourceTree = "<group>"; };
+		2EE514F7166CF8870098D96D /* TravisAuthenticator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TravisAuthenticator.h; sourceTree = "<group>"; };
+		2EE514F8166CF8870098D96D /* TravisAuthenticator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TravisAuthenticator.m; sourceTree = "<group>"; };
 		884722F96BEB4A039C4EBD96 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Travis CI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Travis CI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -189,6 +219,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EE514D6166CC41A0098D96D /* WebKit.framework in Frameworks */,
 				9D48CED31593733B00955842 /* SystemConfiguration.framework in Frameworks */,
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				DD06BD7413170793007673AA /* CoreLocation.framework in Frameworks */,
@@ -269,6 +300,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2EE514D5166CC41A0098D96D /* WebKit.framework */,
 				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
 				2E00CCC0164F974800A30635 /* SenTestingKit.framework */,
 				2E00CCC2164F974900A30635 /* Cocoa.framework */,
@@ -285,6 +317,10 @@
 				2E00CCB3164EE10000A30635 /* TravisAPI.m */,
 				2E00CCB5164EE18000A30635 /* TravisHTTPClient.h */,
 				2E00CCB6164EE18000A30635 /* TravisHTTPClient.m */,
+				2EE514F3166CF67C0098D96D /* TravisKeychain.h */,
+				2EE514F4166CF67C0098D96D /* TravisKeychain.m */,
+				2EE514F7166CF8870098D96D /* TravisAuthenticator.h */,
+				2EE514F8166CF8870098D96D /* TravisAuthenticator.m */,
 			);
 			name = "Travis API";
 			sourceTree = "<group>";
@@ -357,8 +393,19 @@
 		2E72AF4B166AB1C100F2631C /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				2EDA04731565C0A70043A3A6 /* PreferencesController.h */,
-				2EDA04741565C0A70043A3A6 /* PreferencesController.m */,
+				2EADDD77166CA9AE002F3B82 /* AuthenticationPreferencesView.h */,
+				2EADDD78166CA9AE002F3B82 /* AuthenticationPreferencesView.m */,
+				2EADDD7A166CA9BD002F3B82 /* AuthenticationPreferencesView.xib */,
+				2EADDD7C166CAE11002F3B82 /* AuthenticationPreferencesViewController.h */,
+				2EADDD7D166CAE11002F3B82 /* AuthenticationPreferencesViewController.m */,
+				2EADDD5E166C978F002F3B82 /* GeneralPreferencesView.h */,
+				2EADDD5F166C978F002F3B82 /* GeneralPreferencesView.m */,
+				2EADDD61166C979E002F3B82 /* GeneralPreferencesView.xib */,
+				2EADDD73166C9B27002F3B82 /* GeneralPreferencesViewController.h */,
+				2EADDD74166C9B27002F3B82 /* GeneralPreferencesViewController.m */,
+				2EADDD3E166C972A002F3B82 /* PreferencesWindowController.h */,
+				2EADDD3F166C972A002F3B82 /* PreferencesWindowController.m */,
+				2EADDD40166C972A002F3B82 /* PreferencesWindowController.xib */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -366,6 +413,7 @@
 		2EE31A611564226E004F33FE /* Travis CI */ = {
 			isa = PBXGroup;
 			children = (
+				2EE514D8166CCA6F0098D96D /* GitHub API */,
 				2E72AF49166AB19400F2631C /* Notifications */,
 				2E00CCB1164EE0C300A30635 /* Travis API */,
 				2E72AF4B166AB1C100F2631C /* UI */,
@@ -387,6 +435,17 @@
 				29B97316FDCFA39411CA2CEA /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2EE514D8166CCA6F0098D96D /* GitHub API */ = {
+			isa = PBXGroup;
+			children = (
+				2EE514D9166CCA850098D96D /* GitHubAuthentication.h */,
+				2EE514DA166CCA850098D96D /* GitHubAuthentication.m */,
+				2EE514DC166CCB2E0098D96D /* GitHubDefines.h */,
+				2EE514DD166CCB360098D96D /* GitHubDefinesExample.h */,
+			);
+			name = "GitHub API";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -483,6 +542,9 @@
 				2EDA0461156464FF0043A3A6 /* tray.png in Resources */,
 				2E90F156164E389F009CAA25 /* Travis CI.icns in Resources */,
 				2E12F39716520C2A000048F5 /* dsa_pub.pem in Resources */,
+				2EADDD42166C972A002F3B82 /* PreferencesWindowController.xib in Resources */,
+				2EADDD62166C979E002F3B82 /* GeneralPreferencesView.xib in Resources */,
+				2EADDD7B166CA9BD002F3B82 /* AuthenticationPreferencesView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -531,7 +593,6 @@
 				2E00CCD9164F9A9B00A30635 /* PreferencesControllerTests.m in Sources */,
 				2EBA8CF6164FAD4A005C033E /* FilterPreferencesTests.m in Sources */,
 				2EBA8CE9164FA582005C033E /* Preferences.m in Sources */,
-				2EBA8CEA164FA582005C033E /* PreferencesController.m in Sources */,
 				2EBA8CFB164FAD9F005C033E /* FilterPreferences.m in Sources */,
 				2E72AF41166A7F4600F2631C /* EventFilterTests.m in Sources */,
 				2E72AF4F166AB20C00F2631C /* EventConverter.m in Sources */,
@@ -548,7 +609,6 @@
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
 				2EE31A6B156422CF004F33FE /* AppDelegate.m in Sources */,
 				2EDA045D156450750043A3A6 /* BuildEvent.m in Sources */,
-				2EDA04751565C0A70043A3A6 /* PreferencesController.m in Sources */,
 				2EDA04781565C67C0043A3A6 /* Preferences.m in Sources */,
 				9DAF568F15932852002018B5 /* Reachability.m in Sources */,
 				2E75988B164DF68100B87810 /* Notification.m in Sources */,
@@ -560,6 +620,14 @@
 				2E72AF4E166AB20C00F2631C /* EventConverter.m in Sources */,
 				2E72AF5E166AEA6500F2631C /* BuildUpdater.m in Sources */,
 				2EADDD39166C8FDC002F3B82 /* UserNotifier.m in Sources */,
+				2EADDD41166C972A002F3B82 /* PreferencesWindowController.m in Sources */,
+				2EADDD60166C978F002F3B82 /* GeneralPreferencesView.m in Sources */,
+				2EADDD75166C9B27002F3B82 /* GeneralPreferencesViewController.m in Sources */,
+				2EADDD79166CA9AE002F3B82 /* AuthenticationPreferencesView.m in Sources */,
+				2EADDD7E166CAE11002F3B82 /* AuthenticationPreferencesViewController.m in Sources */,
+				2EE514DB166CCA850098D96D /* GitHubAuthentication.m in Sources */,
+				2EE514F5166CF67C0098D96D /* TravisKeychain.m in Sources */,
+				2EE514F9166CF8880098D96D /* TravisAuthenticator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
