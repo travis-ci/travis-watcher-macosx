@@ -9,13 +9,14 @@
 #import "BuildEventStream.h"
 
 #import <ReactiveCocoa/ReactiveCocoa.h>
+#import <libextobjc/EXTScope.h>
 #import <Pusher/PTPusher.h>
 #import <Pusher/PTPusherChannel.h>
 #import <Pusher/PTPusherEvent.h>
 #import "Reachability.h"
 #import "BuildEvent.h"
+#import "TravisAPI.h"
 
-static NSString * const BuildEventStreamPusherAPIKey = @"23ed642e81512118260e";
 static NSString * const BuildEventStreamPusherChannelName = @"common";
 static NSString * const BuildEventStreamPusherBuildStartedEvent = @"build:started";
 static NSString * const BuildEventStreamPusherBuildFinishedEvent = @"build:finished";
@@ -39,10 +40,15 @@ static NSString * const BuildEventStreamPusherBuildFinishedEvent = @"build:finis
 
   _eventSubject = [RACSubject subject];
   _reachability = [Reachability reachabilityForInternetConnection];
-  _pusher = [PTPusher pusherWithKey:BuildEventStreamPusherAPIKey delegate:self encrypted:YES];
-  _channel = [_pusher subscribeToChannelNamed:BuildEventStreamPusherChannelName];
-  [_channel bindToEventNamed:BuildEventStreamPusherBuildStartedEvent target:self action:@selector(handleEvent:)];
-  [_channel bindToEventNamed:BuildEventStreamPusherBuildFinishedEvent target:self action:@selector(handleEvent:)];
+
+  @weakify(self);
+  [[TravisAPI.standardAPI fetchConfig] subscribeNext:^(NSDictionary *config) {
+    @strongify(self);
+    _pusher = [PTPusher pusherWithKey:config[@"config"][@"pusher"][@"key"] delegate:self encrypted:YES];
+    _channel = [self.pusher subscribeToChannelNamed:BuildEventStreamPusherChannelName];
+    [self.channel bindToEventNamed:BuildEventStreamPusherBuildStartedEvent target:self action:@selector(handleEvent:)];
+    [self.channel bindToEventNamed:BuildEventStreamPusherBuildFinishedEvent target:self action:@selector(handleEvent:)];
+  }];
 
   return self;
 }
