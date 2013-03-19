@@ -18,5 +18,6 @@
 - (id)initWithHTTPClient:(TravisHTTPClient *)HTTPClient;
 
 - (RACSignal *)fetchBuildWithID:(NSNumber *)buildID forRepository:(NSString *)slug;
+- (RACSignal *)fetchConfig;
 
 @end

@@ -33,4 +33,8 @@
   return [[self HTTPClient] requestWithMethod:TravisHTTPClientMethodGET path:path parameters:nil];
 }
 
+- (RACSignal *)fetchConfig {
+  return [[self HTTPClient] requestWithMethod:TravisHTTPClientMethodGET path:@"/config" parameters:@{}];
+}
+
 @end
