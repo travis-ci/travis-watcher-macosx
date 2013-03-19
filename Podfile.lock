@@ -21,13 +21,13 @@ DEPENDENCIES:
 - ReactiveCocoa (~> 0.10.0)
 
 SPEC CHECKSUMS:
-  AFNetworking: 4c11f857c9a18d65f4257c90a1e74ac49f0ac422
+  AFNetworking: 0bce3ae41023e080e96b8a2e0d07c94709f72a81
   JRSwizzle: 6242ff38485d870fc2636899048ee1ab883ae587
-  ReactiveCocoa: 1d0b1bca0092ca3088d7ae66799ce0116c25a612
-  ReactiveCocoa/Core: 1d0b1bca0092ca3088d7ae66799ce0116c25a612
-  ReactiveCocoa/RACExtensions: 1d0b1bca0092ca3088d7ae66799ce0116c25a612
+  ReactiveCocoa: c6e34c11c3e95536b2e3c9da11b3606600ca924c
+  ReactiveCocoa/Core: c6e34c11c3e95536b2e3c9da11b3606600ca924c
+  ReactiveCocoa/RACExtensions: c6e34c11c3e95536b2e3c9da11b3606600ca924c
   libextobjc/EXTConcreteProtocol: 7dcd66faf065d3b7fcb5f85a1646efaed28bcadf
   libextobjc/EXTKeyPathCoding: 7dcd66faf065d3b7fcb5f85a1646efaed28bcadf
   libextobjc/EXTScope: 7dcd66faf065d3b7fcb5f85a1646efaed28bcadf
 
-COCOAPODS: 0.16.0
+COCOAPODS: 0.16.4
