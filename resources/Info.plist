@@ -33,6 +33,6 @@
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
 	<key>SUFeedURL</key>
-	<string>http://henrikhodne.com/travis-osx-sparkle/app.xml</string>
+	<string>https://travis-ci.mesmerizeapp.com/</string>
 </dict>
 </plist>
