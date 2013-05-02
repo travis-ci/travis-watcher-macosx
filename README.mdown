@@ -1,31 +1,37 @@
 # Travis Watcher - Mac edition
 
-<img alt="Travis Watcher screenshot showing notifications in Notification Center and an active notification" src="http://f.cl.ly/items/3q0e2q1m1J0g1d3s1Q26/Pasted%20Image%2011:12:12%202:59%20PM.png" width="400">
+## Roadmap
 
-Travis Watcher is a toolbar app for OSX that notifies you about your Travis builds.
+In no particular order (see issue tracker for more details):
 
-## Installation
+- Authentication
+- Option to connect to multiple Travis installations (org/pro/custom). The only
+  difference is the API endpoint and the fact that pro *requires* authentication
+- Show status for master branch (or other custom branch, eventually) for
+  "favourite" repositories
+  - Go to latest build in web browser if clicked on
+- Ability to change notification types globally, per organization and per
+  repository (notify on success, failure or change)
+- If we're disconnected from Pusher/WebSockets, update with HTTP and reconnect
+  to Pusher/WebSockets.
+- (Auto)update
 
-To install the app, download it from [here][last-download].
 
-[last-download]: https://github.com/downloads/travis-ci/travis-watcher-macosx/TravisCI-v0.2.4.zip
+## Mockups
 
-## Preferences
+Menu bar:
 
-![Preferences panel][preferences-panel]
+![Menu bar mockup](mockups/menubar.png)
 
-If you click the Travis Icon in your toolbar (![Travis Icon][travis-icon]), you can open the preferences panel. There
-you can enable the firehose, which will give you every single build notification on Travis. If this is too much for you,
-you can enable specific repositories or users. If you want to, say, enable all build notifications for the travis-ci
-organisation, you can add `travis-ci/*` to the list of repositories.
+Preferences window:
 
-[preferences-panel]: http://f.cl.ly/items/31453a3a3T0o341w0J3R/Preferences-2.png
-[travis-icon]: http://f.cl.ly/items/053a1H3o0a1O1n3r3c0Q/tray.png
+![Preferences window mockup](mockups/preferences.png)
+
 
 ## Development Setup
 
-The Travis CI Mac app uses [CocoaPods][] to manage dependencies. After installing CocoaPods you need to run `pod
-install` to download the dependencies.
+The Travis CI Mac app uses [CocoaPods][] to manage dependencies. After
+installing CocoaPods you need to run `pod install` to download the dependencies.
 
 [CocoaPods]: http://cocoapods.org
 
@@ -33,11 +39,12 @@ install` to download the dependencies.
 
 1. Fork the project.
 2. Make your feature addition or bug fix.
-3. Add tests for it. This is important so it doesn't get broken in a future version unintentionally.
-4. Commit. Please do not edit the version number. If you want to update it, please do it in a separate commit so it's
-   easy to ignore when merging.
+3. Add tests for it. This is important so it doesn't get broken in a future
+   version unintentionally.
+4. Commit. Please do not edit the version number. If you want to update it,
+   please do it in a separate commit so it's easy to ignore when merging.
 5. Send a pull request. Bonus points for topic branches.
 
 ## Copyright
 
-Copyright (c) 2012 [Travis](http://github.com/travis-ci). See LICENSE for details.
+Copyright (c) 2012-2013 [Travis](http://github.com/travis-ci). See LICENSE for details.
