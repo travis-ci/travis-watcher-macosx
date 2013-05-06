@@ -2,5 +2,8 @@ language: objective-c
 before_install:
   - "git clone https://github.com/facebook/xctool.git ~/xctool"
   - "~/xctool/build.sh"
+install:
+  - "bundle install"
+  - "bundle exec pod install"
 script: "~/xctool/xctool.sh -workspace Travis.xcworkspace -scheme Travis test"
 
