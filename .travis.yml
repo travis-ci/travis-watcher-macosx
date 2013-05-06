@@ -2,5 +2,6 @@ language: objective-c
 before_install:
   - "git clone https://github.com/facebook/xctool.git ~/xctool"
   - "~/xctool/build.sh"
+  - "gem update cocoapods"
 script: "~/xctool/xctool.sh -workspace Travis.xcworkspace -scheme Travis test"
 
