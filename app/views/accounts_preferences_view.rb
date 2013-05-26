@@ -1,6 +1,15 @@
 class AccountsPreferencesView < NSView
   def initWithFrame(frame)
-    super(NSMakeRect(0, 0, 549, 260)).tap do
+    # Height: 260
+    super(NSMakeRect(0, 0, 549, 140)).tap do
+      self.stylesheet = :accounts_preferences
+
+      @box = subview(NSBox, :box)
+      layout(@box.contentView) do
+        subview(signInView, :signInView)
+        subview(signedInView, :signedInView)
+      end
+
       self.userInfo = {
         "correct_scopes" => true,
         "email" => "me@henrikhodne.com",
@@ -12,19 +21,19 @@ class AccountsPreferencesView < NSView
         "name" => "Henrik Hodne",
         "synced_at" => "2013-05-25T12:55:28Z",
       }
-
-      self.stylesheet = :accounts_preferences
-
-      @box = subview(NSBox, :box)
-      layout(@box.contentView) do
-        subview(signInView, :signInView)
-        subview(signedInView, :signedInView)
-      end
     end
   end
 
   def userInfo=(userInfo)
     @userInfo = userInfo
+
+    @avatar.image = NSImage.alloc.initWithContentsOfURL(gravatarURL)
+    @nameLabel.stringValue = @userInfo["name"]
+    @usernameLabel.stringValue = @userInfo["login"]
+  end
+
+  def gravatarURL
+    NSURL.URLWithString("http://www.gravatar.com/avatar/#{@userInfo["gravatar_id"]}?s=60&d=mm")
   end
 
   def username
@@ -69,7 +78,13 @@ class AccountsPreferencesView < NSView
       @signedInView.hidden = false
 
       layout(@signedInView) do
-        subview(NSTextField, :signed_in_label)
+        @avatar = subview(NSImageView, :userInfoAvatar)
+
+        @nameLabel = subview(NSTextField, :userInfoName)
+        @usernameLabel = subview(NSTextField, :userInfoUsername)
+        @signOutButton = subview(NSButton, :signOutButton)
+        @signOutButton.target = self
+        @signOutButton.action = "signOut:"
       end
     end
 
@@ -100,6 +115,9 @@ class AccountsPreferencesView < NSView
     Dispatch::Queue.main.async do
       animation.startAnimation
     end
+  end
+
+  def signOut(sender)
   end
 end
 

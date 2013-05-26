@@ -86,13 +86,39 @@ Teacup::Stylesheet.new(:accounts_preferences) do
 
   style :signedInView, constraints: [ :full ]
 
-  style :signed_in_label, extends: :label,
-    stringValue: "You are logged in.",
+  style :userInfoAvatar,
+    editable: false,
     constraints: [
-      constrain_center_x,
       constrain_center_y,
+      constrain_height(40),
+      constrain_width(40),
+      constrain_left(15),
+    ]
+
+  style :userInfoName, extends: :label,
+    font: NSFont.boldSystemFontOfSize(0),
+    constraints: [
+      constrain(:top).equals(:userInfoAvatar, :top),
+      constrain(:left).equals(:userInfoAvatar, :right).plus(8),
+      constrain(:right).equals(:signOutButton, :left).minus(8),
       constrain_height(17),
-      constrain_width(150)
+    ]
+
+  style :userInfoUsername, extends: :small_label,
+    constraints: [
+      constrain(:bottom).equals(:userInfoAvatar, :bottom),
+      constrain(:left).equals(:userInfoName, :left),
+      constrain(:right).equals(:userInfoName, :right),
+      constrain_height(17),
+    ]
+
+  style :signOutButton, extends: :button,
+    title: "Sign Out",
+    constraints: [
+      constrain_right(-15),
+      constrain_width(90),
+      constrain_height(31),
+      constrain_center_y,
     ]
 end
 
