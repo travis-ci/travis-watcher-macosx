@@ -35,7 +35,8 @@ class TravisAPI
   end
 
   def parseJSON(data)
-    NSJSONSerialization.JSONObjectWithData(data, options:NSJSONReadingAllowFragments, error:Pointer.new(:object))
+    error_ptr = Pointer.new(:object)
+    NSJSONSerialization.JSONObjectWithData(data, options:NSJSONReadingAllowFragments, error:error_ptr)
   end
 end
 

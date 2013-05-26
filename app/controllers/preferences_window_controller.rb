@@ -11,7 +11,8 @@ class PreferencesWindowController < DBPrefsWindowController
   def accountsPreferencesView
     unless defined?(@accountsPreferencesView)
       @accountsPreferencesView = AccountsPreferencesView.alloc.initWithFrame(NSZeroRect)
-      # @accountsPreferencesView.setSignInTarget(self, action: 'signIn:')
+      @accountsPreferencesView.setSignInTarget(self, action: 'signIn:')
+      @accountsPreferencesView.setSignOutTarget(self, action: 'signOut:')
     end
 
     @accountsPreferencesView
@@ -26,8 +27,28 @@ class PreferencesWindowController < DBPrefsWindowController
         Preferences.sharedPreferences.access_token = auth["access_token"]
         travisAPI.accessToken = auth["access_token"]
         travisAPI.getUserInfo do |info|
-          NSLog("Logged in on Travis as %@", info)
+          NSLog("Logged in on Travis as %@", info["user"]["login"])
+          accountsPreferencesView.userInfo = info["user"]
         end
+      end
+    end
+  end
+
+  def signOut(target)
+    Preferences.sharedPreferences.access_token = nil
+    accountsPreferencesView.userInfo = nil
+  end
+
+  ## NSWindowController
+
+  def windowDidLoad
+    super
+
+    if Preferences.sharedPreferences.access_token
+      travisAPI = TravisAPI.new
+      travisAPI.getUserInfo do |info|
+        NSLog("Logged in as %@", info["user"])
+        accountsPreferencesView.userInfo = info["user"]
       end
     end
   end
