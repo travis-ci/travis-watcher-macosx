@@ -14,11 +14,14 @@ class AccountsPreferencesView < NSView
   def userInfo=(userInfo)
     @userInfo = userInfo
 
-    @avatar.image = NSImage.alloc.initWithContentsOfURL(gravatarURL)
-    @nameLabel.stringValue = @userInfo["name"]
-    @usernameLabel.stringValue = @userInfo["login"]
-
-    @userInfo ? changeToSignedInView : changeToSignInView
+    if @userInfo
+      @avatar.image = NSImage.alloc.initWithContentsOfURL(gravatarURL)
+      @nameLabel.stringValue = @userInfo["name"]
+      @usernameLabel.stringValue = @userInfo["login"]
+      changeToSignedInView
+    else
+      changeToSignInView
+    end
 
     @userInfo
   end

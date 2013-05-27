@@ -19,9 +19,7 @@ class PreferencesWindowController < DBPrefsWindowController
   end
 
   def signIn(target)
-    gitHubAPI = GitHubAPI.new
     gitHubAPI.createAuthorization(accountsPreferencesView.username, accountsPreferencesView.password) do |authorization|
-      travisAPI = TravisAPI.new
       travisAPI.gitHubAuth(authorization["token"]) do |auth|
         gitHubAPI.deleteAuthorization(authorization["id"])
         Preferences.sharedPreferences.access_token = auth["access_token"]
@@ -39,15 +37,22 @@ class PreferencesWindowController < DBPrefsWindowController
     accountsPreferencesView.userInfo = nil
   end
 
+  def travisAPI
+    @travisAPI ||= TravisAPI.new
+  end
+
+  def gitHubAPI
+    @gitHubAPI ||= GitHubAPI.new
+  end
+
   ## NSWindowController
 
   def windowDidLoad
     super
 
     if Preferences.sharedPreferences.access_token
-      travisAPI = TravisAPI.new
       travisAPI.getUserInfo do |info|
-        NSLog("Logged in as %@", info["user"])
+        NSLog("Logged in as %@", info["user"]["login"])
         accountsPreferencesView.userInfo = info["user"]
       end
     end

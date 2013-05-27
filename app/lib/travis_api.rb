@@ -15,21 +15,22 @@ class TravisAPI
   end
 
   def gitHubAuth(gitHubToken, &block)
-    @client.postPath("/auth/github", parameters: { "github_token" => gitHubToken }, success:proc { |operation, replyData|
+    @client.postPath("/auth/github", parameters: { "github_token" => gitHubToken }, success:-> (operation, replyData) {
       reply = parseJSON(replyData)
       NSLog("Did GitHub auth: %@", reply)
       block.call(reply)
-    }, failure:proc { |operation, error|
+    }, failure:-> (operation, error) {
       NSLog("Error doing GitHub auth on Travis: %@", error)
     })
   end
 
   def getUserInfo(&block)
-    @client.getPath("/users", parameters:nil, success:proc { |operation, replyData|
+    NSLog("Getting user data...")
+
+    @client.getPath("/users", parameters:nil, success:-> (operation, replyData) {
       reply = parseJSON(replyData)
-      NSLog("Got user data: %@", reply)
       block.call(reply)
-    }, failure:proc{ |operation, error|
+    }, failure:-> (operation, error) {
       NSLog("Failed getting user data: %@", error)
     })
   end
