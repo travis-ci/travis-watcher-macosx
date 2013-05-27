@@ -14,13 +14,14 @@ class TravisAPI
     @client.setDefaultHeader("Authorization", value:"token #{accessToken}")
   end
 
-  def gitHubAuth(gitHubToken, &block)
+  def gitHubAuth(gitHubToken, success:success, failure:failure)
     @client.postPath("/auth/github", parameters: { "github_token" => gitHubToken }, success:-> (operation, replyData) {
       reply = parseJSON(replyData)
       NSLog("Did GitHub auth: %@", reply)
-      block.call(reply)
+      success.call(reply)
     }, failure:-> (operation, error) {
       NSLog("Error doing GitHub auth on Travis: %@", error)
+      failure.call(error)
     })
   end
 

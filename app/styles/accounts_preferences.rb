@@ -65,6 +65,35 @@ Teacup::Stylesheet.new(:accounts_preferences) do
       constrain_width(90),
     ]
 
+  style :progressIndicator,
+    style: NSProgressIndicatorSpinningStyle,
+    controlSize: NSSmallControlSize,
+    displayedWhenStopped: false,
+    constraints: [
+      constrain_height(16),
+      constrain_width(16),
+      constrain(:left).equals(:sign_in_button, :left),
+      constrain(:center_y).equals(:sign_in_button, :center_y),
+    ]
+
+  style :progressLabel, extends: :label,
+    stringValue: "Signing in",
+    constraints: [
+      constrain(:left).equals(:progressIndicator, :right).plus(8),
+      constrain_height(17),
+      constrain(:right).equals(:sign_in_button, :right),
+      constrain(:center_y).equals(:sign_in_button, :center_y),
+    ]
+
+  style :errorLabel, extends: :label,
+    textColor: NSColor.colorWithSRGBRed(0.6, green:0.0, blue:0.0, alpha:1.0),
+    constraints: [
+      constrain(:left).equals(:sign_in_button, :right).plus(8),
+      constrain(:right).equals(:password_field, :right),
+      constrain(:top).equals(:sign_in_button, :top).plus(7),
+      constrain_height(17),
+    ]
+
   style :sign_in_info_label, extends: :label,
     stringValue: "Use your GitHub details to sign in.",
     constraints: [

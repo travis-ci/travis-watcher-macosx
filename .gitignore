@@ -3,3 +3,4 @@ build
 tags
 .DS_Store
 vendor/Pods
+.dat*

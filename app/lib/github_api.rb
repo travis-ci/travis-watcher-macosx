@@ -6,16 +6,17 @@ class GitHubAPI
     @client.parameterEncoding = AFJSONParameterEncoding
   end
 
-  def createAuthorization(username, password, &block)
+  def createAuthorizationWithUsername(username, password:password, success:success, failure:failure)
     @client.setAuthorizationHeaderWithUsername(username, password:password)
 
     @client.postPath("/authorizations", parameters: { "scopes" => [ "user:email", "public_repo" ], "note" => "Temporary token to identify on travis-ci.org" }, success:-> (operation, replyData) {
       error_ptr = Pointer.new(:object)
       reply = NSJSONSerialization.JSONObjectWithData(replyData, options:NSJSONReadingAllowFragments, error:error_ptr)
 
-      block.call(reply)
+      success.call(reply)
     }, failure:-> (operation, error) {
       NSLog("WARNING: GitHub authentication failed: %@", error)
+      failure.call(error)
     })
   end
 

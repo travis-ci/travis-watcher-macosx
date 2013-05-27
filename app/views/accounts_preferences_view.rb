@@ -8,6 +8,9 @@ class AccountsPreferencesView < NSView
         subview(signInView, :signInView)
         subview(signedInView, :signedInView)
       end
+
+      self.signingIn = false
+      self.userInfo = nil
     end
   end
 
@@ -24,6 +27,22 @@ class AccountsPreferencesView < NSView
     end
 
     @userInfo
+  end
+
+  def errorMessage=(errorMessage)
+    @errorLabel.stringValue = errorMessage
+  end
+
+  def signingIn=(signingIn)
+    if signingIn
+      @signInButton.hidden = true
+      @progressLabel.hidden = false
+      @progressIndicator.startAnimation(self)
+    else
+      @signInButton.hidden = false
+      @progressLabel.hidden = true
+      @progressIndicator.stopAnimation(self)
+    end
   end
 
   def gravatarURL
@@ -54,6 +73,10 @@ class AccountsPreferencesView < NSView
         @password.nextKeyView = @username
 
         @signInButton = subview(NSButton, :sign_in_button)
+        @progressIndicator = subview(NSProgressIndicator, :progressIndicator)
+        @progressLabel = subview(NSTextField, :progressLabel)
+
+        @errorLabel = subview(NSTextField, :errorLabel)
 
         subview(NSTextField, :sign_in_info_label)
         subview(NSTextField, :info_label)
