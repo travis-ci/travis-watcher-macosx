@@ -1,0 +1,13 @@
+PODS:
+  - AFNetworking (1.2.1)
+  - DBPrefsWindowController (0.0.1)
+
+DEPENDENCIES:
+  - AFNetworking
+  - DBPrefsWindowController
+
+SPEC CHECKSUMS:
+  AFNetworking: a44069e3c9c89867544f6639482f155c7e5f9b41
+  DBPrefsWindowController: 95e4b32baa5e7ef6d8aec433ae069f6be79928a0
+
+COCOAPODS: 0.20.1
